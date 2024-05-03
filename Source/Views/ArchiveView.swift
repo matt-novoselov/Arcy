@@ -11,14 +11,6 @@ import RealityKitContent
 
 struct ArchiveView: View {
     
-    // Adapt to different screen sizes
-    // Fill remaining space even if column rows are specified as two
-    let columns = [
-        GridItem(.adaptive(minimum: 300))
-    ]
-    
-    let itemsCollection: [ArcheologicalItem] = ArcheologicalItemsCollection().items
-    
     var settings: ProfileData
     
     @State private var searchText: String = ""
@@ -37,27 +29,14 @@ struct ArchiveView: View {
                 .pickerStyle(.segmented)
                 
                 TabView(selection: $showingFiltered) {
-                    ScrollView{
-                        LazyVGrid(columns: columns) {
-                            ForEach(filterItems()) { selectedItem in
-                                
-                                NavigationLink(destination: ArchiveDetailView(selectedItem: selectedItem)){
-                                    ItemFlatCardView(title: selectedItem.name, imageName: selectedItem.previewImage)
-                                }
-                                .buttonStyle(BorderlessButtonStyle())
-                                .buttonBorderShape(.roundedRectangle)
-                                
-                            }
-                        }
-                    }
-                    .tag(false)
+                    ArchiveGridView(searchText: $searchText)
+                        .tag(false)
                     
                     RecommendationView()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .tag(true)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
-
+                
             }
             .padding(.horizontal)
             .toolbar{
@@ -90,22 +69,6 @@ struct ArchiveView: View {
         }
         .searchable(text: $searchText)
         
-    }
-    
-    func filterItems() -> [ArcheologicalItem] {
-        let searchTextTrimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !searchTextTrimmed.isEmpty else {
-            return itemsCollection
-        }
-        
-        return itemsCollection.filter { item in
-            let searchTextLowercased = searchTextTrimmed.lowercased()
-            let itemNameLowercased = item.name.lowercased().replacingOccurrences(of: " ", with: "")
-            let itemDescriptionLowercased = item.description.lowercased().replacingOccurrences(of: " ", with: "")
-            
-            return itemNameLowercased.contains(searchTextLowercased) ||
-            itemDescriptionLowercased.contains(searchTextLowercased)
-        }
     }
     
 }

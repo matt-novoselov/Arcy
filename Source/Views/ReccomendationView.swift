@@ -10,11 +10,7 @@ import SwiftUI
 struct RecommendationView: View {
     var body: some View {
         
-        VStack{
-            Text("AI can recommend you archeological items by analyzing your favorite items.")
-            
-            ContentUnavailableView("No recommendations", systemImage: "sparkle.magnifyingglass", description: Text("Try adding a few favorite items to see recommendations"))
-        }
+        ContentUnavailableView("No recommendations", systemImage: "sparkle.magnifyingglass", description: Text("Try adding a few favorite items to see recommendations"))
         
     }
 }
