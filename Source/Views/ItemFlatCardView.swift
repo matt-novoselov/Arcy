@@ -19,7 +19,7 @@ struct ItemFlatCardView: View {
         ZStack (alignment: .bottom){
             imageName
                 .resizable()
-                .padding()
+                .padding(.all, 30)
                 .glassBackgroundEffect()
             
             Text(title)
