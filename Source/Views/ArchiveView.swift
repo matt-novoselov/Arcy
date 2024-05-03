@@ -36,11 +36,7 @@ struct ArchiveView: View {
                 }
                 .pickerStyle(.segmented)
                 
-                if showingFiltered{
-                    RecommendationView()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .transition(.move(edge: .trailing))
-                } else{
+                TabView(selection: $showingFiltered) {
                     ScrollView{
                         LazyVGrid(columns: columns) {
                             ForEach(filterItems()) { selectedItem in
@@ -54,11 +50,16 @@ struct ArchiveView: View {
                             }
                         }
                     }
-                    .transition(.move(edge: .leading))
+                    .tag(false)
+                    
+                    RecommendationView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .tag(true)
                 }
+                .tabViewStyle(.page(indexDisplayMode: .never))
 
             }
-            .padding()
+            .padding(.horizontal)
             .toolbar{
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: ProfileView(settings: settings)){
