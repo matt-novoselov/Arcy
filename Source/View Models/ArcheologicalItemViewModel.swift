@@ -1,6 +1,6 @@
 //
 //  ArcheologicalViewModel.swift
-//  Ancient Archive
+//  Arcy
 //
 //  Created by Matt Novoselov on 02/05/24.
 //

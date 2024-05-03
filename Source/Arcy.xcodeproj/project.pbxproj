@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A185AE32BE44EEC00B7843C /* Sinebow.metal */; };
+		1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473272BE538E4001A0275 /* ProfilePictureView.swift */; };
+		1A24732A2BE550C8001A0275 /* ItemFlatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473292BE550C8001A0275 /* ItemFlatCardView.swift */; };
+		1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732B2BE563D6001A0275 /* LikeButtonView.swift */; };
+		1A24732E2BE568CA001A0275 /* ShadowGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732D2BE568CA001A0275 /* ShadowGuessView.swift */; };
+		1A2473302BE5690C001A0275 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732F2BE5690B001A0275 /* ModelView.swift */; };
+		1A2473322BE574A1001A0275 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473312BE574A1001A0275 /* ProfileEditView.swift */; };
+		1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473332BE576FD001A0275 /* OnboardingCardView.swift */; };
+		1A2473362BE578AF001A0275 /* OnboardingFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */; };
 		1A31C88D2BE4245E004CCB0B /* ArcheologicalItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C88C2BE4245E004CCB0B /* ArcheologicalItemModel.swift */; };
 		1A31C8982BE4253C004CCB0B /* Corinthian_Oinochoe.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C88F2BE4253C004CCB0B /* Corinthian_Oinochoe.usdz */; };
 		1A31C8992BE4253C004CCB0B /* Pomegranate.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8902BE4253C004CCB0B /* Pomegranate.usdz */; };
@@ -24,8 +32,9 @@
 		1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AF2BE44310004CCB0B /* ProfileView.swift */; };
 		1A31C8B22BE4443F004CCB0B /* FavouritsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */; };
 		1A31C8B42BE44654004CCB0B /* ReccomendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */; };
+		1AD0C5052BE51FA7000AA944 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0C5042BE51FA7000AA944 /* ProfileModel.swift */; };
 		1AF111972BD40973004D77EB /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF111962BD40973004D77EB /* RealityKitContent */; };
-		1AF111992BD40973004D77EB /* AncientArchiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF111982BD40973004D77EB /* AncientArchiveApp.swift */; };
+		1AF111992BD40973004D77EB /* ArcyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF111982BD40973004D77EB /* ArcyApp.swift */; };
 		1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF1119A2BD40973004D77EB /* ContentView.swift */; };
 		1AF1119F2BD40974004D77EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF1119E2BD40974004D77EB /* Assets.xcassets */; };
 		1AFA26212BE4101900FD8152 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26202BE4101900FD8152 /* ArchiveView.swift */; };
@@ -35,6 +44,14 @@
 
 /* Begin PBXFileReference section */
 		1A185AE32BE44EEC00B7843C /* Sinebow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sinebow.metal; sourceTree = "<group>"; };
+		1A2473272BE538E4001A0275 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
+		1A2473292BE550C8001A0275 /* ItemFlatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFlatCardView.swift; sourceTree = "<group>"; };
+		1A24732B2BE563D6001A0275 /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
+		1A24732D2BE568CA001A0275 /* ShadowGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowGuessView.swift; sourceTree = "<group>"; };
+		1A24732F2BE5690B001A0275 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		1A2473312BE574A1001A0275 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
+		1A2473332BE576FD001A0275 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
+		1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeaturesView.swift; sourceTree = "<group>"; };
 		1A31C88C2BE4245E004CCB0B /* ArcheologicalItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheologicalItemModel.swift; sourceTree = "<group>"; };
 		1A31C88F2BE4253C004CCB0B /* Corinthian_Oinochoe.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Corinthian_Oinochoe.usdz; sourceTree = "<group>"; };
 		1A31C8902BE4253C004CCB0B /* Pomegranate.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Pomegranate.usdz; sourceTree = "<group>"; };
@@ -51,9 +68,10 @@
 		1A31C8AF2BE44310004CCB0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritsView.swift; sourceTree = "<group>"; };
 		1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendationView.swift; sourceTree = "<group>"; };
-		1AF111912BD40973004D77EB /* Ancient Archive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ancient Archive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD0C5042BE51FA7000AA944 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		1AF111912BD40973004D77EB /* Arcy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF111952BD40973004D77EB /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
-		1AF111982BD40973004D77EB /* AncientArchiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncientArchiveApp.swift; sourceTree = "<group>"; };
+		1AF111982BD40973004D77EB /* ArcyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcyApp.swift; sourceTree = "<group>"; };
 		1AF1119A2BD40973004D77EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1AF1119E2BD40974004D77EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF111A32BD40974004D77EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				1A31C88C2BE4245E004CCB0B /* ArcheologicalItemModel.swift */,
+				1AD0C5042BE51FA7000AA944 /* ProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +147,7 @@
 				1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */,
 				1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */,
 				1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */,
+				1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -137,7 +157,7 @@
 			children = (
 				1AF1119E2BD40974004D77EB /* Assets.xcassets */,
 				1AF111A32BD40974004D77EB /* Info.plist */,
-				1AF111982BD40973004D77EB /* AncientArchiveApp.swift */,
+				1AF111982BD40973004D77EB /* ArcyApp.swift */,
 				1AF111932BD40973004D77EB /* Views */,
 				1A31C8A12BE42E05004CCB0B /* Models */,
 				1A31C8A22BE42E0B004CCB0B /* View Models */,
@@ -151,7 +171,7 @@
 		1AF111922BD40973004D77EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AF111912BD40973004D77EB /* Ancient Archive.app */,
+				1AF111912BD40973004D77EB /* Arcy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +186,13 @@
 				1A31C8AF2BE44310004CCB0B /* ProfileView.swift */,
 				1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */,
 				1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */,
+				1A2473272BE538E4001A0275 /* ProfilePictureView.swift */,
+				1A2473292BE550C8001A0275 /* ItemFlatCardView.swift */,
+				1A24732B2BE563D6001A0275 /* LikeButtonView.swift */,
+				1A24732D2BE568CA001A0275 /* ShadowGuessView.swift */,
+				1A24732F2BE5690B001A0275 /* ModelView.swift */,
+				1A2473312BE574A1001A0275 /* ProfileEditView.swift */,
+				1A2473332BE576FD001A0275 /* OnboardingCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,9 +208,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1AF111902BD40973004D77EB /* Ancient Archive */ = {
+		1AF111902BD40973004D77EB /* Arcy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AF111A62BD40974004D77EB /* Build configuration list for PBXNativeTarget "Ancient Archive" */;
+			buildConfigurationList = 1AF111A62BD40974004D77EB /* Build configuration list for PBXNativeTarget "Arcy" */;
 			buildPhases = (
 				1AF1118D2BD40973004D77EB /* Sources */,
 				1AF1118E2BD40973004D77EB /* Frameworks */,
@@ -193,12 +220,12 @@
 			);
 			dependencies = (
 			);
-			name = "Ancient Archive";
+			name = Arcy;
 			packageProductDependencies = (
 				1AF111962BD40973004D77EB /* RealityKitContent */,
 			);
 			productName = Birdbox;
-			productReference = 1AF111912BD40973004D77EB /* Ancient Archive.app */;
+			productReference = 1AF111912BD40973004D77EB /* Arcy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -216,7 +243,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1AF1118C2BD40973004D77EB /* Build configuration list for PBXProject "Ancient Archive" */;
+			buildConfigurationList = 1AF1118C2BD40973004D77EB /* Build configuration list for PBXProject "Arcy" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -229,7 +256,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1AF111902BD40973004D77EB /* Ancient Archive */,
+				1AF111902BD40973004D77EB /* Arcy */,
 			);
 		};
 /* End PBXProject section */
@@ -261,14 +288,23 @@
 			files = (
 				1A31C8AB2BE43BA5004CCB0B /* OnboardingWelcomeView.swift in Sources */,
 				1A31C8B42BE44654004CCB0B /* ReccomendationView.swift in Sources */,
+				1A2473322BE574A1001A0275 /* ProfileEditView.swift in Sources */,
+				1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */,
+				1A2473302BE5690C001A0275 /* ModelView.swift in Sources */,
 				1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */,
+				1AD0C5052BE51FA7000AA944 /* ProfileModel.swift in Sources */,
 				1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */,
-				1AF111992BD40973004D77EB /* AncientArchiveApp.swift in Sources */,
+				1AF111992BD40973004D77EB /* ArcyApp.swift in Sources */,
 				1A31C8A52BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift in Sources */,
+				1A24732E2BE568CA001A0275 /* ShadowGuessView.swift in Sources */,
 				1A31C8AE2BE43D68004CCB0B /* OnboardingProfileView.swift in Sources */,
 				1AFA26252BE41B1C00FD8152 /* OnboardingView.swift in Sources */,
 				1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */,
 				1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */,
+				1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */,
+				1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */,
+				1A24732A2BE550C8001A0275 /* ItemFlatCardView.swift in Sources */,
+				1A2473362BE578AF001A0275 /* OnboardingFeaturesView.swift in Sources */,
 				1A31C8B22BE4443F004CCB0B /* FavouritsView.swift in Sources */,
 				1AFA26212BE4101900FD8152 /* ArchiveView.swift in Sources */,
 				1A31C88D2BE4245E004CCB0B /* ArcheologicalItemModel.swift in Sources */,
@@ -408,7 +444,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Ancient Archive";
+				INFOPLIST_KEY_CFBundleDisplayName = Arcy;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,7 +470,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Ancient Archive";
+				INFOPLIST_KEY_CFBundleDisplayName = Arcy;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1AF1118C2BD40973004D77EB /* Build configuration list for PBXProject "Ancient Archive" */ = {
+		1AF1118C2BD40973004D77EB /* Build configuration list for PBXProject "Arcy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AF111A42BD40974004D77EB /* Debug */,
@@ -461,7 +497,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1AF111A62BD40974004D77EB /* Build configuration list for PBXNativeTarget "Ancient Archive" */ = {
+		1AF111A62BD40974004D77EB /* Build configuration list for PBXNativeTarget "Arcy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AF111A72BD40974004D77EB /* Debug */,

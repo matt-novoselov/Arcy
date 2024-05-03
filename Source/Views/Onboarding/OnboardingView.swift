@@ -1,6 +1,6 @@
 //
 //  Test1.swift
-//  Ancient Archive
+//  Arcy
 //
 //  Created by Matt Novoselov on 02/05/24.
 //
@@ -10,6 +10,7 @@ import SwiftUI
 enum onboardingState{
     case welcome
     case profile
+    case features
 }
 
 struct OnboardingView: View {
@@ -20,6 +21,8 @@ struct OnboardingView: View {
     @State private var startTime = Date.now
     
     @State var onboardingState: onboardingState = .welcome
+    
+    var settings: ProfileData
     
     var body: some View {
         
@@ -32,12 +35,19 @@ struct OnboardingView: View {
                 // Display main game menu
                 case .welcome:
                     OnboardingWelcomeView(onboardingState: $onboardingState)
+                        .transition(.blurReplace)
                     
                 case .profile:
-                    OnboardingProfileView(onboardingState: $onboardingState)
+                    OnboardingProfileView(onboardingState: $onboardingState, settings: settings)
+                        .transition(.blurReplace)
+                    
+                case .features:
+                    OnboardingFeaturesView(onboardingState: $onboardingState)
+                        .transition(.blurReplace)
                 }
             }
-            .transition(.blurReplace())
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+
             .background{
                 Rectangle()
                     .opacity(0.7)
@@ -53,6 +63,10 @@ struct OnboardingView: View {
                     .blur(radius: 150.0)
             }
             
+            .onAppear(){
+            onboardingState = .welcome
+            }
+            
         }
         
     }
@@ -60,5 +74,5 @@ struct OnboardingView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    OnboardingView()
+    OnboardingView(settings: ProfileData(userName: ""))
 }

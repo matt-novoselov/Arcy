@@ -1,6 +1,6 @@
 //
 //  Test2.swift
-//  Ancient Archive
+//  Arcy
 //
 //  Created by Matt Novoselov on 02/05/24.
 //
@@ -19,6 +19,8 @@ struct ArchiveView: View {
     
     let itemsCollection: [ArcheologicalItem] = ArcheologicalItemsCollection().items
     
+    var settings: ProfileData
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -29,17 +31,9 @@ struct ArchiveView: View {
                     ForEach(filterItems()) { selectedItem in
                         
                         NavigationLink(destination: ArchiveDetailView(selectedItem: selectedItem)){
-                            ZStack(alignment: .bottom){
-                                selectedItem.previewImage
-                                    .resizable()
-                                    .scaledToFit()
-                                    .padding()
-                                
-                                Text(selectedItem.name)
-                                    .padding()
-                                    .glassBackgroundEffect()
-                            }
+                            ItemFlatCardView(title: selectedItem.name, imageName: selectedItem.previewImage)
                         }
+                        .buttonStyle(BorderlessButtonStyle())
                         .buttonBorderShape(.roundedRectangle)
                         
                     }
@@ -48,12 +42,14 @@ struct ArchiveView: View {
             .padding()
             .toolbar{
                 ToolbarItem(placement: .topBarLeading){
-                    NavigationLink(destination: ProfileView()){
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                    NavigationLink(destination: ProfileView(settings: settings)){
+                        Image(systemName: "heart")
                     }
                     .buttonBorderShape(.circle)
+                    .overlay{
+                        ProfilePictureView(settings: settings)
+                            .allowsHitTesting(false)
+                    }
                 }
                 
                 ToolbarItem(placement: .topBarLeading){
@@ -66,6 +62,13 @@ struct ArchiveView: View {
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: RecommendationView()){
                         Image(systemName: "sparkles")
+                    }
+                    .buttonBorderShape(.circle)
+                }
+                
+                ToolbarItem(placement: .topBarLeading){
+                    NavigationLink(destination: ShadowGuessView()){
+                        Image(systemName: "trophy")
                     }
                     .buttonBorderShape(.circle)
                 }
@@ -94,7 +97,7 @@ struct ArchiveView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ArchiveView()
+    ArchiveView(settings: ProfileData(userName: ""))
 }
 
 extension UINavigationBar {

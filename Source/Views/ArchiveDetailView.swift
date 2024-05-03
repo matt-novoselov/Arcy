@@ -1,6 +1,6 @@
 //
 //  Test3.swift
-//  Ancient Archive
+//  Arcy
 //
 //  Created by Matt Novoselov on 02/05/24.
 //
@@ -37,6 +37,7 @@ struct ArchiveDetailView: View {
                         }
                 } placeholder: {
                     ProgressView()
+                        .frame(height: 300)
                 }
                 
                 Button(action: {}, label: {
@@ -56,9 +57,7 @@ struct ArchiveDetailView: View {
                         Image(systemName: "square.and.arrow.up")
                     }
                     
-                    Button(action: {isLiked.toggle()}, label: {
-                        Image(systemName: isLiked ? "heart.fill" : "heart")
-                    })
+                    LikeButtonView(isLiked: $isLiked)
                 }
                 
             }

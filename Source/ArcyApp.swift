@@ -1,17 +1,19 @@
 //
-//  Ancient ArchiveApp.swift
-//  Ancient Archive
+//  ArcyApp.swift
+//  Arcy
 //
 //  Created by Matt Novoselov on 20/04/24.
 //
 
 import SwiftUI
+import SwiftData
 
 @main
-struct AncientArchiveApp: App {
+struct ArcyApp: App {    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: ProfileData.self)
     }
 }

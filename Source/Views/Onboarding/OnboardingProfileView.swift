@@ -1,23 +1,23 @@
 //
 //  OnboardingProfileView.swift
-//  Ancient Archive
+//  Arcy
 //
 //  Created by Matt Novoselov on 02/05/24.
 //
 
 import SwiftUI
-import PhotosUI
+import SwiftData
 
 struct OnboardingProfileView: View {
     
     @State private var textInput: String = ""
-    @State private var avatarItem: PhotosPickerItem?
-    @State private var avatarImage: Image?
-    @State private var showingPhotoPicker: Bool = false
     @Binding var onboardingState: onboardingState
     
     @State var isTextFieldEmpty: Bool = true
     
+    @Environment(\.modelContext) var modelContext
+    var settings: ProfileData
+
     // Get onboarding complete value from the user defaults
     @AppStorage("onboardingCompleted") var onboardingCompleted: Bool = false
     
@@ -29,39 +29,7 @@ struct OnboardingProfileView: View {
                 Text("Let's setup your profile")
                     .font(.title)
                 
-                // Button to trigger the photo picker
-                Button(action: { showingPhotoPicker = true }) {
-                    if let avatarImage{
-                        avatarImage
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    } else{
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
-                }
-                .buttonBorderShape(.circle)
-                .frame(width: 300)
-                .shadow(color: .white, radius: 10)
-                
-                // Integrates the PhotosPicker with the SwiftUI view hierarchy
-                .photosPicker(isPresented: $showingPhotoPicker, selection: $avatarItem, matching: .images)
-                
-                // Load the selected image
-                .onChange(of: avatarItem) {
-                    Task {
-                        if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
-                            avatarImage = loaded
-                        } else {
-                            print("Failed")
-                        }
-                    }
-                }
-                
-                TextField("Your name", text: $textInput)
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.center)
+                ProfileEditView(textInput: $textInput, settings: settings)
                 
                 Button(action: {
                     onboardingCompleted = true
@@ -79,10 +47,36 @@ struct OnboardingProfileView: View {
             }
 
         }
+        .onAppear(perform: load)
 
+    }
+    
+    func load() {
+        textInput = settings.userName
+        isTextFieldEmpty = settings.userName.isEmpty
     }
 }
 
 #Preview(windowStyle: .automatic) {
-    OnboardingProfileView(onboardingState: .constant(.profile))
+    OnboardingProfileView(onboardingState: .constant(.profile), settings: ProfileData(userName: ""))
+        .modelContainer(for: ProfileData.self)
+}
+
+
+
+
+
+extension UIImage {
+    var base64: String? {
+        self.jpegData(compressionQuality: 1)?.base64EncodedString()
+    }
+}
+
+extension String {
+    var imageFromBase64: UIImage? {
+        guard let imageData = Data(base64Encoded: self, options: .ignoreUnknownCharacters) else {
+            return nil
+        }
+        return UIImage(data: imageData)
+    }
 }

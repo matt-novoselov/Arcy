@@ -1,6 +1,6 @@
 //
 //  OnboardingWelcomeView.swift
-//  Ancient Archive
+//  Arcy
 //
 //  Created by Matt Novoselov on 02/05/24.
 //
@@ -14,7 +14,7 @@ struct OnboardingWelcomeView: View {
     var body: some View {
         
         VStack{
-            Text("Ancient Archive")
+            Text("Arcy")
                 .font(.title2)
             
             Spacer()
@@ -39,7 +39,7 @@ struct OnboardingWelcomeView: View {
     
     func switchState(){
         withAnimation{
-            onboardingState = .profile
+            onboardingState = .features
         }
     }
 }

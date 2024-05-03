@@ -1,6 +1,6 @@
 //
 //  RecommendationView.swift
-//  Ancient Archive
+//  Arcy
 //
 //  Created by Matt Novoselov on 03/05/24.
 //
