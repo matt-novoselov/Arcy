@@ -25,6 +25,15 @@ struct ProfileView: View {
             Button(action: {showAlert = true}, label: {
                 Text("Reset onboarding")
             })
+            
+            HStack{
+                Text("Developed with")
+                
+                OneShotLikeButtonView()
+                
+                Text("by Matt Novoselov")
+            }
+            .font(.title)
         }
         .alert(isPresented: $showAlert) {
             Alert(
