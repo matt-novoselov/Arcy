@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A185AE32BE44EEC00B7843C /* Sinebow.metal */; };
+		1A31C88D2BE4245E004CCB0B /* ArcheologicalItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C88C2BE4245E004CCB0B /* ArcheologicalItemModel.swift */; };
+		1A31C8982BE4253C004CCB0B /* Corinthian_Oinochoe.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C88F2BE4253C004CCB0B /* Corinthian_Oinochoe.usdz */; };
+		1A31C8992BE4253C004CCB0B /* Pomegranate.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8902BE4253C004CCB0B /* Pomegranate.usdz */; };
+		1A31C89A2BE4253C004CCB0B /* Pinax_with_depiction_of_Zeus.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8912BE4253C004CCB0B /* Pinax_with_depiction_of_Zeus.usdz */; };
+		1A31C89B2BE4253C004CCB0B /* Carved_gourd_mate_burilado.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8922BE4253C004CCB0B /* Carved_gourd_mate_burilado.usdz */; };
+		1A31C89C2BE4253C004CCB0B /* Laconian_Kylix.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8932BE4253C004CCB0B /* Laconian_Kylix.usdz */; };
+		1A31C89D2BE4253C004CCB0B /* Terracotta_figurine_of_a_veiled_woman.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8942BE4253C004CCB0B /* Terracotta_figurine_of_a_veiled_woman.usdz */; };
+		1A31C89E2BE4253C004CCB0B /* Terracotta_figurine_of_a_seated_goddess.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8952BE4253C004CCB0B /* Terracotta_figurine_of_a_seated_goddess.usdz */; };
+		1A31C89F2BE4253C004CCB0B /* Male_head_from_an_Etruscan_Tomb.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8962BE4253C004CCB0B /* Male_head_from_an_Etruscan_Tomb.usdz */; };
+		1A31C8A02BE4253C004CCB0B /* Attic_red-figure_Pelike.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8972BE4253C004CCB0B /* Attic_red-figure_Pelike.usdz */; };
+		1A31C8A52BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8A42BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift */; };
+		1A31C8AB2BE43BA5004CCB0B /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */; };
+		1A31C8AE2BE43D68004CCB0B /* OnboardingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */; };
+		1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AF2BE44310004CCB0B /* ProfileView.swift */; };
+		1A31C8B22BE4443F004CCB0B /* FavouritsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */; };
+		1A31C8B42BE44654004CCB0B /* ReccomendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */; };
+		1AF111972BD40973004D77EB /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF111962BD40973004D77EB /* RealityKitContent */; };
+		1AF111992BD40973004D77EB /* AncientArchiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF111982BD40973004D77EB /* AncientArchiveApp.swift */; };
+		1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF1119A2BD40973004D77EB /* ContentView.swift */; };
+		1AF1119F2BD40974004D77EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF1119E2BD40974004D77EB /* Assets.xcassets */; };
+		1AFA26212BE4101900FD8152 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26202BE4101900FD8152 /* ArchiveView.swift */; };
+		1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */; };
+		1AFA26252BE41B1C00FD8152 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A185AE32BE44EEC00B7843C /* Sinebow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sinebow.metal; sourceTree = "<group>"; };
+		1A31C88C2BE4245E004CCB0B /* ArcheologicalItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheologicalItemModel.swift; sourceTree = "<group>"; };
+		1A31C88F2BE4253C004CCB0B /* Corinthian_Oinochoe.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Corinthian_Oinochoe.usdz; sourceTree = "<group>"; };
+		1A31C8902BE4253C004CCB0B /* Pomegranate.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Pomegranate.usdz; sourceTree = "<group>"; };
+		1A31C8912BE4253C004CCB0B /* Pinax_with_depiction_of_Zeus.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Pinax_with_depiction_of_Zeus.usdz; sourceTree = "<group>"; };
+		1A31C8922BE4253C004CCB0B /* Carved_gourd_mate_burilado.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Carved_gourd_mate_burilado.usdz; sourceTree = "<group>"; };
+		1A31C8932BE4253C004CCB0B /* Laconian_Kylix.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Laconian_Kylix.usdz; sourceTree = "<group>"; };
+		1A31C8942BE4253C004CCB0B /* Terracotta_figurine_of_a_veiled_woman.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Terracotta_figurine_of_a_veiled_woman.usdz; sourceTree = "<group>"; };
+		1A31C8952BE4253C004CCB0B /* Terracotta_figurine_of_a_seated_goddess.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Terracotta_figurine_of_a_seated_goddess.usdz; sourceTree = "<group>"; };
+		1A31C8962BE4253C004CCB0B /* Male_head_from_an_Etruscan_Tomb.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Male_head_from_an_Etruscan_Tomb.usdz; sourceTree = "<group>"; };
+		1A31C8972BE4253C004CCB0B /* Attic_red-figure_Pelike.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Attic_red-figure_Pelike.usdz"; sourceTree = "<group>"; };
+		1A31C8A42BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheologicalItemViewModel.swift; sourceTree = "<group>"; };
+		1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
+		1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProfileView.swift; sourceTree = "<group>"; };
+		1A31C8AF2BE44310004CCB0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritsView.swift; sourceTree = "<group>"; };
+		1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendationView.swift; sourceTree = "<group>"; };
+		1AF111912BD40973004D77EB /* Ancient Archive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ancient Archive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AF111952BD40973004D77EB /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		1AF111982BD40973004D77EB /* AncientArchiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncientArchiveApp.swift; sourceTree = "<group>"; };
+		1AF1119A2BD40973004D77EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1AF1119E2BD40974004D77EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AF111A32BD40974004D77EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AFA26202BE4101900FD8152 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailView.swift; sourceTree = "<group>"; };
+		1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AF1118E2BD40973004D77EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AF111972BD40973004D77EB /* RealityKitContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A185AE52BE4508900B7843C /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				1A185AE32BE44EEC00B7843C /* Sinebow.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		1A31C88E2BE42532004CCB0B /* 3D Content */ = {
+			isa = PBXGroup;
+			children = (
+				1A31C8A32BE42E26004CCB0B /* Archeological Models */,
+			);
+			path = "3D Content";
+			sourceTree = "<group>";
+		};
+		1A31C8A12BE42E05004CCB0B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A31C88C2BE4245E004CCB0B /* ArcheologicalItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A31C8A22BE42E0B004CCB0B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A31C8A42BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		1A31C8A32BE42E26004CCB0B /* Archeological Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A31C8972BE4253C004CCB0B /* Attic_red-figure_Pelike.usdz */,
+				1A31C8922BE4253C004CCB0B /* Carved_gourd_mate_burilado.usdz */,
+				1A31C88F2BE4253C004CCB0B /* Corinthian_Oinochoe.usdz */,
+				1A31C8932BE4253C004CCB0B /* Laconian_Kylix.usdz */,
+				1A31C8962BE4253C004CCB0B /* Male_head_from_an_Etruscan_Tomb.usdz */,
+				1A31C8912BE4253C004CCB0B /* Pinax_with_depiction_of_Zeus.usdz */,
+				1A31C8902BE4253C004CCB0B /* Pomegranate.usdz */,
+				1A31C8952BE4253C004CCB0B /* Terracotta_figurine_of_a_seated_goddess.usdz */,
+				1A31C8942BE4253C004CCB0B /* Terracotta_figurine_of_a_veiled_woman.usdz */,
+			);
+			path = "Archeological Models";
+			sourceTree = "<group>";
+		};
+		1A31C8AC2BE43D52004CCB0B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */,
+				1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */,
+				1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1AF111882BD40973004D77EB = {
+			isa = PBXGroup;
+			children = (
+				1AF1119E2BD40974004D77EB /* Assets.xcassets */,
+				1AF111A32BD40974004D77EB /* Info.plist */,
+				1AF111982BD40973004D77EB /* AncientArchiveApp.swift */,
+				1AF111932BD40973004D77EB /* Views */,
+				1A31C8A12BE42E05004CCB0B /* Models */,
+				1A31C8A22BE42E0B004CCB0B /* View Models */,
+				1A31C88E2BE42532004CCB0B /* 3D Content */,
+				1A185AE52BE4508900B7843C /* Shaders */,
+				1AF111942BD40973004D77EB /* Packages */,
+				1AF111922BD40973004D77EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AF111922BD40973004D77EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AF111912BD40973004D77EB /* Ancient Archive.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AF111932BD40973004D77EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A31C8AC2BE43D52004CCB0B /* Onboarding */,
+				1AF1119A2BD40973004D77EB /* ContentView.swift */,
+				1AFA26202BE4101900FD8152 /* ArchiveView.swift */,
+				1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */,
+				1A31C8AF2BE44310004CCB0B /* ProfileView.swift */,
+				1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */,
+				1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1AF111942BD40973004D77EB /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				1AF111952BD40973004D77EB /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AF111902BD40973004D77EB /* Ancient Archive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AF111A62BD40974004D77EB /* Build configuration list for PBXNativeTarget "Ancient Archive" */;
+			buildPhases = (
+				1AF1118D2BD40973004D77EB /* Sources */,
+				1AF1118E2BD40973004D77EB /* Frameworks */,
+				1AF1118F2BD40973004D77EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ancient Archive";
+			packageProductDependencies = (
+				1AF111962BD40973004D77EB /* RealityKitContent */,
+			);
+			productName = Birdbox;
+			productReference = 1AF111912BD40973004D77EB /* Ancient Archive.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AF111892BD40973004D77EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					1AF111902BD40973004D77EB = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 1AF1118C2BD40973004D77EB /* Build configuration list for PBXProject "Ancient Archive" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1AF111882BD40973004D77EB;
+			productRefGroup = 1AF111922BD40973004D77EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AF111902BD40973004D77EB /* Ancient Archive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AF1118F2BD40973004D77EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A31C89A2BE4253C004CCB0B /* Pinax_with_depiction_of_Zeus.usdz in Resources */,
+				1A31C8A02BE4253C004CCB0B /* Attic_red-figure_Pelike.usdz in Resources */,
+				1A31C8982BE4253C004CCB0B /* Corinthian_Oinochoe.usdz in Resources */,
+				1A31C89F2BE4253C004CCB0B /* Male_head_from_an_Etruscan_Tomb.usdz in Resources */,
+				1A31C89E2BE4253C004CCB0B /* Terracotta_figurine_of_a_seated_goddess.usdz in Resources */,
+				1A31C8992BE4253C004CCB0B /* Pomegranate.usdz in Resources */,
+				1A31C89D2BE4253C004CCB0B /* Terracotta_figurine_of_a_veiled_woman.usdz in Resources */,
+				1AF1119F2BD40974004D77EB /* Assets.xcassets in Resources */,
+				1A31C89C2BE4253C004CCB0B /* Laconian_Kylix.usdz in Resources */,
+				1A31C89B2BE4253C004CCB0B /* Carved_gourd_mate_burilado.usdz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AF1118D2BD40973004D77EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A31C8AB2BE43BA5004CCB0B /* OnboardingWelcomeView.swift in Sources */,
+				1A31C8B42BE44654004CCB0B /* ReccomendationView.swift in Sources */,
+				1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */,
+				1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */,
+				1AF111992BD40973004D77EB /* AncientArchiveApp.swift in Sources */,
+				1A31C8A52BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift in Sources */,
+				1A31C8AE2BE43D68004CCB0B /* OnboardingProfileView.swift in Sources */,
+				1AFA26252BE41B1C00FD8152 /* OnboardingView.swift in Sources */,
+				1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */,
+				1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */,
+				1A31C8B22BE4443F004CCB0B /* FavouritsView.swift in Sources */,
+				1AFA26212BE4101900FD8152 /* ArchiveView.swift in Sources */,
+				1A31C88D2BE4245E004CCB0B /* ArcheologicalItemModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1AF111A42BD40974004D77EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.1;
+			};
+			name = Debug;
+		};
+		1AF111A52BD40974004D77EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.1;
+			};
+			name = Release;
+		};
+		1AF111A72BD40974004D77EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ancient Archive";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.Birdbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		1AF111A82BD40974004D77EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ancient Archive";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.Birdbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AF1118C2BD40973004D77EB /* Build configuration list for PBXProject "Ancient Archive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AF111A42BD40974004D77EB /* Debug */,
+				1AF111A52BD40974004D77EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AF111A62BD40974004D77EB /* Build configuration list for PBXNativeTarget "Ancient Archive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AF111A72BD40974004D77EB /* Debug */,
+				1AF111A82BD40974004D77EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1AF111962BD40973004D77EB /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1AF111892BD40973004D77EB /* Project object */;
+}
