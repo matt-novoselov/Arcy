@@ -47,7 +47,7 @@ struct ProfileEditView: View {
             }
         }
         
-        TextField("Your name", text: $textInput)
+        TextField("Your name", text: $textInput.animation())
             .font(.largeTitle)
             .multilineTextAlignment(.center)
             .onChange(of: textInput){

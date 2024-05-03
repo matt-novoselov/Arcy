@@ -21,23 +21,42 @@ struct ArchiveView: View {
     
     var settings: ProfileData
     
-    @State private var searchText = ""
+    @State private var searchText: String = ""
+    
+    @State private var showingFiltered: Bool = false
     
     var body: some View {
         
         NavigationStack{
-            ScrollView{
-                LazyVGrid(columns: columns) {
-                    ForEach(filterItems()) { selectedItem in
-                        
-                        NavigationLink(destination: ArchiveDetailView(selectedItem: selectedItem)){
-                            ItemFlatCardView(title: selectedItem.name, imageName: selectedItem.previewImage)
-                        }
-                        .buttonStyle(BorderlessButtonStyle())
-                        .buttonBorderShape(.roundedRectangle)
-                        
-                    }
+            
+            VStack {
+                Picker("What is your favorite color?", selection: $showingFiltered.animation()) {
+                    Text("Full collection").tag(false)
+                    Text("Recommendations").tag(true)
                 }
+                .pickerStyle(.segmented)
+                
+                if showingFiltered{
+                    RecommendationView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .transition(.move(edge: .trailing))
+                } else{
+                    ScrollView{
+                        LazyVGrid(columns: columns) {
+                            ForEach(filterItems()) { selectedItem in
+                                
+                                NavigationLink(destination: ArchiveDetailView(selectedItem: selectedItem)){
+                                    ItemFlatCardView(title: selectedItem.name, imageName: selectedItem.previewImage)
+                                }
+                                .buttonStyle(BorderlessButtonStyle())
+                                .buttonBorderShape(.roundedRectangle)
+                                
+                            }
+                        }
+                    }
+                    .transition(.move(edge: .leading))
+                }
+
             }
             .padding()
             .toolbar{
@@ -60,22 +79,16 @@ struct ArchiveView: View {
                 }
                 
                 ToolbarItem(placement: .topBarLeading){
-                    NavigationLink(destination: RecommendationView()){
-                        Image(systemName: "sparkles")
-                    }
-                    .buttonBorderShape(.circle)
-                }
-                
-                ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: ShadowGuessView()){
                         Image(systemName: "trophy")
                     }
                     .buttonBorderShape(.circle)
                 }
             }
+            
         }
         .searchable(text: $searchText)
-
+        
     }
     
     func filterItems() -> [ArcheologicalItem] {
@@ -83,35 +96,19 @@ struct ArchiveView: View {
         guard !searchTextTrimmed.isEmpty else {
             return itemsCollection
         }
-
+        
         return itemsCollection.filter { item in
             let searchTextLowercased = searchTextTrimmed.lowercased()
             let itemNameLowercased = item.name.lowercased().replacingOccurrences(of: " ", with: "")
             let itemDescriptionLowercased = item.description.lowercased().replacingOccurrences(of: " ", with: "")
             
             return itemNameLowercased.contains(searchTextLowercased) ||
-                   itemDescriptionLowercased.contains(searchTextLowercased)
+            itemDescriptionLowercased.contains(searchTextLowercased)
         }
     }
-
+    
 }
 
 #Preview(windowStyle: .automatic) {
     ArchiveView(settings: ProfileData(userName: ""))
-}
-
-extension UINavigationBar {
-    static func changeAppearance(clear: Bool) {
-        let appearance = UINavigationBarAppearance()
-        
-        if clear {
-            appearance.configureWithTransparentBackground()
-        } else {
-            appearance.configureWithDefaultBackground()
-        }
-        
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().compactAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-    }
 }

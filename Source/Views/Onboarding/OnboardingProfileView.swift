@@ -13,8 +13,6 @@ struct OnboardingProfileView: View {
     @State private var textInput: String = ""
     @Binding var onboardingState: onboardingState
     
-    @State var isTextFieldEmpty: Bool = true
-    
     @Environment(\.modelContext) var modelContext
     var settings: ProfileData
 
@@ -34,15 +32,11 @@ struct OnboardingProfileView: View {
                 Button(action: {
                     onboardingCompleted = true
                 }, label: {
-                    Text(isTextFieldEmpty ? "Enter name to continue" : "Continue")
+                    Text(textInput.isEmpty ? "Enter name to continue" : "Continue")
                         .clipped()
                 })
-                .disabled(isTextFieldEmpty)
-                .onChange(of: textInput.isEmpty){
-                    withAnimation{
-                        isTextFieldEmpty = textInput.isEmpty
-                    }
-                }
+                .disabled(textInput.isEmpty)
+
                 
             }
 
@@ -53,7 +47,6 @@ struct OnboardingProfileView: View {
     
     func load() {
         textInput = settings.userName
-        isTextFieldEmpty = settings.userName.isEmpty
     }
 }
 
