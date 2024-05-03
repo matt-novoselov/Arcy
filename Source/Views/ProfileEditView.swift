@@ -21,7 +21,7 @@ struct ProfileEditView: View {
         
         // Button to trigger the photo picker
         Button(action: { showingPhotoPicker = true }) {
-            ProfilePictureView(settings: settings)
+            ProfilePictureView()
         }
         .buttonBorderShape(.circle)
         .frame(width: 300)

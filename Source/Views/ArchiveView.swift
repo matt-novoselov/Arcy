@@ -67,7 +67,7 @@ struct ArchiveView: View {
                     }
                     .buttonBorderShape(.circle)
                     .overlay{
-                        ProfilePictureView(settings: settings)
+                        ProfilePictureView()
                             .allowsHitTesting(false)
                     }
                 }
