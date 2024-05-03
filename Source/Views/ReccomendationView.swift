@@ -15,6 +15,7 @@ struct RecommendationView: View {
             
             ContentUnavailableView("No recommendations", systemImage: "sparkle.magnifyingglass", description: Text("Try adding a few favorite items to see recommendations"))
         }
+        .navigationTitle("Recommended Items")
         
     }
 }

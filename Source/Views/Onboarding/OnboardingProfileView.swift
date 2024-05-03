@@ -16,6 +16,8 @@ struct OnboardingProfileView: View {
     @State private var showingPhotoPicker: Bool = false
     @Binding var onboardingState: onboardingState
     
+    @State var isTextFieldEmpty: Bool = true
+    
     // Get onboarding complete value from the user defaults
     @AppStorage("onboardingCompleted") var onboardingCompleted: Bool = false
     
@@ -64,9 +66,15 @@ struct OnboardingProfileView: View {
                 Button(action: {
                     onboardingCompleted = true
                 }, label: {
-                    Text("Continue")
+                    Text(isTextFieldEmpty ? "Enter name to continue" : "Continue")
+                        .clipped()
                 })
-                .disabled(textInput.isEmpty)
+                .disabled(isTextFieldEmpty)
+                .onChange(of: textInput.isEmpty){
+                    withAnimation{
+                        isTextFieldEmpty = textInput.isEmpty
+                    }
+                }
                 
             }
 
