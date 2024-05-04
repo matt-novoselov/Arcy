@@ -18,21 +18,28 @@ struct ProfileView: View {
     
     var body: some View {
         VStack{
+            
+            Spacer()
+            
             ProfileEditView(textInput: $textInput)
             
             Button(action: {showAlert = true}, label: {
                 Text("Reset onboarding")
             })
             
-            HStack{
+            Spacer()
+            
+            HStack(spacing: 5){
                 Text("Developed with")
                 
                 OneShotLikeButtonView()
                 
                 Text("by Matt Novoselov")
             }
-            .font(.title)
+            .font(.caption)
+            .opacity(0.5)
         }
+        .padding()
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Are you sure you want to reset onboarding?"),

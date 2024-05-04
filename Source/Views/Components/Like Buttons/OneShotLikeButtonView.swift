@@ -18,10 +18,10 @@ struct OneShotLikeButtonView: View {
             Image(systemName: "heart.fill")
                 .foregroundStyle(.white)
                 .symbolEffect(.bounce, value: emittingParticles)
-                .padding()
                 .overlay{
                     if emittingParticles{
                         UILottieView(lottieName: "like_animation_white", playOnce: true)
+                            .padding(.all, -20)
                             .allowsHitTesting(false)
                     }
                 }

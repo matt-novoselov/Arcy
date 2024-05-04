@@ -21,10 +21,10 @@ struct LikeButtonView: View {
                 .foregroundStyle(isLiked ? .redPastel : .white)
                 .symbolEffect(.bounce, value: isLiked)
         })
-        .padding()
         .overlay{
             if isLiked{
                 UILottieView(lottieName: "like_animation", playOnce: true)
+                    .padding(.all, -20)
                     .allowsHitTesting(false)
             }
         }

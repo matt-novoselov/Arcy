@@ -71,6 +71,7 @@ struct ShadowGuessView: View {
             if variantsArray != variantsArrayHinted{
                 Button(action: {getHint()}){
                     Label("Get hint", systemImage: "lightbulb.max")
+                        .labelStyle(CenteredLabelStyle())
                 }
             }
         }

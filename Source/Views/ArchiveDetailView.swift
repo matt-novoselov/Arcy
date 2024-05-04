@@ -41,7 +41,7 @@ struct ArchiveDetailView: View {
                     }
                     
                     Button(action: {}, label: {
-                        Label("Exapnd", systemImage: "arrow.up.left.and.arrow.down.right")
+                        Label("Expand", systemImage: "arrow.up.left.and.arrow.down.right")
                     })
                 }
                 .frame(height: 300)

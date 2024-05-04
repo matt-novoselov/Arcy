@@ -15,50 +15,54 @@ struct ArchiveView: View {
     var body: some View {
         
         NavigationStack{
-            
-            VStack(spacing: 0) {
-                Picker("What is your favorite color?", selection: $showingFiltered.animation()) {
-                    Text("Full collection").tag(false)
-                    Text("Recommendations").tag(true)
-                }
-                .pickerStyle(.segmented)
-                
-                TabView(selection: $showingFiltered) {
-                    ArchiveGridView(searchText: $searchText)
-                        .tag(false)
-                    
+            Group{
+                switch showingFiltered{
+                case true:
                     RecommendationView()
-                        .tag(true)
+                        .transition(.move(edge: .leading))
+                    
+                case false:
+                    ArchiveGridView(searchText: $searchText)
+                        .transition(.move(edge: .trailing))
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                
             }
             .padding(.horizontal)
+            
+            .toolbar{
+                ToolbarItem(placement: .bottomOrnament){
+                    Picker("What is your favorite color?", selection: $showingFiltered.animation()) {
+                        Text("Collection").tag(false)
+                        Text("Recommendations").tag(true)
+                    }
+                    .pickerStyle(.segmented)
+                }
+            }
+            
             .toolbar{
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: ProfileView()){
-                        Button(action: {}){
-                            Image(systemName: "circle")
-                        }
-                        .buttonBorderShape(.circle)
-                        .foregroundStyle(.clear)
-                        .overlay{
-                            ProfilePictureView()
-                        }
+                        Image(systemName: "circle")
                     }
-                    .buttonStyle(PlainButtonStyle())
+                    .overlay{
+                        ProfilePictureView()
+                            .allowsHitTesting(false)
+                            .contentShape(.hoverEffect, .circle)
+                            .hoverEffect()
+                    }
+                    .buttonBorderShape(.circle)
+                    .help("Profile")
                 }
                 
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: FavoritesView()){
-                        Image(systemName: "heart")
+                        Label("Favorites", systemImage: "heart")
                     }
                     .buttonBorderShape(.circle)
                 }
                 
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: ShadowGuessView()){
-                        Image(systemName: "trophy")
+                        Label("Game", systemImage: "trophy")
                     }
                     .buttonBorderShape(.circle)
                 }

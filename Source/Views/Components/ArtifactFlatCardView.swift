@@ -12,29 +12,23 @@ struct ArtifactFlatCardView: View {
     var title: String
     var imageName: Image
     
-    @State private var isLiked: Bool = false
-    
     var body: some View {
         
         ZStack (alignment: .bottom){
             imageName
                 .resizable()
                 .padding(.all, 30)
-                .glassBackgroundEffect()
             
             Text(title)
                 .font(.title3)
                 .multilineTextAlignment(.center)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .glassBackgroundEffect()
-            
-            LikeButtonView(isLiked: $isLiked)
-                .buttonBorderShape(.circle)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+//                .glassBackgroundEffect()
+                .background(.fill.tertiary, in: .capsule)
         }
         .aspectRatio(1, contentMode: .fit)
-
+        .background(.regularMaterial.quaternary, in: .rect(cornerRadius: 30))
         
     }
 }

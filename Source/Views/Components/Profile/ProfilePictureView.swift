@@ -11,7 +11,10 @@ struct ProfilePictureView: View {
     
     var body: some View {
         
-        EmptyView()
+        Image(.memoji)
+            .resizable()
+            .clipShape(.circle)
+            .scaledToFit()
         
 //        Group{
 //            // Using UIImage to create an image from Data

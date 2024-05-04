@@ -38,6 +38,8 @@
 		1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AF2BE44310004CCB0B /* ProfileView.swift */; };
 		1A31C8B22BE4443F004CCB0B /* FavouritsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */; };
 		1A31C8B42BE44654004CCB0B /* ReccomendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */; };
+		1A358F7F2BE6BFDF001AB224 /* CenteredLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A358F7E2BE6BFDF001AB224 /* CenteredLabelStyle.swift */; };
+		1A358F812BE6C03D001AB224 /* ImageToDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A358F802BE6C03D001AB224 /* ImageToDataExtension.swift */; };
 		1A56D1CA2BE6557E00247B85 /* like_animation.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A56D1C92BE6557E00247B85 /* like_animation.lottie */; };
 		1AD0C5052BE51FA7000AA944 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0C5042BE51FA7000AA944 /* ProfileModel.swift */; };
 		1AF111972BD40973004D77EB /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF111962BD40973004D77EB /* RealityKitContent */; };
@@ -80,6 +82,8 @@
 		1A31C8AF2BE44310004CCB0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritsView.swift; sourceTree = "<group>"; };
 		1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendationView.swift; sourceTree = "<group>"; };
+		1A358F7E2BE6BFDF001AB224 /* CenteredLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredLabelStyle.swift; sourceTree = "<group>"; };
+		1A358F802BE6C03D001AB224 /* ImageToDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToDataExtension.swift; sourceTree = "<group>"; };
 		1A56D1C92BE6557E00247B85 /* like_animation.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation.lottie; sourceTree = "<group>"; };
 		1AD0C5042BE51FA7000AA944 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		1AF111912BD40973004D77EB /* Arcy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +130,9 @@
 		1A2473652BE58587001A0275 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A358F822BE6C045001AB224 /* Extensions */,
 				1A2473612BE58514001A0275 /* Lottie Files */,
+				1A358F7E2BE6BFDF001AB224 /* CenteredLabelStyle.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -214,6 +220,14 @@
 				1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1A358F822BE6C045001AB224 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A358F802BE6C03D001AB224 /* ImageToDataExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1A41C1902BE63DAA002252B9 /* Profile */ = {
@@ -374,6 +388,7 @@
 				1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */,
 				1A2473302BE5690C001A0275 /* ArtifactModelView.swift in Sources */,
 				1A2473702BE5A47F001A0275 /* ArchiveGridView.swift in Sources */,
+				1A358F812BE6C03D001AB224 /* ImageToDataExtension.swift in Sources */,
 				1A24736C2BE59638001A0275 /* OneShotLikeButtonView.swift in Sources */,
 				1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */,
 				1AD0C5052BE51FA7000AA944 /* ProfileModel.swift in Sources */,
@@ -384,6 +399,7 @@
 				1A24732E2BE568CA001A0275 /* ShadowGuessView.swift in Sources */,
 				1A31C8AE2BE43D68004CCB0B /* OnboardingProfileView.swift in Sources */,
 				1AFA26252BE41B1C00FD8152 /* OnboardingView.swift in Sources */,
+				1A358F7F2BE6BFDF001AB224 /* CenteredLabelStyle.swift in Sources */,
 				1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */,
 				1A2473642BE58514001A0275 /* UILottieView.swift in Sources */,
 				1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */,
