@@ -7,7 +7,6 @@
 
 import SwiftUI
 import RealityKit
-import RealityKitContent
 import MapKit
 
 struct ArchiveDetailView: View {

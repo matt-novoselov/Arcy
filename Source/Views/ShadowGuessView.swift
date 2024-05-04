@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import RealityKit
+import RealityKitContent
 
 struct ShadowGuessView: View {
     
@@ -71,7 +73,9 @@ struct ShadowGuessView: View {
                     Label("Get hint", systemImage: "lightbulb.max")
                 }
             }
-            
+        }
+        .overlay{
+            Model3D(named: "Fireworks", bundle: realityKitContentBundle)
         }
         
     }
