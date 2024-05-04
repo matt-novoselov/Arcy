@@ -41,13 +41,15 @@ struct ArchiveGridView: View {
                         .overlay{
                             LikeButtonView(isLiked: $isLiked)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                                .buttonStyle(PlainButtonStyle())
                                 .buttonBorderShape(.circle)
+                                .padding()
                         }
                         .scrollTransition() { content, phase in
                             content
                             // Use phase.value < 0 to apply transition effects only to the top leading of scrollview
                                 .opacity(phase.value < 0 ? 0 : 1)
-                                .scaleEffect(phase.value < 0 ? 0.85 : 1)
+                                .scaleEffect(phase.value < 0 ? 0.8 : 1)
                         }
                         .padding()
                         

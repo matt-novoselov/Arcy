@@ -25,10 +25,10 @@ struct ArtifactFlatCardView: View {
                 .padding()
                 .frame(maxWidth: .infinity)
 //                .glassBackgroundEffect()
-                .background(.fill.tertiary, in: .capsule)
+                .background(.regularMaterial.quaternary, in: .capsule)
         }
         .aspectRatio(1, contentMode: .fit)
-        .background(.regularMaterial.quaternary, in: .rect(cornerRadius: 30))
+//        .background(.fill.tertiary, in: .rect(cornerRadius: 20))
         
     }
 }
