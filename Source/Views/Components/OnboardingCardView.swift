@@ -25,6 +25,8 @@ struct OnboardingCardView: View {
                 
                 Text(description)
                     .font(.body)
+                    .foregroundStyle(.secondary)
+                
             }
         }
         .padding(.all, 20)

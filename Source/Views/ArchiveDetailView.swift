@@ -52,6 +52,7 @@ struct ArchiveDetailView: View {
                         .font(.largeTitle)
                     
                     Text(artifact.description)
+                        .foregroundStyle(.secondary)
                     
                     HStack{
                         ShareLink(item: URL(string: "https://apps.apple.com/us/app/light-speedometer/id6447198696")!) {

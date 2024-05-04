@@ -16,6 +16,7 @@ struct OnboardingWelcomeView: View {
         VStack{
             Text("Arcy")
                 .font(.title2)
+                .foregroundStyle(.secondary)
             
             Spacer()
             
@@ -25,6 +26,7 @@ struct OnboardingWelcomeView: View {
             
             Text("Lorem ipsum")
                 .font(.title3)
+                .foregroundStyle(.secondary)
             
             Spacer()
             

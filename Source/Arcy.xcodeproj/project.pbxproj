@@ -19,7 +19,6 @@
 		1A24735D2BE584AA001A0275 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1A24735C2BE584AA001A0275 /* Lottie */; };
 		1A2473632BE58514001A0275 /* LottieModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24735F2BE58514001A0275 /* LottieModelView.swift */; };
 		1A2473642BE58514001A0275 /* UILottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473602BE58514001A0275 /* UILottieView.swift */; };
-		1A24736A2BE5864D001A0275 /* like_animation.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A2473692BE5864D001A0275 /* like_animation.lottie */; };
 		1A24736C2BE59638001A0275 /* OneShotLikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */; };
 		1A24736E2BE597A1001A0275 /* like_animation_white.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A24736D2BE597A1001A0275 /* like_animation_white.lottie */; };
 		1A2473702BE5A47F001A0275 /* ArchiveGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */; };
@@ -39,6 +38,7 @@
 		1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AF2BE44310004CCB0B /* ProfileView.swift */; };
 		1A31C8B22BE4443F004CCB0B /* FavouritsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */; };
 		1A31C8B42BE44654004CCB0B /* ReccomendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */; };
+		1A56D1CA2BE6557E00247B85 /* like_animation.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A56D1C92BE6557E00247B85 /* like_animation.lottie */; };
 		1AD0C5052BE51FA7000AA944 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0C5042BE51FA7000AA944 /* ProfileModel.swift */; };
 		1AF111972BD40973004D77EB /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF111962BD40973004D77EB /* RealityKitContent */; };
 		1AF111992BD40973004D77EB /* ArcyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF111982BD40973004D77EB /* ArcyApp.swift */; };
@@ -61,7 +61,6 @@
 		1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeaturesView.swift; sourceTree = "<group>"; };
 		1A24735F2BE58514001A0275 /* LottieModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieModelView.swift; sourceTree = "<group>"; };
 		1A2473602BE58514001A0275 /* UILottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILottieView.swift; sourceTree = "<group>"; };
-		1A2473692BE5864D001A0275 /* like_animation.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation.lottie; sourceTree = "<group>"; };
 		1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneShotLikeButtonView.swift; sourceTree = "<group>"; };
 		1A24736D2BE597A1001A0275 /* like_animation_white.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation_white.lottie; sourceTree = "<group>"; };
 		1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveGridView.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		1A31C8AF2BE44310004CCB0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritsView.swift; sourceTree = "<group>"; };
 		1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendationView.swift; sourceTree = "<group>"; };
+		1A56D1C92BE6557E00247B85 /* like_animation.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation.lottie; sourceTree = "<group>"; };
 		1AD0C5042BE51FA7000AA944 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		1AF111912BD40973004D77EB /* Arcy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF111952BD40973004D77EB /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		1A2473682BE585EC001A0275 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
-				1A2473692BE5864D001A0275 /* like_animation.lottie */,
+				1A56D1C92BE6557E00247B85 /* like_animation.lottie */,
 				1A24736D2BE597A1001A0275 /* like_animation_white.lottie */,
 			);
 			path = Lotties;
@@ -346,7 +346,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A24736A2BE5864D001A0275 /* like_animation.lottie in Resources */,
 				1A31C89A2BE4253C004CCB0B /* Pinax_with_depiction_of_Zeus.usdz in Resources */,
 				1A31C8A02BE4253C004CCB0B /* Attic_red-figure_Pelike.usdz in Resources */,
 				1A31C8982BE4253C004CCB0B /* Corinthian_Oinochoe.usdz in Resources */,
@@ -358,6 +357,7 @@
 				1AF1119F2BD40974004D77EB /* Assets.xcassets in Resources */,
 				1A31C89C2BE4253C004CCB0B /* Laconian_Kylix.usdz in Resources */,
 				1A31C89B2BE4253C004CCB0B /* Carved_gourd_mate_burilado.usdz in Resources */,
+				1A56D1CA2BE6557E00247B85 /* like_animation.lottie in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

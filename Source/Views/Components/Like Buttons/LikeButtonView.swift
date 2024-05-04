@@ -18,7 +18,7 @@ struct LikeButtonView: View {
             }
         }, label: {
             Image(systemName: isLiked ? "heart.fill" : "heart")
-                .foregroundStyle(isLiked ? .red : .white)
+                .foregroundStyle(isLiked ? .redPastel : .white)
                 .symbolEffect(.bounce, value: isLiked)
         })
         .padding()
