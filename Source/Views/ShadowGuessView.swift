@@ -11,7 +11,9 @@ struct ShadowGuessView: View {
     
     let hiddenModelName: String
     
-    let data: [String]
+    @State var variantsArray: [String]
+    
+    let variantsArrayHinted: [String]
     
     let columns = [
         GridItem(.flexible()),
@@ -35,7 +37,16 @@ struct ShadowGuessView: View {
             }
         }
         
-        self.data = Array(randomModels).shuffled()
+        var randomModelsHinted: Set<String> = [randomArcheologicalItem.name]
+        
+        while randomModelsHinted.count < 2 {
+            if let randomModelHinted = randomModels.randomElement() {
+                randomModelsHinted.insert(randomModelHinted)
+            }
+        }
+        
+        self.variantsArrayHinted = Array(randomModelsHinted).shuffled()
+        self.variantsArray = Array(randomModels).shuffled()
     }
     
     var body: some View {
@@ -47,15 +58,28 @@ struct ShadowGuessView: View {
             ArtifactModelView(modelName: hiddenModelName)
             
             LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(data, id: \.self) { item in
+                ForEach(variantsArray, id: \.self) { item in
                     Button(action: {}, label: {
                         Text(item)
                     })
                     .buttonBorderShape(.roundedRectangle)
                 }
             }
+            
+            if variantsArray != variantsArrayHinted{
+                Button(action: {getHint()}){
+                    Label("Get hint", systemImage: "lightbulb.max")
+                }
+            }
+            
         }
         
+    }
+    
+    func getHint(){
+        withAnimation{
+            variantsArray = variantsArrayHinted
+        }
     }
 }
 
