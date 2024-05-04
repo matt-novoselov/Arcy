@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A185AE32BE44EEC00B7843C /* Sinebow.metal */; };
 		1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473272BE538E4001A0275 /* ProfilePictureView.swift */; };
-		1A24732A2BE550C8001A0275 /* ItemFlatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473292BE550C8001A0275 /* ItemFlatCardView.swift */; };
+		1A24732A2BE550C8001A0275 /* ArtifactFlatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */; };
 		1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732B2BE563D6001A0275 /* LikeButtonView.swift */; };
 		1A24732E2BE568CA001A0275 /* ShadowGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732D2BE568CA001A0275 /* ShadowGuessView.swift */; };
-		1A2473302BE5690C001A0275 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732F2BE5690B001A0275 /* ModelView.swift */; };
+		1A2473302BE5690C001A0275 /* ArtifactModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732F2BE5690B001A0275 /* ArtifactModelView.swift */; };
 		1A2473322BE574A1001A0275 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473312BE574A1001A0275 /* ProfileEditView.swift */; };
 		1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473332BE576FD001A0275 /* OnboardingCardView.swift */; };
 		1A2473362BE578AF001A0275 /* OnboardingFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */; };
@@ -52,10 +52,10 @@
 /* Begin PBXFileReference section */
 		1A185AE32BE44EEC00B7843C /* Sinebow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sinebow.metal; sourceTree = "<group>"; };
 		1A2473272BE538E4001A0275 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
-		1A2473292BE550C8001A0275 /* ItemFlatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFlatCardView.swift; sourceTree = "<group>"; };
+		1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactFlatCardView.swift; sourceTree = "<group>"; };
 		1A24732B2BE563D6001A0275 /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
 		1A24732D2BE568CA001A0275 /* ShadowGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowGuessView.swift; sourceTree = "<group>"; };
-		1A24732F2BE5690B001A0275 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		1A24732F2BE5690B001A0275 /* ArtifactModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactModelView.swift; sourceTree = "<group>"; };
 		1A2473312BE574A1001A0275 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		1A2473332BE576FD001A0275 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeaturesView.swift; sourceTree = "<group>"; };
@@ -150,6 +150,19 @@
 			path = Lotties;
 			sourceTree = "<group>";
 		};
+		1A2473712BE638CE001A0275 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1A41C1912BE63DC4002252B9 /* Like Buttons */,
+				1A41C1902BE63DAA002252B9 /* Profile */,
+				1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */,
+				1A24732F2BE5690B001A0275 /* ArtifactModelView.swift */,
+				1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */,
+				1A2473332BE576FD001A0275 /* OnboardingCardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		1A31C88E2BE42532004CCB0B /* 3D Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,12 +208,30 @@
 		1A31C8AC2BE43D52004CCB0B /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */,
 				1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */,
 				1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */,
-				1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */,
 				1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1A41C1902BE63DAA002252B9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1A2473272BE538E4001A0275 /* ProfilePictureView.swift */,
+				1A2473312BE574A1001A0275 /* ProfileEditView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		1A41C1912BE63DC4002252B9 /* Like Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				1A24732B2BE563D6001A0275 /* LikeButtonView.swift */,
+				1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */,
+			);
+			path = "Like Buttons";
 			sourceTree = "<group>";
 		};
 		1AF111882BD40973004D77EB = {
@@ -229,22 +260,15 @@
 		1AF111932BD40973004D77EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1A2473712BE638CE001A0275 /* Components */,
 				1A31C8AC2BE43D52004CCB0B /* Onboarding */,
 				1AF1119A2BD40973004D77EB /* ContentView.swift */,
 				1AFA26202BE4101900FD8152 /* ArchiveView.swift */,
-				1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */,
 				1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */,
 				1A31C8AF2BE44310004CCB0B /* ProfileView.swift */,
 				1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */,
 				1A31C8B32BE44654004CCB0B /* ReccomendationView.swift */,
-				1A2473272BE538E4001A0275 /* ProfilePictureView.swift */,
-				1A2473292BE550C8001A0275 /* ItemFlatCardView.swift */,
-				1A24732B2BE563D6001A0275 /* LikeButtonView.swift */,
 				1A24732D2BE568CA001A0275 /* ShadowGuessView.swift */,
-				1A24732F2BE5690B001A0275 /* ModelView.swift */,
-				1A2473312BE574A1001A0275 /* ProfileEditView.swift */,
-				1A2473332BE576FD001A0275 /* OnboardingCardView.swift */,
-				1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,7 +372,7 @@
 				1A31C8B42BE44654004CCB0B /* ReccomendationView.swift in Sources */,
 				1A2473322BE574A1001A0275 /* ProfileEditView.swift in Sources */,
 				1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */,
-				1A2473302BE5690C001A0275 /* ModelView.swift in Sources */,
+				1A2473302BE5690C001A0275 /* ArtifactModelView.swift in Sources */,
 				1A2473702BE5A47F001A0275 /* ArchiveGridView.swift in Sources */,
 				1A24736C2BE59638001A0275 /* OneShotLikeButtonView.swift in Sources */,
 				1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */,
@@ -365,7 +389,7 @@
 				1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */,
 				1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */,
 				1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */,
-				1A24732A2BE550C8001A0275 /* ItemFlatCardView.swift in Sources */,
+				1A24732A2BE550C8001A0275 /* ArtifactFlatCardView.swift in Sources */,
 				1A2473362BE578AF001A0275 /* OnboardingFeaturesView.swift in Sources */,
 				1A31C8B22BE4443F004CCB0B /* FavouritsView.swift in Sources */,
 				1AFA26212BE4101900FD8152 /* ArchiveView.swift in Sources */,

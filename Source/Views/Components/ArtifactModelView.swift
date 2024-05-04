@@ -9,7 +9,7 @@ import SwiftUI
 import RealityKit
 import RealityKitContent
 
-struct ModelView: View {
+struct ArtifactModelView: View {
     
     var modelName: String
     @State private var modelOpacity: Double = 0
@@ -37,5 +37,5 @@ struct ModelView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ModelView(modelName: "Pinax_with_depiction_of_Zeus")
+    ArtifactModelView(modelName: "Pinax_with_depiction_of_Zeus")
 }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct ArcheologicalItem: Identifiable {
+struct Artifact: Identifiable {
     var id: UUID = UUID()
     var modelName: String
     var name: String

@@ -15,8 +15,6 @@ struct ProfileEditView: View {
     @State private var avatarImage: Image?
     @State private var showingPhotoPicker: Bool = false
     
-    var settings: ProfileData
-    
     var body: some View {
         
         // Button to trigger the photo picker
@@ -43,7 +41,8 @@ struct ProfileEditView: View {
             Task{
                 guard let imageData = try await avatarItem?.loadTransferable(type: Data.self) else { return }
                 print(imageData.self)
-                settings.myImage640 = imageData
+//                settings.myImage640 = imageData
+                // Save image to model
             }
         }
         
@@ -51,12 +50,13 @@ struct ProfileEditView: View {
             .font(.largeTitle)
             .multilineTextAlignment(.center)
             .onChange(of: textInput){
-                settings.userName = textInput
+//                settings.userName = textInput
+                // Load user name from input
             }
     }
     
 }
 
 #Preview(windowStyle: .automatic) {
-    ProfileEditView(textInput: .constant(""), settings: ProfileData(userName: ""))
+    ProfileEditView(textInput: .constant(""))
 }

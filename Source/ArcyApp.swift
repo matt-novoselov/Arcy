@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct ArcyApp: App {    
@@ -14,6 +13,5 @@ struct ArcyApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: ProfileData.self)
     }
 }

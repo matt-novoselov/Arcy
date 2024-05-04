@@ -11,17 +11,14 @@ import RealityKitContent
 
 struct ArchiveView: View {
     
-    var settings: ProfileData
-    
     @State private var searchText: String = ""
-    
     @State private var showingFiltered: Bool = false
     
     var body: some View {
         
         NavigationStack{
             
-            VStack {
+            VStack(spacing: 0) {
                 Picker("What is your favorite color?", selection: $showingFiltered.animation()) {
                     Text("Full collection").tag(false)
                     Text("Recommendations").tag(true)
@@ -41,14 +38,17 @@ struct ArchiveView: View {
             .padding(.horizontal)
             .toolbar{
                 ToolbarItem(placement: .topBarLeading){
-                    NavigationLink(destination: ProfileView(settings: settings)){
-                        Image(systemName: "heart")
+                    NavigationLink(destination: ProfileView()){
+                        Button(action: {}){
+                            Image(systemName: "circle")
+                        }
+                        .buttonBorderShape(.circle)
+                        .foregroundStyle(.clear)
+                        .overlay{
+                            ProfilePictureView()
+                        }
                     }
-                    .buttonBorderShape(.circle)
-                    .overlay{
-                        ProfilePictureView()
-                            .allowsHitTesting(false)
-                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
                 
                 ToolbarItem(placement: .topBarLeading){
@@ -74,5 +74,5 @@ struct ArchiveView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ArchiveView(settings: ProfileData(userName: ""))
+    ArchiveView()
 }

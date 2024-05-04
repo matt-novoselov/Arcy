@@ -10,8 +10,8 @@ import SwiftUI
 struct FavoritesView: View {
     var body: some View {
         
-        ContentUnavailableView("No favorites", systemImage: "heart.slash", description: Text("Add favorite items by clicking like button in archive item's page."))
-            .navigationTitle("Favorites Items")
+        ContentUnavailableView("No favorites", systemImage: "heart.slash", description: Text("Add favorite artifacts by clicking the like button."))
+            .navigationTitle("Favorites artifacts")
         
     }
 }

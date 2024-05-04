@@ -6,15 +6,12 @@
 //
 
 import SwiftUI
-import SwiftData
+
 
 struct OnboardingProfileView: View {
     
     @State private var textInput: String = ""
     @Binding var onboardingState: onboardingState
-    
-    @Environment(\.modelContext) var modelContext
-    var settings: ProfileData
 
     // Get onboarding complete value from the user defaults
     @AppStorage("onboardingCompleted") var onboardingCompleted: Bool = false
@@ -27,7 +24,7 @@ struct OnboardingProfileView: View {
                 Text("Let's setup your profile")
                     .font(.title)
                 
-                ProfileEditView(textInput: $textInput, settings: settings)
+                ProfileEditView(textInput: $textInput)
                 
                 Button(action: {
                     onboardingCompleted = true
@@ -37,22 +34,17 @@ struct OnboardingProfileView: View {
                 })
                 .disabled(textInput.isEmpty)
 
-                
             }
-
         }
-        .onAppear(perform: load)
+        .onAppear{
+            // Load name to textfield from saved data
+        }
 
-    }
-    
-    func load() {
-        textInput = settings.userName
     }
 }
 
 #Preview(windowStyle: .automatic) {
-    OnboardingProfileView(onboardingState: .constant(.profile), settings: ProfileData(userName: ""))
-        .modelContainer(for: ProfileData.self)
+    OnboardingProfileView(onboardingState: .constant(.profile))
 }
 
 

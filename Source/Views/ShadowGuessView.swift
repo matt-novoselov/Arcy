@@ -19,7 +19,7 @@ struct ShadowGuessView: View {
     ]
     
     init(){
-        let modelLibrary: [ArcheologicalItem] = ArcheologicalItemsCollection().items
+        let modelLibrary: [Artifact] = Collection().artifacts
         
         guard let randomArcheologicalItem = modelLibrary.randomElement() else {
             fatalError("Model library is empty.")
@@ -44,7 +44,7 @@ struct ShadowGuessView: View {
             Text("Guess the name of the exhibit based on the silhouette.")
                 .font(.largeTitle)
             
-            ModelView(modelName: hiddenModelName)
+            ArtifactModelView(modelName: hiddenModelName)
             
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(data, id: \.self) { item in

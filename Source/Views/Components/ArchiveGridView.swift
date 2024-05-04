@@ -15,24 +15,24 @@ struct ArchiveGridView: View {
         GridItem(.adaptive(minimum: 300))
     ]
     
-    let itemsCollection: [ArcheologicalItem] = ArcheologicalItemsCollection().items
+    let artifactCollection: [Artifact] = Collection().artifacts
     
     @Binding var searchText: String
     
     
     var body: some View {
         
-        let filteredArchive: [ArcheologicalItem] = filterItems()
+        let filteredArchive: [Artifact] = filterArtifacts()
         
         if filteredArchive.isEmpty{
-            ContentUnavailableView("No results", systemImage: "magnifyingglass", description: Text("Check the spelling or try a new search."))
+            ContentUnavailableView("No results for \(searchText)", systemImage: "magnifyingglass", description: Text("Check the spelling or try a new search."))
         } else{
             ScrollView{
                 LazyVGrid(columns: columns) {
-                    ForEach(filterItems()) { selectedItem in
+                    ForEach(filterArtifacts()) { artifact in
                         
-                        NavigationLink(destination: ArchiveDetailView(selectedItem: selectedItem)){
-                            ItemFlatCardView(title: selectedItem.name, imageName: selectedItem.previewImage)
+                        NavigationLink(destination: ArchiveDetailView(artifact: artifact)){
+                            ArtifactFlatCardView(title: artifact.name, imageName: artifact.previewImage)
                         }
                         .buttonStyle(BorderlessButtonStyle())
                         .buttonBorderShape(.roundedRectangle)
@@ -43,19 +43,19 @@ struct ArchiveGridView: View {
         }
     }
     
-    func filterItems() -> [ArcheologicalItem] {
+    func filterArtifacts() -> [Artifact] {
         let searchTextTrimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !searchTextTrimmed.isEmpty else {
-            return itemsCollection
+            return artifactCollection
         }
         
-        return itemsCollection.filter { item in
+        return artifactCollection.filter { artifact in
             let searchTextLowercased = searchTextTrimmed.lowercased()
-            let itemNameLowercased = item.name.lowercased().replacingOccurrences(of: " ", with: "")
-            let itemDescriptionLowercased = item.description.lowercased().replacingOccurrences(of: " ", with: "")
+            let artifactNameLowercased = artifact.name.lowercased().replacingOccurrences(of: " ", with: "")
+            let artifactDescriptionLowercased = artifact.description.lowercased().replacingOccurrences(of: " ", with: "")
             
-            return itemNameLowercased.contains(searchTextLowercased) ||
-            itemDescriptionLowercased.contains(searchTextLowercased)
+            return artifactNameLowercased.contains(searchTextLowercased) ||
+            artifactDescriptionLowercased.contains(searchTextLowercased)
         }
     }
     

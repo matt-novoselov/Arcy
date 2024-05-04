@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemFlatCardView: View {
+struct ArtifactFlatCardView: View {
     
     var title: String
     var imageName: Image
@@ -40,5 +40,5 @@ struct ItemFlatCardView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ItemFlatCardView(title: "Lorem ipsum dolor sit", imageName: Image(.placeholder))
+    ArtifactFlatCardView(title: "Lorem ipsum dolor sit", imageName: Image(.placeholder))
 }

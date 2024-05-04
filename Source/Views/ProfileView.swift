@@ -16,11 +16,9 @@ struct ProfileView: View {
     
     @State var showAlert: Bool = false
     
-    var settings: ProfileData
-    
     var body: some View {
         VStack{
-            ProfileEditView(textInput: $textInput, settings: settings)
+            ProfileEditView(textInput: $textInput)
             
             Button(action: {showAlert = true}, label: {
                 Text("Reset onboarding")
@@ -49,5 +47,5 @@ struct ProfileView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ProfileView(settings: ProfileData(userName: ""))
+    ProfileView()
 }

@@ -15,76 +15,110 @@ struct ArchiveDetailView: View {
     @State private var isLiked: Bool = false
     @State private var modelRotation = Angle.zero
     @State private var modelOpacity: Double = 0
-    var selectedItem: ArcheologicalItem
+    var artifact: Artifact
     
     var body: some View {
         
-        HStack{
-            ZStack(alignment: .bottom){
-                
-                Model3D(named: selectedItem.modelName) { model in
-                    model
-                        .resizable()
-                        .scaledToFit()
-                        .opacity(modelOpacity)
-                        .rotation3DEffect(modelRotation, axis: .y)
-                        .padding()
-                        .onAppear(){
-                            withAnimation(.interpolatingSpring(duration: 1.5)){
-                                modelRotation.degrees+=360
-                                modelOpacity = 1
+        ZStack(alignment: .trailing){
+            HStack{
+                ZStack(alignment: .bottom){
+                    
+                    Model3D(named: artifact.modelName) { model in
+                        model
+                            .resizable()
+                            .scaledToFit()
+                            .opacity(modelOpacity)
+                            .rotation3DEffect(modelRotation, axis: .y)
+                            .padding()
+                            .onAppear(){
+                                withAnimation(.interpolatingSpring(duration: 1.5)){
+                                    modelRotation.degrees+=360
+                                    modelOpacity = 1
+                                }
                             }
-                        }
-                } placeholder: {
-                    ProgressView()
-                        .frame(height: 300)
-                }
-                
-                Button(action: {}, label: {
-                    Label("Exapnd", systemImage: "arrow.up.left.and.arrow.down.right")
-                })
-            }
-            .frame(height: 300)
-            
-            VStack(alignment: .leading){
-                Text("\(selectedItem.name) • \(selectedItem.ageOfCreation) BC")
-                    .font(.largeTitle)
-                
-                Text(selectedItem.description)
-                
-                HStack{
-                    ShareLink(item: URL(string: "https://apps.apple.com/us/app/light-speedometer/id6447198696")!) {
-                        Image(systemName: "square.and.arrow.up")
+                    } placeholder: {
+                        ProgressView()
+                            .frame(height: 300)
                     }
                     
-                    LikeButtonView(isLiked: $isLiked)
+                    Button(action: {}, label: {
+                        Label("Exapnd", systemImage: "arrow.up.left.and.arrow.down.right")
+                    })
                 }
+                .frame(height: 300)
                 
+                VStack(alignment: .leading){
+                    Text("\(artifact.name) • \(artifact.ageOfCreation) BC")
+                        .font(.largeTitle)
+                    
+                    Text(artifact.description)
+                    
+                    HStack{
+                        ShareLink(item: URL(string: "https://apps.apple.com/us/app/light-speedometer/id6447198696")!) {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                        
+                        LikeButtonView(isLiked: $isLiked)
+                    }
+                    
+                }
+                .frame(width: 400)
+                
+                Rectangle()
+                    .frame(width: 400, height: 400)
             }
-            .frame(width: 400)
             
-            let position = MapCameraPosition.region(
-                MKCoordinateRegion(
-                    center: CLLocationCoordinate2D(latitude: selectedItem.location.latitude, longitude: selectedItem.location.longitude),
-                    span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
-                )
-            )
             
-            Button(action: {}){
-                Map(initialPosition: position)
-                    .mapStyle(.imagery)
-                    .cornerRadius(20)
-                    .scaledToFill()
-            }
-            .buttonBorderShape(.roundedRectangle(radius: 20))
-            .frame(width: 400, height: 400)
-            .padding()
-            
+            ExpandableMap()
         }
         
     }
 }
 
+struct ExpandableMap: View {
+    
+    @State var isExpanded: Bool = false
+    
+//    let position = MapCameraPosition.region(
+//        MKCoordinateRegion(
+//            center: CLLocationCoordinate2D(latitude: selectedItem.location.latitude, longitude: selectedItem.location.longitude),
+//            span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+//        )
+//    )
+//    
+    var body: some View {
+        
+
+        ZStack(alignment: .bottom){
+            Button(action: {switchState()}){
+    //            Map(initialPosition: position)
+                Map()
+                    .mapStyle(.imagery)
+                    .scaledToFill()
+            }
+            .buttonBorderShape(.roundedRectangle(radius: 20))
+            .frame(maxWidth: isExpanded ? .infinity : 400, maxHeight: isExpanded ? .infinity : 400)
+            
+            if isExpanded{
+                Button(action: {switchState()}){
+                    Label("Collapse", systemImage: "arrow.up.right.and.arrow.down.left")
+                }
+                .padding()
+            }
+
+        }
+        .cornerRadius(20)
+
+        
+    }
+    
+    func switchState(){
+        withAnimation{
+            isExpanded.toggle()
+        }
+    }
+}
+
 #Preview(windowStyle: .automatic) {
-    ArchiveDetailView(selectedItem: ArcheologicalItemsCollection().items.first!)
+    ArchiveDetailView(artifact: Collection().artifacts.first!)
 }

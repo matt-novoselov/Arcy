@@ -22,8 +22,6 @@ struct OnboardingView: View {
     
     @State var onboardingState: onboardingState = .welcome
     
-    var settings: ProfileData
-    
     var body: some View {
         
         TimelineView(.animation) { timeline in
@@ -38,7 +36,7 @@ struct OnboardingView: View {
                         .transition(.blurReplace)
                     
                 case .profile:
-                    OnboardingProfileView(onboardingState: $onboardingState, settings: settings)
+                    OnboardingProfileView(onboardingState: $onboardingState)
                         .transition(.blurReplace)
                     
                 case .features:
@@ -74,5 +72,5 @@ struct OnboardingView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    OnboardingView(settings: ProfileData(userName: ""))
+    OnboardingView()
 }

@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
+
+//@Model
 class ProfileData {
     var userName: String
     var myImage640: Data? = nil

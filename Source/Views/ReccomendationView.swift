@@ -10,7 +10,7 @@ import SwiftUI
 struct RecommendationView: View {
     var body: some View {
         
-        ContentUnavailableView("No recommendations", systemImage: "sparkle.magnifyingglass", description: Text("Try adding a few favorite items to see recommendations"))
+        ContentUnavailableView("No recommendations", systemImage: "sparkle.magnifyingglass", description: Text("Try adding a few favorite artifacts to see recommendations"))
         
     }
 }
