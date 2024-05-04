@@ -31,7 +31,7 @@ struct ArtifactFlatCardView: View {
             
             LikeButtonView(isLiked: $isLiked)
                 .buttonBorderShape(.circle)
-                .glassBackgroundEffect()
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         }
         .aspectRatio(1, contentMode: .fit)
 
