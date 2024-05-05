@@ -47,11 +47,16 @@ struct ArchiveDetailView: View {
                 .frame(height: 300)
                 
                 VStack(alignment: .leading){
-                    Text("\(artifact.name) • \(artifact.ageOfCreation) BC")
-                        .font(.largeTitle)
                     
-                    Text(artifact.description)
-                        .foregroundStyle(.secondary)
+                    VStack(alignment: .leading){
+                        Text(artifact.name)
+                            .font(.largeTitle)
+                        
+                        Text(artifact.description)
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding()
+                    .background(.regularMaterial, in: .rect(cornerRadius: 20))
                     
                     HStack{
                         ShareLink(item: URL(string: "https://apps.apple.com/us/app/light-speedometer/id6447198696")!) {

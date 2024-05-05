@@ -17,20 +17,17 @@ struct OnboardingView: View {
     
     // Get onboarding complete value from the user defaults
     @AppStorage("onboardingCompleted") var onboardingCompleted: Bool = false
-    
     @State private var startTime = Date.now
-    
     @State var onboardingState: onboardingState = .welcome
     
     var body: some View {
         
         TimelineView(.animation) { timeline in
             let elapsedTime = startTime.distance(to: timeline.date)
-            
             Group{
                 switch onboardingState {
                     
-                // Display main game menu
+                    // Display main game menu
                 case .welcome:
                     OnboardingWelcomeView(onboardingState: $onboardingState)
                         .transition(.blurReplace)
@@ -45,30 +42,23 @@ struct OnboardingView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-
+            
             .background{
-                Rectangle()
-                    .opacity(0.7)
-                    .visualEffect { content, proxy in
-                        content
-                            .colorEffect(
-                                ShaderLibrary.sinebow(
-                                    .float2(proxy.size),
-                                    .float(elapsedTime)
-                                )
-                            )
-                    }
-                    .blur(radius: 150.0)
+                BackgroundGradientView(elapsedTime: elapsedTime)
             }
             
             .onAppear(){
                 onboardingState = .welcome
             }
+            .onChange(of: onboardingCompleted){
+                if onboardingCompleted == false{
+                    onboardingState = .welcome
+                }
+            }
             
         }
-        
     }
-
+    
 }
 
 #Preview(windowStyle: .automatic) {

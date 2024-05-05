@@ -58,13 +58,6 @@ struct ShadowGuessView: View {
     var body: some View {
         
         VStack{
-            if variantsArray != variantsArrayHinted && selectedAnswer == nil{
-                Button(action: {getHint()}){
-                    Label("Get hint", systemImage: "lightbulb.max")
-                        .labelStyle(CenteredLabelStyle())
-                }
-            }
-            
             Spacer()
             
             ArtifactModelView(modelName: hiddenModelName)
@@ -106,7 +99,26 @@ struct ShadowGuessView: View {
         
         }
         .padding()
-        .navigationTitle("Guess the name of the exhibit based on the silhouette.")
+        .navigationTitle("Guess the name of the exhibit.")
+        
+        // Ornament
+        .toolbar{
+            ToolbarItem(placement: .bottomOrnament){
+                HStack{
+                    if variantsArray != variantsArrayHinted && selectedAnswer == nil{
+                        Button(action: {getHint()}){
+                            Label("Get hint", systemImage: "lightbulb.max")
+                                .labelStyle(CenteredLabelStyle())
+                        }
+                    }
+                    
+                    Button(action: {}){
+                        Label("Next", systemImage: "arrow.right")
+                    }
+                    .disabled(selectedAnswer == nil)
+                }
+            }
+        }
 
         .overlay{
             if selectedAnswer == hiddenName{

@@ -9,34 +9,45 @@ import SwiftUI
 
 struct ProfilePictureView: View {
     
+    var startTime = Date.now
+    var showingShimmer: Bool = false
+    
     var body: some View {
-
-        Group{
-            // Using UIImage to create an image from Data
-            if let uiImage = UIImage(data: Data()) {
-                // Using Image view to display the UIImage
-                Image(uiImage: uiImage)
+        
+        TimelineView(.animation) { timeline in
+            let elapsedTime = startTime.distance(to: timeline.date)
+            
+            Group{
+                // MARK: Load image from persistence
+    //            if let imagePath = Image(.placeholder){
+    //                imagePath
+    //                    .resizable()
+    //            } else {
+                Image(.profilePicturePlaceholder)
+                    .interpolation(.high)
                     .resizable()
-
-            } else {
-                GeometryReader{ proxy in
-                    Image(systemName: "person.crop.circle.fill")
-                        .resizable()
-                        .shadow(radius: 10)
-                        .background(.gray)
-                        .overlay(
-                            Circle()
-                                .stroke(Color.white, lineWidth: proxy.size.width/10)
+                    .scaledToFit()
+    //            }
+            }
+            .clipShape(.circle)
+            .scaledToFit()
+                .visualEffect { content, proxy in
+                    content
+                        .colorEffect(
+                            ShaderLibrary.shimmer(
+                                .float2(proxy.size),
+                                .float(elapsedTime),
+                                .float(1.5),
+                                .float(0.5),
+                                .float(showingShimmer ? 0.5 : 0)
+                            )
                         )
                 }
-            }
         }
-        .clipShape(.circle)
-        .scaledToFit()
         
     }
 }
 
 #Preview(windowStyle: .automatic) {
-    ProfilePictureView()
+    ProfilePictureView(showingShimmer: true)
 }

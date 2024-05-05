@@ -12,36 +12,30 @@ struct ProfileEditView: View {
     
     @State var textInput: String = UserDefaults.standard.string(forKey: "userName") ?? ""
     @State private var avatarItem: PhotosPickerItem?
-    @State private var avatarImage: Image?
     @State private var showingPhotoPicker: Bool = false
+    
+    @State var showingShimmer: Bool = false
+    
+    @State var shimmerStartTime = Date.now
     
     var body: some View {
         
         // Button to trigger the photo picker
         Button(action: { showingPhotoPicker = true }) {
-            ProfilePictureView()
+            ProfilePictureView(startTime: shimmerStartTime, showingShimmer: showingShimmer)
         }
         .buttonBorderShape(.circle)
         .frame(width: 300)
-        
         
         // Integrates the PhotosPicker with the SwiftUI view hierarchy
         .photosPicker(isPresented: $showingPhotoPicker, selection: $avatarItem, matching: .images)
         
         // Load the selected image
         .onChange(of: avatarItem) {
-            Task {
-                if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
-                    avatarImage = loaded
-                } else {
-                    print("Failed")
-                }
-            }
+            // MARK: Save image to persistence
             
-            Task{
-                guard let imageData = try await avatarItem?.loadTransferable(type: Data.self) else { return }
-                // MARK: Save image
-            }
+            showingShimmer = true
+            shimmerStartTime = Date.now
         }
 
         TextField("Your name", text: $textInput.animation())
@@ -55,5 +49,5 @@ struct ProfileEditView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ProfileEditView()
+    ProfileEditView(showingShimmer: true)
 }

@@ -23,7 +23,7 @@ struct ArtifactFlatCardView: View {
                 .padding(.all, 30)
             
             Text(title)
-                .font(.headline)
+                .font(.body)
                 .multilineTextAlignment(.center)
                 .padding()
                 .frame(maxWidth: .infinity)

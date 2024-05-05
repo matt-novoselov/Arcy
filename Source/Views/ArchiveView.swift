@@ -42,9 +42,9 @@ struct ArchiveView: View {
                             .transition(.move(edge: .leading))
                     }
                 }
+                .padding(.horizontal)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .padding(.horizontal)
             
             // Ornament
             .toolbar{

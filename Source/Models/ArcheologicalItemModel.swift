@@ -13,7 +13,6 @@ struct Artifact: Identifiable {
     var modelName: String
     var name: String
     var description: String
-    var ageOfCreation: String
     var location: (latitude: Double, longitude: Double)
     var previewImage: Image
 }
