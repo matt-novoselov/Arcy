@@ -62,7 +62,7 @@ struct OnboardingView: View {
             }
             
             .onAppear(){
-            onboardingState = .welcome
+                onboardingState = .welcome
             }
             
         }

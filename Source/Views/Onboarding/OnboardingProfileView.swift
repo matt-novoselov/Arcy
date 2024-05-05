@@ -10,11 +10,11 @@ import SwiftUI
 
 struct OnboardingProfileView: View {
     
-    @State private var textInput: String = ""
     @Binding var onboardingState: onboardingState
-
-    // Get onboarding complete value from the user defaults
-    @AppStorage("onboardingCompleted") var onboardingCompleted: Bool = false
+    
+    @AppStorage("userName") var username: String = ""
+    
+    @State var usernameEmpty: Bool = UserDefaults.standard.string(forKey: "userName")?.isEmpty ?? true
     
     var body: some View {
         
@@ -24,20 +24,23 @@ struct OnboardingProfileView: View {
                 Text("Let's setup your profile")
                     .font(.title)
                 
-                ProfileEditView(textInput: $textInput)
+                ProfileEditView()
                 
                 Button(action: {
-                    onboardingCompleted = true
+                    // Get onboarding complete value from the user defaults
+                    UserDefaults.standard.set(true, forKey: "onboardingCompleted")
                 }, label: {
-                    Text(textInput.isEmpty ? "Enter name to continue" : "Continue")
+                    Text(usernameEmpty ? "Enter name to continue" : "Continue")
                         .clipped()
                 })
-                .disabled(textInput.isEmpty)
+                .disabled(usernameEmpty)
+                .onChange(of: username){
+                    withAnimation{
+                        usernameEmpty = username.isEmpty
+                    }
+                }
 
             }
-        }
-        .onAppear{
-            // Load name to textfield from saved data
         }
 
     }

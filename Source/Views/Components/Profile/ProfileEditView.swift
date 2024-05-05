@@ -10,7 +10,7 @@ import PhotosUI
 
 struct ProfileEditView: View {
     
-    @Binding var textInput: String
+    @State var textInput: String = UserDefaults.standard.string(forKey: "userName") ?? ""
     @State private var avatarItem: PhotosPickerItem?
     @State private var avatarImage: Image?
     @State private var showingPhotoPicker: Bool = false
@@ -40,23 +40,20 @@ struct ProfileEditView: View {
             
             Task{
                 guard let imageData = try await avatarItem?.loadTransferable(type: Data.self) else { return }
-                print(imageData.self)
-//                settings.myImage640 = imageData
-                // Save image to model
+                // MARK: Save image
             }
         }
-        
+
         TextField("Your name", text: $textInput.animation())
             .font(.largeTitle)
             .multilineTextAlignment(.center)
             .onChange(of: textInput){
-//                settings.userName = textInput
-                // Load user name from input
+                UserDefaults.standard.set(textInput, forKey: "userName")
             }
     }
     
 }
 
 #Preview(windowStyle: .automatic) {
-    ProfileEditView(textInput: .constant(""))
+    ProfileEditView()
 }
