@@ -12,6 +12,9 @@ struct ArtifactFlatCardView: View {
     var title: String
     var imageName: Image
     
+    let buttonCornerRadius: Double
+    @State var isLiked: Bool = false
+    
     var body: some View {
         
         ZStack (alignment: .bottom){
@@ -20,19 +23,26 @@ struct ArtifactFlatCardView: View {
                 .padding(.all, 30)
             
             Text(title)
-                .font(.title3)
+                .font(.headline)
                 .multilineTextAlignment(.center)
                 .padding()
                 .frame(maxWidth: .infinity)
-//                .glassBackgroundEffect()
-                .background(.regularMaterial.quaternary, in: .capsule)
+                .background(.regularMaterial.secondary, in: .rect(cornerRadius: 20))
         }
         .aspectRatio(1, contentMode: .fit)
-//        .background(.fill.tertiary, in: .rect(cornerRadius: 20))
+        .background(.ultraThinMaterial.opacity(0.3), in: .rect(cornerRadius: buttonCornerRadius))
+        .overlay{
+            LikeButtonView(isLiked: $isLiked)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                .buttonStyle(PlainButtonStyle())
+                .buttonBorderShape(.circle)
+                .padding()
+        }
         
     }
 }
 
 #Preview(windowStyle: .automatic) {
-    ArtifactFlatCardView(title: "Lorem ipsum dolor sit", imageName: Image(.placeholder))
+    ArtifactFlatCardView(title: "Lorem ipsum dolor sit", imageName: Image(.placeholder), buttonCornerRadius: 20)
+        .frame(width: 300, height: 300)
 }

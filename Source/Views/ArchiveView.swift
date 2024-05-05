@@ -7,37 +7,64 @@
 
 import SwiftUI
 
+enum SelectionPage: CaseIterable {
+    case collection
+    case recommendation
+    
+    // Text title for Smart Search
+    var title: String {
+        switch self {
+        case .collection:
+            return "Collection"
+        case .recommendation:
+            return "Recommendation"
+        }
+    }
+}
+
 struct ArchiveView: View {
     
     @State private var searchText: String = ""
-    @State private var showingFiltered: Bool = false
+    @State var selectionPage: SelectionPage = .collection
     
     var body: some View {
         
         NavigationStack{
-            Group{
-                switch showingFiltered{
-                case true:
-                    RecommendationView()
-                        .transition(.move(edge: .leading))
-                    
-                case false:
-                    ArchiveGridView(searchText: $searchText)
-                        .transition(.move(edge: .trailing))
+            ZStack{
+                Group{
+                    switch selectionPage{
+                    case .recommendation:
+                        RecommendationView()
+                            .transition(.move(edge: .trailing))
+                        
+                    case .collection:
+                        ArchiveGridView(searchText: $searchText)
+                            .transition(.move(edge: .leading))
+                    }
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             .padding(.horizontal)
             
+            // Ornament
             .toolbar{
                 ToolbarItem(placement: .bottomOrnament){
-                    Picker("What is your favorite color?", selection: $showingFiltered.animation()) {
-                        Text("Collection").tag(false)
-                        Text("Recommendations").tag(true)
+                    HStack{
+                        ForEach(SelectionPage.allCases, id: \.self) { category in
+                            Button(action: {
+                                withAnimation{
+                                    self.selectionPage = category
+                                }
+                            }){
+                                Text(category.title)
+                            }
+                            .background(self.selectionPage == category ? .thinMaterial : .bar, in: .capsule)
+                        }
                     }
-                    .pickerStyle(.segmented)
                 }
             }
             
+            // Toolbar
             .toolbar{
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: ProfileView()){

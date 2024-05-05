@@ -19,7 +19,7 @@ struct ArchiveGridView: View {
     
     @Binding var searchText: String
     
-    @State var isLiked: Bool = false
+    let buttonCornerRadius: Double = 25
     
     
     var body: some View {
@@ -34,17 +34,10 @@ struct ArchiveGridView: View {
                     ForEach(filterArtifacts()) { artifact in
                         
                         NavigationLink(destination: ArchiveDetailView(artifact: artifact)){
-                            ArtifactFlatCardView(title: artifact.name, imageName: artifact.previewImage)
+                            ArtifactFlatCardView(title: artifact.name, imageName: artifact.previewImage, buttonCornerRadius: buttonCornerRadius)
                         }
                         .buttonStyle(PlainButtonStyle())
-                        .buttonBorderShape(.roundedRectangle)
-                        .overlay{
-                            LikeButtonView(isLiked: $isLiked)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                                .buttonStyle(PlainButtonStyle())
-                                .buttonBorderShape(.circle)
-                                .padding()
-                        }
+                        .buttonBorderShape(.roundedRectangle(radius: buttonCornerRadius))
                         .scrollTransition() { content, phase in
                             content
                             // Use phase.value < 0 to apply transition effects only to the top leading of scrollview
@@ -52,10 +45,10 @@ struct ArchiveGridView: View {
                                 .scaleEffect(phase.value < 0 ? 0.8 : 1)
                         }
                         .padding()
-                        
                     }
                 }
             }
+            .padding(.bottom)
         }
     }
     

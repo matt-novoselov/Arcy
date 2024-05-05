@@ -10,6 +10,7 @@ import SwiftUI
 struct OneShotLikeButtonView: View {
     
     @State var emittingParticles: Bool = false
+    @State var emittedParticles: Bool = false
     
     var body: some View {
         Button(action: {
@@ -17,7 +18,7 @@ struct OneShotLikeButtonView: View {
         }){
             Image(systemName: "heart.fill")
                 .foregroundStyle(.white)
-                .symbolEffect(.bounce, value: emittingParticles)
+                .symbolEffect(.bounce, value: emittedParticles)
                 .overlay{
                     if emittingParticles{
                         UILottieView(lottieName: "like_animation_white", playOnce: true)
@@ -35,6 +36,8 @@ struct OneShotLikeButtonView: View {
     }
     
     func emitParticles(){
+        emittedParticles.toggle()
+        
         withAnimation(.none){
             emittingParticles = true
         } completion: {

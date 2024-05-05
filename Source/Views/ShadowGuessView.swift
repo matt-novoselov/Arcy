@@ -12,6 +12,7 @@ import RealityKitContent
 struct ShadowGuessView: View {
     
     let hiddenModelName: String
+    let hiddenName: String
     
     @State var variantsArray: [String]
     
@@ -22,6 +23,8 @@ struct ShadowGuessView: View {
         GridItem(.flexible())
     ]
     
+    @State var selectedAnswer: String?
+    
     init(){
         let modelLibrary: [Artifact] = Collection().artifacts
         
@@ -30,6 +33,7 @@ struct ShadowGuessView: View {
         }
         
         self.hiddenModelName = randomArcheologicalItem.modelName
+        self.hiddenName = randomArcheologicalItem.name
         
         var randomModels: Set<String> = [randomArcheologicalItem.name]
         
@@ -47,36 +51,71 @@ struct ShadowGuessView: View {
             }
         }
         
-        self.variantsArrayHinted = Array(randomModelsHinted).shuffled()
+        self.variantsArrayHinted = Array(randomModelsHinted)
         self.variantsArray = Array(randomModels).shuffled()
     }
     
     var body: some View {
         
         VStack{
-            Text("Guess the name of the exhibit based on the silhouette.")
-                .font(.largeTitle)
-            
-            ArtifactModelView(modelName: hiddenModelName)
-            
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(variantsArray, id: \.self) { item in
-                    Button(action: {}, label: {
-                        Text(item)
-                    })
-                    .buttonBorderShape(.roundedRectangle)
-                }
-            }
-            
-            if variantsArray != variantsArrayHinted{
+            if variantsArray != variantsArrayHinted && selectedAnswer == nil{
                 Button(action: {getHint()}){
                     Label("Get hint", systemImage: "lightbulb.max")
                         .labelStyle(CenteredLabelStyle())
                 }
             }
+            
+            Spacer()
+            
+            ArtifactModelView(modelName: hiddenModelName)
+            
+            Spacer()
+            
+            LazyVGrid(columns: columns) {
+                ForEach(variantsArray, id: \.self) { item in
+                    Button(action: {
+                        withAnimation{
+                            selectedAnswer=item
+                        }
+                    }, label: {
+                        Text(item)
+                            .font(.title)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                    })
+                    .disabled(selectedAnswer != nil)
+                    
+                    // Highlight correct answer
+                    .background(selectedAnswer != nil && item == hiddenName ? Color.green : Color.clear)
+                    
+                    // Highlight incorrect answer
+                    .background(selectedAnswer != nil && item == selectedAnswer ? Color.red : Color.clear)
+                    
+                    .clipShape(.capsule)
+                    
+                    // Highlight correct and incorrect answers
+                    .overlay{
+                        if (selectedAnswer != nil && item == hiddenName || item == selectedAnswer){
+                            Text(item)
+                                .font(.title)
+                        }
+                    }
+                
+                }
+            }
+        
         }
+        .padding()
+        .navigationTitle("Guess the name of the exhibit based on the silhouette.")
+
         .overlay{
-            Model3D(named: "Fireworks", bundle: realityKitContentBundle)
+            if selectedAnswer == hiddenName{
+                Model3D(named: "Fireworks", bundle: realityKitContentBundle)
+            }
+        }
+        
+        .onChange(of: selectedAnswer){
+            print(hiddenName == selectedAnswer)
         }
         
     }
