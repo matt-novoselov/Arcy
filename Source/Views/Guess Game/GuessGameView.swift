@@ -80,11 +80,13 @@ struct GuessGameView: View {
             ArtifactModelView(modelName: hiddenArtifact.modelName)
             
             Spacer()
-            
-            // Display variants as buttons
-            LazyVGrid(columns: columns) {
-                ForEach(artifactVariantsNames, id: \.self) { singleArtifact in
-                    GuessGameButton(singleArtifact: singleArtifact, hiddenArtifact: hiddenArtifact, selectedAnswer: $selectedAnswer)
+
+            ScrollView{
+                // Display variants as buttons
+                LazyVGrid(columns: columns) {
+                    ForEach(artifactVariantsNames, id: \.self) { singleArtifact in
+                        GuessGameButton(singleArtifact: singleArtifact, hiddenArtifact: hiddenArtifact, selectedAnswer: $selectedAnswer)
+                    }
                 }
             }
             
@@ -97,25 +99,25 @@ struct GuessGameView: View {
                 Model3D(named: "Fireworks", bundle: realityKitContentBundle)
             }
         }
-        
-        // Ornament
-        .toolbar{
-            ToolbarItem(placement: .bottomOrnament){
-                HStack{
-                    if artifactVariantsNames != artifactVariantsNamesHinted && selectedAnswer == nil{
-                        Button(action: {getHint()}){
-                            Label("Get hint", systemImage: "lightbulb.max")
-                                .labelStyle(CenteredLabelStyle())
-                        }
-                    }
-                    
-                    Button(action: {}){
-                        Label("Next", systemImage: "arrow.right")
-                    }
-                    .disabled(selectedAnswer == nil)
-                }
-            }
-        }
+//        
+//        // Ornament
+//        .toolbar{
+//            ToolbarItem(placement: .bottomOrnament){
+//                HStack{
+//                    if artifactVariantsNames != artifactVariantsNamesHinted && selectedAnswer == nil{
+//                        Button(action: {getHint()}){
+//                            Label("Get hint", systemImage: "lightbulb.max")
+//                                .labelStyle(CenteredLabelStyle())
+//                        }
+//                    }
+//                    
+//                    Button(action: {}){
+//                        Label("Next", systemImage: "arrow.right")
+//                    }
+//                    .disabled(selectedAnswer == nil)
+//                }
+//            }
+//        }
         
     }
     

@@ -81,7 +81,7 @@ struct ArchiveView: View {
                 
                 // Guess Game View
                 ToolbarItem(placement: .topBarLeading){
-                    NavigationLink(destination: GuessGameView()){
+                    NavigationLink(destination: GameView()){
                         Label("Game", systemImage: "trophy")
                     }
                     .buttonBorderShape(.circle)
