@@ -91,7 +91,7 @@ struct GuessGameView: View {
     var body: some View {
         
         VStack{
-            Text("Guess the name of the artifact.")
+            Text("Guess the name of the artifact")
                 .font(.title)
             
             Spacer()

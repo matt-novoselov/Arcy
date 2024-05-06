@@ -20,53 +20,44 @@ struct GuessGameButton: View {
     
     @Binding var countCorrectAnswers: Int
     
-    private var buttonHighlighted: Bool {
-        return withAnimation(.none){
-            (selectedAnswer != nil && singleArtifact == hiddenArtifact.name || singleArtifact == selectedAnswer)
-        }
+    private var highlightedCorrectly: Bool {
+        selectedAnswer != nil && singleArtifact == hiddenArtifact.name
+    }
+    
+    private var highlightedIncorrectly: Bool {
+        selectedAnswer != nil && singleArtifact != hiddenArtifact.name && singleArtifact == selectedAnswer
     }
     
     var body: some View {
         Button(action: {
-            withAnimation{
-                selectedAnswer=singleArtifact
-            }
-            
-            if selectedAnswer == hiddenArtifact.name{
-                countCorrectAnswers+=1
+            if selectedAnswer == nil{
+                withAnimation{
+                    selectedAnswer=singleArtifact
+                }
+                
+                if selectedAnswer == hiddenArtifact.name{
+                    countCorrectAnswers+=1
+                }
             }
         }, label: {
             Text(singleArtifact)
-                .font(.title)
                 .padding()
+                .font(.title)
                 .frame(maxWidth: .infinity)
-                .opacity(buttonHighlighted ? 0 : 1)
-                .animation(.none, value: buttonHighlighted)
         })
-        .disabled(selectedAnswer != nil)
+        .disabled(selectedAnswer != nil && !highlightedCorrectly && !highlightedIncorrectly)
         
         // Highlight correct answer
-        .background(selectedAnswer != nil && singleArtifact == hiddenArtifact.name ? Color.green : Color.clear)
+        .background(highlightedCorrectly ? Color.green : Color.clear, in: .capsule)
         
         // Highlight incorrect answer
-        .background(selectedAnswer != nil && singleArtifact == selectedAnswer && selectedAnswer != hiddenArtifact.name ? Color.red : Color.clear)
-        
-        .clipShape(.capsule)
+        .background(highlightedIncorrectly ? Color.red : Color.clear, in: .capsule)
         
         // Highlight correct answer
-        .shadow(color: selectedAnswer != nil && singleArtifact == hiddenArtifact.name ? Color.green : Color.clear, radius: 10)
+        .shadow(color: highlightedCorrectly ? Color.green.opacity(0.5) : Color.clear, radius: 10)
         
         // Highlight incorrect answer
-        .shadow(color: selectedAnswer != nil && singleArtifact == selectedAnswer && selectedAnswer != hiddenArtifact.name ? Color.red : Color.clear, radius: 10)
-        
-        // Highlight correct and incorrect answers
-        .overlay{
-            if buttonHighlighted{
-                Text(singleArtifact)
-                    .font(.title)
-                    .animation(.none, value: buttonHighlighted)
-            }
-        }
+        .shadow(color: highlightedIncorrectly ? Color.red.opacity(0.5) : Color.clear, radius: 10)
     }
 }
 
