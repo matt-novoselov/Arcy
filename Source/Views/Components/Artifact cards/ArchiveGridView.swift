@@ -31,7 +31,7 @@ struct ArchiveGridView: View {
             ScrollView{
                 LazyVGrid(columns: columns) {
                     ForEach(filterArtifacts()) { artifact in
-                        ArtifactButtonView(artifact: artifact)
+                        ArtifactButtonView(selectedArtifact: artifact)
                             .padding()
                         
                         // Add scroll transition that fades out element on the top

@@ -14,7 +14,7 @@ struct ArchiveDetailView: View {
     // Animated rotation of the model
     @State private var modelRotation = Angle.zero
     
-    var artifact: Artifact
+    var selectedArtifact: Artifact
     
     var body: some View {
         
@@ -24,7 +24,7 @@ struct ArchiveDetailView: View {
             ZStack(alignment: .bottom){
                 
                 // 3D model
-                ArtifactModelView(modelName: artifact.modelName)
+                ArtifactModelView(modelName: selectedArtifact.modelName)
                     .rotation3DEffect(modelRotation, axis: .y)
                     .onAppear(){
                         withAnimation(.interpolatingSpring(duration: 1.5)){
@@ -43,10 +43,10 @@ struct ArchiveDetailView: View {
             VStack(alignment: .leading){
                 // Title and description
                 VStack(alignment: .leading){
-                    Text(artifact.name)
+                    Text(selectedArtifact.name)
                         .font(.largeTitle)
                     
-                    Text(artifact.description)
+                    Text(selectedArtifact.description)
                         .foregroundStyle(.secondary)
                 }
                 .padding()
@@ -54,11 +54,11 @@ struct ArchiveDetailView: View {
                 
                 // Action buttons
                 HStack{
-                    ShareLink(item: artifact.previewImage, preview: SharePreview("\(artifact.name)\n\n\(artifact.description)", image: artifact.previewImage)) {
+                    ShareLink(item: selectedArtifact.previewImage, preview: SharePreview("\(selectedArtifact.name)\n\n\(selectedArtifact.description)", image: selectedArtifact.previewImage)) {
                         Image(systemName: "square.and.arrow.up")
                     }
                     
-                    LikeButtonView(isLiked: $isLiked)
+                    LikeButtonView(artifactID: selectedArtifact.artifactID)
                 }
             }
             .frame(width: 400)
@@ -72,5 +72,5 @@ struct ArchiveDetailView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ArchiveDetailView(artifact: ArtifactsCollection().artifacts.first!)
+    ArchiveDetailView(selectedArtifact: ArtifactsCollection().artifacts.first!)
 }

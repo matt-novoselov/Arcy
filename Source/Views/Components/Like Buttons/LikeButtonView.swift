@@ -6,14 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct LikeButtonView: View {
     
-    @Binding var isLiked: Bool
+    @State private var isLiked: Bool = false
+    
+    @Environment(\.modelContext) private var context
+    
+    @Query private var items: [LikeModel]
+
+    let artifactID: Int
     
     var body: some View {
         
         Button(action: {
+            updateLike()
             withAnimation(.none){
                 isLiked.toggle()
             }
@@ -25,23 +33,42 @@ struct LikeButtonView: View {
         
         // Add Lottie animation
         .overlay{
-            if isLiked{
+            if isLiked {
                 UILottieView(lottieName: "like_animation", playOnce: true)
                     .padding(.all, -20)
                     .allowsHitTesting(false)
             }
         }
         
+        .onAppear() {
+            withAnimation(.none){
+                isLiked = getInitValue()
+            }
+        }
+        
+    }
+    
+    func getInitValue() -> Bool {
+        if let matchedItem = items.first(where: { $0.artifactID == self.artifactID }) {
+            return matchedItem.isLiked
+        } else{
+            return false
+        }
+    }
+    
+    func updateLike() {
+        // Check if an item with the given artifactID exists
+        if let existingItem = items.first(where: { $0.artifactID == artifactID }) {
+            // If it exists, toggle the like status
+            existingItem.isLiked.toggle()
+        } else {
+            // If it doesn't exist, create a new item with isLiked set to true
+            let newItem = LikeModel(artifactID: artifactID, isLiked: true)
+            context.insert(newItem)
+        }
     }
 }
 
 #Preview(windowStyle: .automatic) {
-    struct Preview: View {
-        @State var isLiked: Bool = false
-        var body: some View {
-            LikeButtonView(isLiked: $isLiked)
-        }
-    }
-    
-    return Preview()
+    LikeButtonView(artifactID: 1000)
 }

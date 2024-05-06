@@ -45,6 +45,7 @@
 		1A3B77EE2BE7E88B008DCBF4 /* CircleWaveTransformation.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77ED2BE7E88B008DCBF4 /* CircleWaveTransformation.metal */; };
 		1A3B77F42BE7E9E8008DCBF4 /* Shimmer.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77F32BE7E9E8008DCBF4 /* Shimmer.metal */; };
 		1A56D1CA2BE6557E00247B85 /* like_animation.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A56D1C92BE6557E00247B85 /* like_animation.lottie */; };
+		1A595FF12BE96BD20040469C /* LikesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A595FF02BE96BD20040469C /* LikesModel.swift */; };
 		1AE7D1372BE91ADB002A98D6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1362BE91ADB002A98D6 /* GameView.swift */; };
 		1AE7D1392BE91D64002A98D6 /* ExtensionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */; };
 		1AE7D1412BE92034002A98D6 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1402BE92034002A98D6 /* ProgressBar.swift */; };
@@ -100,6 +101,7 @@
 		1A3B77ED2BE7E88B008DCBF4 /* CircleWaveTransformation.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = CircleWaveTransformation.metal; sourceTree = "<group>"; };
 		1A3B77F32BE7E9E8008DCBF4 /* Shimmer.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shimmer.metal; sourceTree = "<group>"; };
 		1A56D1C92BE6557E00247B85 /* like_animation.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation.lottie; sourceTree = "<group>"; };
+		1A595FF02BE96BD20040469C /* LikesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesModel.swift; sourceTree = "<group>"; };
 		1AE7D1362BE91ADB002A98D6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTransition.swift; sourceTree = "<group>"; };
 		1AE7D1402BE92034002A98D6 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */,
+				1A595FF02BE96BD20040469C /* LikesModel.swift */,
 				1A31C8A22BE42E0B004CCB0B /* View Models */,
 			);
 			path = Models;
@@ -451,6 +454,7 @@
 				1A31C8B42BE44654004CCB0B /* RecommendationView.swift in Sources */,
 				1A2473322BE574A1001A0275 /* ProfileEditView.swift in Sources */,
 				1AE7D1392BE91D64002A98D6 /* ExtensionTransition.swift in Sources */,
+				1A595FF12BE96BD20040469C /* LikesModel.swift in Sources */,
 				1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */,
 				1A2473302BE5690C001A0275 /* ArtifactModelView.swift in Sources */,
 				1A2473702BE5A47F001A0275 /* ArchiveGridView.swift in Sources */,

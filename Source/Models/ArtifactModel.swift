@@ -7,9 +7,11 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct Artifact: Identifiable {
     var id: UUID = UUID()
+    var artifactID: Int
     var modelName: String
     var name: String
     var description: String
