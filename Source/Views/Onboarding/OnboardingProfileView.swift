@@ -10,11 +10,14 @@ import SwiftUI
 
 struct OnboardingProfileView: View {
     
+    // Binding for controlling current onboarding scene
     @Binding var onboardingState: onboardingState
     
-    @AppStorage("userName") var username: String = ""
+    // Value to store username in the user defaults
+    @AppStorage("userName") private var userName: String = ""
     
-    @State var usernameEmpty: Bool = UserDefaults.standard.string(forKey: "userName")?.isEmpty ?? true
+    // Animated property that states if input field for username is empty
+    @State private var inputFieldEmpty: Bool = UserDefaults.standard.string(forKey: "userName")?.isEmpty ?? true
     
     var body: some View {
         
@@ -27,22 +30,26 @@ struct OnboardingProfileView: View {
                 ProfileEditView()
                 
                 Button(action: {
-                    // Get onboarding complete value from the user defaults
+                    // Set onboarding complete value to the user defaults
                     UserDefaults.standard.set(true, forKey: "onboardingCompleted")
                 }, label: {
-                    Text(usernameEmpty ? "Enter name to continue" : "Continue")
+                    Text(inputFieldEmpty ? "Enter name to continue" : "Continue")
                         .clipped()
                 })
-                .disabled(usernameEmpty)
-                .onChange(of: username){
+                
+                // Disable button if there is no user input
+                .disabled(inputFieldEmpty)
+                
+                // Animate inputFieldEmpty on change of username
+                .onChange(of: userName){
                     withAnimation{
-                        usernameEmpty = username.isEmpty
+                        inputFieldEmpty = userName.isEmpty
                     }
                 }
-
+                
             }
         }
-
+        
     }
 }
 

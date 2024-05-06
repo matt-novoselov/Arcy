@@ -1,10 +1,3 @@
-//
-// CircleWave.metal
-// Inferno
-// https://www.github.com/twostraws/Inferno
-// See LICENSE for license information.
-//
-
 #include <metal_stdlib>
 using namespace metal;
 

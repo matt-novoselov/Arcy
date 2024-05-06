@@ -1,0 +1,132 @@
+//
+//  ShadowGuessView.swift
+//  Arcy
+//
+//  Created by Matt Novoselov on 03/05/24.
+//
+
+import SwiftUI
+import RealityKit
+import RealityKitContent
+
+struct GuessGameView: View {
+    
+    // Artifact that users needs to guess
+    private let hiddenArtifact: Artifact
+    
+    // Array of 4 of suggested artifacts names
+    // One of the names is the name of hiddenArtifact
+    @State private var artifactVariantsNames: [String]
+    
+    // Array of 2 of suggested artifacts names
+    // One of the names is the name of hiddenArtifact
+    private let artifactVariantsNamesHinted: [String]
+    
+    // Columns for lazy stack
+    private let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
+    // Property that stores the name of the answer that user selected
+    @State private var selectedAnswer: String?
+    
+    init(){
+        // Load all artifacts from the library
+        let artifactsCollection: [Artifact] = ArtifactsCollection().artifacts
+        
+        // Select a random artifact from library
+        guard let randomArtifact = artifactsCollection.randomElement() else {
+            fatalError("Model library is empty.")
+        }
+        self.hiddenArtifact = randomArtifact
+        
+        // A set of unique names for artifact variants
+        // Should always contain 4 artifacts, one of which is correct
+        var randomArtifactNames: Set<String> = [randomArtifact.name]
+        
+        // Fill variants array with unique names
+        while randomArtifactNames.count < 4 {
+            if let randomArtifactName = artifactsCollection.randomElement()?.name {
+                randomArtifactNames.insert(randomArtifactName)
+            }
+        }
+        
+        // A set of unique names for hinted artifact variants
+        // Should always contain 2 artifacts, one of which is correct
+        var randomArtifactNamesHinted: Set<String> = [randomArtifact.name]
+        
+        // Fill hinted variants array with names from randomArtifactNames
+        while randomArtifactNamesHinted.count < 2 {
+            if let randomArtifactHinted = randomArtifactNames.randomElement() {
+                randomArtifactNamesHinted.insert(randomArtifactHinted)
+            }
+        }
+        
+        // Assign pre made arrays
+        self.artifactVariantsNamesHinted = Array(randomArtifactNamesHinted)
+        self.artifactVariantsNames = Array(randomArtifactNames).shuffled()
+    }
+    
+    var body: some View {
+        
+        VStack{
+            Text("Guess the name of the artifact.")
+                .font(.title)
+            
+            Spacer()
+            
+            // Hidden artifact model
+            ArtifactModelView(modelName: hiddenArtifact.modelName)
+            
+            Spacer()
+            
+            // Display variants as buttons
+            LazyVGrid(columns: columns) {
+                ForEach(artifactVariantsNames, id: \.self) { singleArtifact in
+                    GuessGameButton(singleArtifact: singleArtifact, hiddenArtifact: hiddenArtifact, selectedAnswer: $selectedAnswer)
+                }
+            }
+            
+        }
+        .padding()
+        
+        // Display confetti on correct answer
+        .overlay{
+            if selectedAnswer == hiddenArtifact.name {
+                Model3D(named: "Fireworks", bundle: realityKitContentBundle)
+            }
+        }
+        
+        // Ornament
+        .toolbar{
+            ToolbarItem(placement: .bottomOrnament){
+                HStack{
+                    if artifactVariantsNames != artifactVariantsNamesHinted && selectedAnswer == nil{
+                        Button(action: {getHint()}){
+                            Label("Get hint", systemImage: "lightbulb.max")
+                                .labelStyle(CenteredLabelStyle())
+                        }
+                    }
+                    
+                    Button(action: {}){
+                        Label("Next", systemImage: "arrow.right")
+                    }
+                    .disabled(selectedAnswer == nil)
+                }
+            }
+        }
+        
+    }
+    
+    // Function to eliminate half of the possible variants
+    func getHint(){
+        withAnimation{
+            artifactVariantsNames = artifactVariantsNamesHinted
+        }
+    }
+}
+
+#Preview(windowStyle: .automatic) {
+    GuessGameView()
+}

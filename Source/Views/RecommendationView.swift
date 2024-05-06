@@ -10,22 +10,30 @@ import SwiftUI
 struct RecommendationView: View {
     
     // Get onboarding complete value from the user defaults
-    @AppStorage("onboardingRecommendationCompleted") var onboardingRecommendationCompleted: Bool = false
+    @AppStorage("onboardingRecommendationCompleted") private var onboardingRecommendationCompleted: Bool = false
     
-    @State var showingRecommendationOnboarding: Bool = true
+    // Value that is reverse to onboardingRecommendationCompleted
+    @State private var showingRecommendationOnboarding: Bool = true
     
     var body: some View {
         
-        ContentUnavailableView("No recommendations", systemImage: "sparkle.magnifyingglass", description: Text("Try liking a few artifacts to see recommendations."))
-            .sheet(isPresented: $showingRecommendationOnboarding) {
-                OnboardingRecommendationView()
-            }
-            .onAppear{
-                showingRecommendationOnboarding = !onboardingRecommendationCompleted
-            }
-            .onChange(of: onboardingRecommendationCompleted){
-                showingRecommendationOnboarding = !onboardingRecommendationCompleted
-            }
+        ZStack{
+            // Display ContentUnavailableView if there are no recommendations
+            ContentUnavailableView("No recommendations", systemImage: "sparkle.magnifyingglass", description: Text("Try liking a few artifacts to see recommendations."))
+        }
+        
+        // Present onboarding sheet that explains the purpose of onboarding
+        .sheet(isPresented: $showingRecommendationOnboarding) {
+            OnboardingRecommendationView()
+        }
+        
+        // Control showingRecommendationOnboarding value
+        .onAppear{
+            showingRecommendationOnboarding = !onboardingRecommendationCompleted
+        }
+        .onChange(of: onboardingRecommendationCompleted){
+            showingRecommendationOnboarding = !onboardingRecommendationCompleted
+        }
         
     }
 }

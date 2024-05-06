@@ -12,6 +12,7 @@ struct LikeButtonView: View {
     @Binding var isLiked: Bool
     
     var body: some View {
+        
         Button(action: {
             withAnimation(.none){
                 isLiked.toggle()
@@ -21,6 +22,8 @@ struct LikeButtonView: View {
                 .foregroundStyle(isLiked ? .redPastel : .white)
                 .symbolEffect(.bounce, value: isLiked)
         })
+        
+        // Add Lottie animation
         .overlay{
             if isLiked{
                 UILottieView(lottieName: "like_animation", playOnce: true)
@@ -28,6 +31,7 @@ struct LikeButtonView: View {
                     .allowsHitTesting(false)
             }
         }
+        
     }
 }
 
@@ -38,6 +42,6 @@ struct LikeButtonView: View {
             LikeButtonView(isLiked: $isLiked)
         }
     }
-
+    
     return Preview()
 }

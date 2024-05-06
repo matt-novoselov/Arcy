@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardingWelcomeView: View {
     
+    // Binding for controlling current onboarding scene
     @Binding var onboardingState: onboardingState
     
     var body: some View {

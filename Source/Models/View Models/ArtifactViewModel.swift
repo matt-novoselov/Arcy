@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Collection {
+struct ArtifactsCollection {
     var artifacts: [Artifact] = [
         Artifact(modelName: "Terracotta_figurine_of_a_seated_goddess", name: "Terracotta figurine of a seated goddess", description: "Terracotta figurines of a seated goddess in the Museum of the University of Tübingen", location: (20.0, 20.0), previewImage: Image(.placeholder)),
         Artifact(modelName: "Male_head_from_an_Etruscan_Tomb", name: "Male head from an Etruscan Tomb", description: "Male head from an Etruscan Tomb in the Museum of the University of Tübingen", location: (20.0, 20.0), previewImage: Image(.placeholder)),

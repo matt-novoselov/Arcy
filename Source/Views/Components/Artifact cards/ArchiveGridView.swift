@@ -11,16 +11,15 @@ struct ArchiveGridView: View {
     
     // Adapt to different screen sizes
     // Fill remaining space even if column rows are specified as two
-    let columns = [
+    private let columns = [
         GridItem(.adaptive(minimum: 300))
     ]
     
-    let artifactCollection: [Artifact] = Collection().artifacts
+    // Load all artifacts from the collection
+    private let artifactCollection: [Artifact] = ArtifactsCollection().artifacts
     
+    // Binding for text that user inputs to the search bar
     @Binding var searchText: String
-    
-    let buttonCornerRadius: Double = 25
-    
     
     var body: some View {
         
@@ -32,19 +31,16 @@ struct ArchiveGridView: View {
             ScrollView{
                 LazyVGrid(columns: columns) {
                     ForEach(filterArtifacts()) { artifact in
+                        ArtifactButtonView(artifact: artifact)
+                            .padding()
                         
-                        NavigationLink(destination: ArchiveDetailView(artifact: artifact)){
-                            ArtifactFlatCardView(title: artifact.name, imageName: artifact.previewImage, buttonCornerRadius: buttonCornerRadius)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .buttonBorderShape(.roundedRectangle(radius: buttonCornerRadius))
-                        .scrollTransition() { content, phase in
-                            content
-                            // Use phase.value < 0 to apply transition effects only to the top leading of scrollview
-                                .opacity(phase.value < 0 ? 0 : 1)
-                                .scaleEffect(phase.value < 0 ? 0.8 : 1)
-                        }
-                        .padding()
+                        // Add scroll transition that fades out element on the top
+                            .scrollTransition() { content, phase in
+                                content
+                                // Use phase.value < 0 to apply transition effects only to the top leading of scrollview
+                                    .opacity(phase.value < 0 ? 0 : 1)
+                                    .scaleEffect(phase.value < 0 ? 0.8 : 1)
+                            }
                     }
                 }
             }
@@ -52,6 +48,7 @@ struct ArchiveGridView: View {
         }
     }
     
+    // Function to filter search of artifacts based on their names or descriptions
     func filterArtifacts() -> [Artifact] {
         let searchTextTrimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !searchTextTrimmed.isEmpty else {

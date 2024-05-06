@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Define different states of onboarding
 enum onboardingState{
     case welcome
     case profile
@@ -16,14 +17,24 @@ enum onboardingState{
 struct OnboardingView: View {
     
     // Get onboarding complete value from the user defaults
-    @AppStorage("onboardingCompleted") var onboardingCompleted: Bool = false
+    @AppStorage("onboardingCompleted") private var onboardingCompleted: Bool = false
+    
+    // Start time of the background gradient effect
     @State private var startTime = Date.now
-    @State var onboardingState: onboardingState = .welcome
+    
+    // Control the flow of onboarding
+    @State private var onboardingState: onboardingState = .welcome
     
     var body: some View {
         
+        // Timeline for Metal shader effects
         TimelineView(.animation) { timeline in
+            
+            // Time elapsed since view appear
+            // Needed for Metal shader effect
             let elapsedTime = startTime.distance(to: timeline.date)
+            
+            // Control scenes of onboarding
             Group{
                 switch onboardingState {
                     
@@ -43,10 +54,12 @@ struct OnboardingView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
+            // Add gradient background effect
             .background{
                 BackgroundGradientView(elapsedTime: elapsedTime)
             }
             
+            // Reset current state on onboarding reset
             .onAppear(){
                 onboardingState = .welcome
             }

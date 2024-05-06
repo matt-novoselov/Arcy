@@ -11,13 +11,15 @@ import SwiftUI
 struct ContentView: View {
     
     // Get onboarding complete value from the user defaults
-    @AppStorage("onboardingCompleted") var onboardingCompleted: Bool = false
-
-    @State var animatedOnboardingCompleted: Bool = false
-
-
+    @AppStorage("onboardingCompleted") private var onboardingCompleted: Bool = false
+    
+    // Animated wrapper that states if onboarding is completed
+    @State private var animatedOnboardingCompleted: Bool = false
+    
+    
     var body: some View {
         
+        // Display main view or onboarding based on saved value
         Group{
             if animatedOnboardingCompleted{
                 ArchiveView()
@@ -27,6 +29,8 @@ struct ContentView: View {
                     .transition(.blurReplace)
             }
         }
+        
+        // Animate property of onboardingCompleted
         .onAppear(){
             animatedOnboardingCompleted = onboardingCompleted
         }
@@ -35,7 +39,7 @@ struct ContentView: View {
                 animatedOnboardingCompleted = onboardingCompleted
             }
         }
-    
+        
     }
     
 }

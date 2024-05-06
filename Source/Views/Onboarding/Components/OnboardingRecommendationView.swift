@@ -9,22 +9,21 @@ import SwiftUI
 
 struct OnboardingRecommendationView: View {
     
-    @Environment(\.dismiss) var dismiss
-    @AppStorage("onboardingRecommendationCompleted") var onboardingRecommendationCompleted: Bool = false
+    // Start time of the background gradient effect
     @State private var startTime = Date.now
     
     var body: some View {
         
+        // Timeline for Metal shader effects
         TimelineView(.animation) { timeline in
+            
+            // Time elapsed since view appear
+            // Needed for Metal shader effect
             let elapsedTime = startTime.distance(to: timeline.date)
+            
             VStack(spacing: 20){
                 Label("AI Recommendations", systemImage: "sparkles")
                     .font(.title)
-                
-                Spacer()
-                
-                CircleWave()
-                    .blur(radius: 10)
                 
                 Spacer()
                 
@@ -34,11 +33,12 @@ struct OnboardingRecommendationView: View {
                 Spacer()
                 
                 Button("Lets try!") {
-                    onboardingRecommendationCompleted = true
-                    dismiss()
+                    UserDefaults.standard.set(true, forKey: "onboardingRecommendationCompleted")
                 }
             }
             .padding(.all, 20)
+            
+            // Add gradient flow background effect
             .background{
                 BackgroundGradientView(elapsedTime: elapsedTime)
                     .scaledToFill()
@@ -48,6 +48,8 @@ struct OnboardingRecommendationView: View {
     }
 }
 
+// Note: Not everything (including some Metal shaders) are working in Previews
+// Use simulator
 #Preview(windowStyle: .automatic) {
     OnboardingRecommendationView()
 }

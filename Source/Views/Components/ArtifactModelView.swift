@@ -10,7 +10,9 @@ import RealityKit
 
 struct ArtifactModelView: View {
     
-    var modelName: String
+    let modelName: String
+    
+    // Animate model opacity on appear
     @State private var modelOpacity: Double = 0
     
     var body: some View {
@@ -21,6 +23,8 @@ struct ArtifactModelView: View {
                 .scaledToFit()
                 .opacity(modelOpacity)
                 .padding()
+            
+            // Animate model opacity on appear
                 .onAppear(){
                     withAnimation(.interpolatingSpring(duration: 1.5)){
                         modelOpacity = 1

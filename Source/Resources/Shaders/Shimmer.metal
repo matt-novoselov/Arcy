@@ -1,15 +1,7 @@
-//
-// Shimmer.metal
-// Inferno
-// https://www.github.com/twostraws/Inferno
-// See LICENSE for license information.
-//
-
 #include <metal_stdlib>
 using namespace metal;
 
 /// Converts a color from RGB to HSL representation.
-/// Reference: https://en.wikipedia.org/wiki/HSL_and_HSV
 /// - Parameter rgb: A vector representing a color with components (R, G, B).
 /// - Returns: A vector representing a color with components (H, S, L).
 half3 rgbToHSL(half3 rgb) {
@@ -39,7 +31,6 @@ half3 rgbToHSL(half3 rgb) {
 }
 
 /// Converts a color from HSL to RGB representation.
-/// Reference: https://en.wikipedia.org/wiki/HSL_and_HSV
 /// - Parameter hsl: A vector representing a color with components (H, S, L).
 /// - Returns: A vector representing a color with components (R, G, B).
 half3 hslToRGB(half3 hsl) {

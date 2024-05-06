@@ -9,19 +9,21 @@ import SwiftUI
 
 struct ArtifactFlatCardView: View {
     
-    var title: String
-    var imageName: Image
-    
+    let title: String
+    let imageName: Image
     let buttonCornerRadius: Double
-    @State var isLiked: Bool = false
+    
+    @State private var isLiked: Bool = false
     
     var body: some View {
         
         ZStack (alignment: .bottom){
+            // Display image that represent the artifact
             imageName
                 .resizable()
                 .padding(.all, 30)
             
+            // Display the name of the artifact
             Text(title)
                 .font(.body)
                 .multilineTextAlignment(.center)
@@ -31,6 +33,8 @@ struct ArtifactFlatCardView: View {
         }
         .aspectRatio(1, contentMode: .fit)
         .background(.ultraThinMaterial.opacity(0.3), in: .rect(cornerRadius: buttonCornerRadius))
+        
+        // Display like button
         .overlay{
             LikeButtonView(isLiked: $isLiked)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)

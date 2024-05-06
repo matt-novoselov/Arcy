@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ProfilePictureView: View {
     
+    // Specify time for shimmer glance to happen
     var startTime = Date.now
+    
+    // Specify if shimmer glance should be visible
     var showingShimmer: Bool = false
     
     var body: some View {
@@ -19,30 +22,27 @@ struct ProfilePictureView: View {
             
             Group{
                 // MARK: Load image from persistence
-    //            if let imagePath = Image(.placeholder){
-    //                imagePath
-    //                    .resizable()
-    //            } else {
                 Image(.profilePicturePlaceholder)
                     .interpolation(.high)
                     .resizable()
-                    .scaledToFit()
-    //            }
             }
             .clipShape(.circle)
             .scaledToFit()
-                .visualEffect { content, proxy in
-                    content
-                        .colorEffect(
-                            ShaderLibrary.shimmer(
-                                .float2(proxy.size),
-                                .float(elapsedTime),
-                                .float(1.5),
-                                .float(0.5),
-                                .float(showingShimmer ? 0.5 : 0)
-                            )
+            
+            // Add shimmer visual effect
+            .visualEffect { content, proxy in
+                content
+                    .colorEffect(
+                        ShaderLibrary.shimmer(
+                            .float2(proxy.size),
+                            .float(elapsedTime),
+                            .float(1.5),
+                            .float(0.5),
+                            // Display effect only if showingShimmer is enabled
+                            .float(showingShimmer ? 0.5 : 0)
                         )
-                }
+                    )
+            }
         }
         
     }

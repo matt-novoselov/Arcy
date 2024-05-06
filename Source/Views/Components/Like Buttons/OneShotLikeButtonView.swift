@@ -9,16 +9,19 @@ import SwiftUI
 
 struct OneShotLikeButtonView: View {
     
-    @State var emittingParticles: Bool = false
-    @State var emittedParticles: Bool = false
+    @State private var emittingParticles: Bool = false
+    @State private var emittedParticles: Bool = false
     
     var body: some View {
+        
         Button(action: {
             emitParticles()
         }){
             Image(systemName: "heart.fill")
                 .foregroundStyle(.white)
                 .symbolEffect(.bounce, value: emittedParticles)
+            
+            // Lottie animation view
                 .overlay{
                     if emittingParticles{
                         UILottieView(lottieName: "like_animation_white", playOnce: true)
@@ -28,11 +31,14 @@ struct OneShotLikeButtonView: View {
                 }
         }
         .buttonStyle(.plain)
+        
+        // Auto emit particles on appear
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 emitParticles()
             }
         }
+        
     }
     
     func emitParticles(){

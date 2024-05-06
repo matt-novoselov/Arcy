@@ -7,29 +7,18 @@
 
 import SwiftUI
 
-enum SelectionPage: CaseIterable {
-    case collection
-    case recommendation
-    
-    // Text title for Smart Search
-    var title: String {
-        switch self {
-        case .collection:
-            return "Collection"
-        case .recommendation:
-            return "Recommendation"
-        }
-    }
-}
-
 struct ArchiveView: View {
     
+    // Search text
     @State private var searchText: String = ""
-    @State var selectionPage: SelectionPage = .collection
+    
+    // Currently selected page
+    @State private var selectionPage: SelectionPage = .collection
     
     var body: some View {
         
         NavigationStack{
+            // Wrap up in ZStack for animation
             ZStack{
                 Group{
                     switch selectionPage{
@@ -48,6 +37,7 @@ struct ArchiveView: View {
             
             // Ornament
             .toolbar{
+                // Toolbar that resembles selection picker
                 ToolbarItem(placement: .bottomOrnament){
                     HStack{
                         ForEach(SelectionPage.allCases, id: \.self) { category in
@@ -66,6 +56,7 @@ struct ArchiveView: View {
             
             // Toolbar
             .toolbar{
+                // Profile View
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: ProfileView()){
                         Image(systemName: "circle")
@@ -80,6 +71,7 @@ struct ArchiveView: View {
                     .help("Profile")
                 }
                 
+                // Favorites View
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: FavoritesView()){
                         Label("Favorites", systemImage: "heart")
@@ -87,8 +79,9 @@ struct ArchiveView: View {
                     .buttonBorderShape(.circle)
                 }
                 
+                // Guess Game View
                 ToolbarItem(placement: .topBarLeading){
-                    NavigationLink(destination: ShadowGuessView()){
+                    NavigationLink(destination: GuessGameView()){
                         Label("Game", systemImage: "trophy")
                     }
                     .buttonBorderShape(.circle)
@@ -100,6 +93,22 @@ struct ArchiveView: View {
         
     }
     
+}
+
+// Add tabs for the Archive view
+enum SelectionPage: CaseIterable {
+    case collection // Represent the view with all available artifacts
+    case recommendation // Represent AI powered search
+    
+    // Text title for tabs
+    var title: String {
+        switch self {
+        case .collection:
+            return "Collection"
+        case .recommendation:
+            return "Recommendation"
+        }
+    }
 }
 
 #Preview(windowStyle: .automatic) {

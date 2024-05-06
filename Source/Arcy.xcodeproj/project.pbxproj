@@ -11,18 +11,18 @@
 		1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473272BE538E4001A0275 /* ProfilePictureView.swift */; };
 		1A24732A2BE550C8001A0275 /* ArtifactFlatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */; };
 		1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732B2BE563D6001A0275 /* LikeButtonView.swift */; };
-		1A24732E2BE568CA001A0275 /* ShadowGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732D2BE568CA001A0275 /* ShadowGuessView.swift */; };
+		1A24732E2BE568CA001A0275 /* GuessGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732D2BE568CA001A0275 /* GuessGameView.swift */; };
 		1A2473302BE5690C001A0275 /* ArtifactModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732F2BE5690B001A0275 /* ArtifactModelView.swift */; };
 		1A2473322BE574A1001A0275 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473312BE574A1001A0275 /* ProfileEditView.swift */; };
 		1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473332BE576FD001A0275 /* OnboardingCardView.swift */; };
 		1A2473362BE578AF001A0275 /* OnboardingFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */; };
 		1A24735D2BE584AA001A0275 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1A24735C2BE584AA001A0275 /* Lottie */; };
-		1A2473632BE58514001A0275 /* LottieModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24735F2BE58514001A0275 /* LottieModelView.swift */; };
+		1A2473632BE58514001A0275 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24735F2BE58514001A0275 /* LottieView.swift */; };
 		1A2473642BE58514001A0275 /* UILottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473602BE58514001A0275 /* UILottieView.swift */; };
 		1A24736C2BE59638001A0275 /* OneShotLikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */; };
 		1A24736E2BE597A1001A0275 /* like_animation_white.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A24736D2BE597A1001A0275 /* like_animation_white.lottie */; };
 		1A2473702BE5A47F001A0275 /* ArchiveGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */; };
-		1A31C88D2BE4245E004CCB0B /* ArcheologicalItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C88C2BE4245E004CCB0B /* ArcheologicalItemModel.swift */; };
+		1A31C88D2BE4245E004CCB0B /* ArtifactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */; };
 		1A31C8982BE4253C004CCB0B /* Corinthian_Oinochoe.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C88F2BE4253C004CCB0B /* Corinthian_Oinochoe.usdz */; };
 		1A31C8992BE4253C004CCB0B /* Pomegranate.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8902BE4253C004CCB0B /* Pomegranate.usdz */; };
 		1A31C89A2BE4253C004CCB0B /* Pinax_with_depiction_of_Zeus.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8912BE4253C004CCB0B /* Pinax_with_depiction_of_Zeus.usdz */; };
@@ -32,7 +32,7 @@
 		1A31C89E2BE4253C004CCB0B /* Terracotta_figurine_of_a_seated_goddess.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8952BE4253C004CCB0B /* Terracotta_figurine_of_a_seated_goddess.usdz */; };
 		1A31C89F2BE4253C004CCB0B /* Male_head_from_an_Etruscan_Tomb.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8962BE4253C004CCB0B /* Male_head_from_an_Etruscan_Tomb.usdz */; };
 		1A31C8A02BE4253C004CCB0B /* Attic_red-figure_Pelike.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A31C8972BE4253C004CCB0B /* Attic_red-figure_Pelike.usdz */; };
-		1A31C8A52BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8A42BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift */; };
+		1A31C8A52BE42E8A004CCB0B /* ArtifactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8A42BE42E8A004CCB0B /* ArtifactViewModel.swift */; };
 		1A31C8AB2BE43BA5004CCB0B /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */; };
 		1A31C8AE2BE43D68004CCB0B /* OnboardingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */; };
 		1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AF2BE44310004CCB0B /* ProfileView.swift */; };
@@ -41,11 +41,14 @@
 		1A358F7F2BE6BFDF001AB224 /* CenteredLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A358F7E2BE6BFDF001AB224 /* CenteredLabelStyle.swift */; };
 		1A3B77E62BE7B33B008DCBF4 /* OnboardingRecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77E52BE7B33B008DCBF4 /* OnboardingRecommendationView.swift */; };
 		1A3B77EA2BE7DE8D008DCBF4 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77E92BE7DE8D008DCBF4 /* BackgroundGradientView.swift */; };
-		1A3B77EC2BE7E854008DCBF4 /* CircleWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77EB2BE7E854008DCBF4 /* CircleWave.swift */; };
+		1A3B77EC2BE7E854008DCBF4 /* CircleWaveEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77EB2BE7E854008DCBF4 /* CircleWaveEffectView.swift */; };
 		1A3B77EE2BE7E88B008DCBF4 /* CircleWaveTransformation.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77ED2BE7E88B008DCBF4 /* CircleWaveTransformation.metal */; };
-		1A3B77F22BE7E9D2008DCBF4 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77F12BE7E9D2008DCBF4 /* SwiftUIView.swift */; };
 		1A3B77F42BE7E9E8008DCBF4 /* Shimmer.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77F32BE7E9E8008DCBF4 /* Shimmer.metal */; };
 		1A56D1CA2BE6557E00247B85 /* like_animation.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A56D1C92BE6557E00247B85 /* like_animation.lottie */; };
+		1AE9B2DC2BE9007700465DDE /* GuessGameButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */; };
+		1AEA7C512BE82F1F006791FD /* ArtifactButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA7C502BE82F1F006791FD /* ArtifactButtonView.swift */; };
+		1AEA7C542BE83635006791FD /* DevelopedWithLoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA7C532BE83635006791FD /* DevelopedWithLoveView.swift */; };
+		1AEA7C572BE83707006791FD /* ExpandableMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA7C562BE83707006791FD /* ExpandableMapView.swift */; };
 		1AF111972BD40973004D77EB /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 1AF111962BD40973004D77EB /* RealityKitContent */; };
 		1AF111992BD40973004D77EB /* ArcyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF111982BD40973004D77EB /* ArcyApp.swift */; };
 		1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF1119A2BD40973004D77EB /* ContentView.swift */; };
@@ -60,17 +63,17 @@
 		1A2473272BE538E4001A0275 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
 		1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactFlatCardView.swift; sourceTree = "<group>"; };
 		1A24732B2BE563D6001A0275 /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
-		1A24732D2BE568CA001A0275 /* ShadowGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowGuessView.swift; sourceTree = "<group>"; };
+		1A24732D2BE568CA001A0275 /* GuessGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessGameView.swift; sourceTree = "<group>"; };
 		1A24732F2BE5690B001A0275 /* ArtifactModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactModelView.swift; sourceTree = "<group>"; };
 		1A2473312BE574A1001A0275 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		1A2473332BE576FD001A0275 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeaturesView.swift; sourceTree = "<group>"; };
-		1A24735F2BE58514001A0275 /* LottieModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieModelView.swift; sourceTree = "<group>"; };
+		1A24735F2BE58514001A0275 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		1A2473602BE58514001A0275 /* UILottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILottieView.swift; sourceTree = "<group>"; };
 		1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneShotLikeButtonView.swift; sourceTree = "<group>"; };
 		1A24736D2BE597A1001A0275 /* like_animation_white.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation_white.lottie; sourceTree = "<group>"; };
 		1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveGridView.swift; sourceTree = "<group>"; };
-		1A31C88C2BE4245E004CCB0B /* ArcheologicalItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheologicalItemModel.swift; sourceTree = "<group>"; };
+		1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactModel.swift; sourceTree = "<group>"; };
 		1A31C88F2BE4253C004CCB0B /* Corinthian_Oinochoe.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Corinthian_Oinochoe.usdz; sourceTree = "<group>"; };
 		1A31C8902BE4253C004CCB0B /* Pomegranate.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Pomegranate.usdz; sourceTree = "<group>"; };
 		1A31C8912BE4253C004CCB0B /* Pinax_with_depiction_of_Zeus.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Pinax_with_depiction_of_Zeus.usdz; sourceTree = "<group>"; };
@@ -80,7 +83,7 @@
 		1A31C8952BE4253C004CCB0B /* Terracotta_figurine_of_a_seated_goddess.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Terracotta_figurine_of_a_seated_goddess.usdz; sourceTree = "<group>"; };
 		1A31C8962BE4253C004CCB0B /* Male_head_from_an_Etruscan_Tomb.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Male_head_from_an_Etruscan_Tomb.usdz; sourceTree = "<group>"; };
 		1A31C8972BE4253C004CCB0B /* Attic_red-figure_Pelike.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Attic_red-figure_Pelike.usdz"; sourceTree = "<group>"; };
-		1A31C8A42BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheologicalItemViewModel.swift; sourceTree = "<group>"; };
+		1A31C8A42BE42E8A004CCB0B /* ArtifactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactViewModel.swift; sourceTree = "<group>"; };
 		1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProfileView.swift; sourceTree = "<group>"; };
 		1A31C8AF2BE44310004CCB0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -89,11 +92,14 @@
 		1A358F7E2BE6BFDF001AB224 /* CenteredLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredLabelStyle.swift; sourceTree = "<group>"; };
 		1A3B77E52BE7B33B008DCBF4 /* OnboardingRecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRecommendationView.swift; sourceTree = "<group>"; };
 		1A3B77E92BE7DE8D008DCBF4 /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
-		1A3B77EB2BE7E854008DCBF4 /* CircleWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWave.swift; sourceTree = "<group>"; };
+		1A3B77EB2BE7E854008DCBF4 /* CircleWaveEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWaveEffectView.swift; sourceTree = "<group>"; };
 		1A3B77ED2BE7E88B008DCBF4 /* CircleWaveTransformation.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = CircleWaveTransformation.metal; sourceTree = "<group>"; };
-		1A3B77F12BE7E9D2008DCBF4 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		1A3B77F32BE7E9E8008DCBF4 /* Shimmer.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shimmer.metal; sourceTree = "<group>"; };
 		1A56D1C92BE6557E00247B85 /* like_animation.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation.lottie; sourceTree = "<group>"; };
+		1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessGameButtonView.swift; sourceTree = "<group>"; };
+		1AEA7C502BE82F1F006791FD /* ArtifactButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactButtonView.swift; sourceTree = "<group>"; };
+		1AEA7C532BE83635006791FD /* DevelopedWithLoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopedWithLoveView.swift; sourceTree = "<group>"; };
+		1AEA7C562BE83707006791FD /* ExpandableMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableMapView.swift; sourceTree = "<group>"; };
 		1AF111912BD40973004D77EB /* Arcy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF111952BD40973004D77EB /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		1AF111982BD40973004D77EB /* ArcyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcyApp.swift; sourceTree = "<group>"; };
@@ -131,7 +137,7 @@
 		1A2473612BE58514001A0275 /* Lottie Files */ = {
 			isa = PBXGroup;
 			children = (
-				1A24735F2BE58514001A0275 /* LottieModelView.swift */,
+				1A24735F2BE58514001A0275 /* LottieView.swift */,
 				1A2473602BE58514001A0275 /* UILottieView.swift */,
 			);
 			path = "Lottie Files";
@@ -170,12 +176,10 @@
 			children = (
 				1A41C1912BE63DC4002252B9 /* Like Buttons */,
 				1A41C1902BE63DAA002252B9 /* Profile */,
-				1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */,
+				1AEA7C522BE82F27006791FD /* Artifact cards */,
 				1A24732F2BE5690B001A0275 /* ArtifactModelView.swift */,
-				1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */,
-				1A2473332BE576FD001A0275 /* OnboardingCardView.swift */,
-				1A3B77EB2BE7E854008DCBF4 /* CircleWave.swift */,
-				1A3B77F12BE7E9D2008DCBF4 /* SwiftUIView.swift */,
+				1A3B77EB2BE7E854008DCBF4 /* CircleWaveEffectView.swift */,
+				1AEA7C532BE83635006791FD /* DevelopedWithLoveView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -191,7 +195,7 @@
 		1A31C8A12BE42E05004CCB0B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1A31C88C2BE4245E004CCB0B /* ArcheologicalItemModel.swift */,
+				1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */,
 				1A31C8A22BE42E0B004CCB0B /* View Models */,
 			);
 			path = Models;
@@ -200,7 +204,7 @@
 		1A31C8A22BE42E0B004CCB0B /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				1A31C8A42BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift */,
+				1A31C8A42BE42E8A004CCB0B /* ArtifactViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -224,22 +228,23 @@
 		1A31C8AC2BE43D52004CCB0B /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				1A3B77E42BE7AF80008DCBF4 /* Sheets */,
+				1A3B77E42BE7AF80008DCBF4 /* Components */,
 				1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */,
 				1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */,
-				1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */,
 				1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */,
+				1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */,
 				1A3B77E92BE7DE8D008DCBF4 /* BackgroundGradientView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		1A3B77E42BE7AF80008DCBF4 /* Sheets */ = {
+		1A3B77E42BE7AF80008DCBF4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1A2473332BE576FD001A0275 /* OnboardingCardView.swift */,
 				1A3B77E52BE7B33B008DCBF4 /* OnboardingRecommendationView.swift */,
 			);
-			path = Sheets;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		1A41C1902BE63DAA002252B9 /* Profile */ = {
@@ -258,6 +263,34 @@
 				1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */,
 			);
 			path = "Like Buttons";
+			sourceTree = "<group>";
+		};
+		1AE9B2DA2BE9005C00465DDE /* Guess Game */ = {
+			isa = PBXGroup;
+			children = (
+				1A24732D2BE568CA001A0275 /* GuessGameView.swift */,
+				1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */,
+			);
+			path = "Guess Game";
+			sourceTree = "<group>";
+		};
+		1AEA7C522BE82F27006791FD /* Artifact cards */ = {
+			isa = PBXGroup;
+			children = (
+				1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */,
+				1AEA7C502BE82F1F006791FD /* ArtifactButtonView.swift */,
+				1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */,
+			);
+			path = "Artifact cards";
+			sourceTree = "<group>";
+		};
+		1AEA7C552BE836E2006791FD /* Archive Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */,
+				1AEA7C562BE83707006791FD /* ExpandableMapView.swift */,
+			);
+			path = "Archive Detail";
 			sourceTree = "<group>";
 		};
 		1AF111882BD40973004D77EB = {
@@ -288,13 +321,13 @@
 			children = (
 				1A2473712BE638CE001A0275 /* Components */,
 				1A31C8AC2BE43D52004CCB0B /* Onboarding */,
+				1AEA7C552BE836E2006791FD /* Archive Detail */,
+				1AE9B2DA2BE9005C00465DDE /* Guess Game */,
 				1AF1119A2BD40973004D77EB /* ContentView.swift */,
 				1AFA26202BE4101900FD8152 /* ArchiveView.swift */,
-				1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */,
 				1A31C8AF2BE44310004CCB0B /* ProfileView.swift */,
 				1A31C8B12BE4443F004CCB0B /* FavouritsView.swift */,
 				1A31C8B32BE44654004CCB0B /* RecommendationView.swift */,
-				1A24732D2BE568CA001A0275 /* ShadowGuessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -404,28 +437,31 @@
 				1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */,
 				1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */,
 				1AF111992BD40973004D77EB /* ArcyApp.swift in Sources */,
-				1A2473632BE58514001A0275 /* LottieModelView.swift in Sources */,
-				1A31C8A52BE42E8A004CCB0B /* ArcheologicalItemViewModel.swift in Sources */,
+				1A2473632BE58514001A0275 /* LottieView.swift in Sources */,
+				1A31C8A52BE42E8A004CCB0B /* ArtifactViewModel.swift in Sources */,
 				1A3B77EE2BE7E88B008DCBF4 /* CircleWaveTransformation.metal in Sources */,
-				1A24732E2BE568CA001A0275 /* ShadowGuessView.swift in Sources */,
+				1A24732E2BE568CA001A0275 /* GuessGameView.swift in Sources */,
 				1A31C8AE2BE43D68004CCB0B /* OnboardingProfileView.swift in Sources */,
+				1AEA7C572BE83707006791FD /* ExpandableMapView.swift in Sources */,
 				1AFA26252BE41B1C00FD8152 /* OnboardingView.swift in Sources */,
-				1A3B77EC2BE7E854008DCBF4 /* CircleWave.swift in Sources */,
-				1A3B77F22BE7E9D2008DCBF4 /* SwiftUIView.swift in Sources */,
+				1A3B77EC2BE7E854008DCBF4 /* CircleWaveEffectView.swift in Sources */,
 				1A3B77F42BE7E9E8008DCBF4 /* Shimmer.metal in Sources */,
+				1AEA7C542BE83635006791FD /* DevelopedWithLoveView.swift in Sources */,
 				1A358F7F2BE6BFDF001AB224 /* CenteredLabelStyle.swift in Sources */,
 				1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */,
 				1A2473642BE58514001A0275 /* UILottieView.swift in Sources */,
 				1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */,
+				1AEA7C512BE82F1F006791FD /* ArtifactButtonView.swift in Sources */,
 				1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */,
 				1A3B77EA2BE7DE8D008DCBF4 /* BackgroundGradientView.swift in Sources */,
 				1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */,
 				1A24732A2BE550C8001A0275 /* ArtifactFlatCardView.swift in Sources */,
+				1AE9B2DC2BE9007700465DDE /* GuessGameButtonView.swift in Sources */,
 				1A2473362BE578AF001A0275 /* OnboardingFeaturesView.swift in Sources */,
 				1A31C8B22BE4443F004CCB0B /* FavouritsView.swift in Sources */,
 				1AFA26212BE4101900FD8152 /* ArchiveView.swift in Sources */,
 				1A3B77E62BE7B33B008DCBF4 /* OnboardingRecommendationView.swift in Sources */,
-				1A31C88D2BE4245E004CCB0B /* ArcheologicalItemModel.swift in Sources */,
+				1A31C88D2BE4245E004CCB0B /* ArtifactModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
