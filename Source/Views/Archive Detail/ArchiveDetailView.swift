@@ -55,7 +55,7 @@ struct ArchiveDetailView: View {
                 
                 // Action buttons
                 HStack{
-                    ShareLink(item: URL(string: "https://apps.apple.com/us/app/light-speedometer/id6447198696")!) {
+                    ShareLink(item: artifact.previewImage, preview: SharePreview("\(artifact.name)\n\n\(artifact.description)", image: artifact.previewImage)) {
                         Image(systemName: "square.and.arrow.up")
                     }
                     
