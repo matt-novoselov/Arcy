@@ -33,40 +33,46 @@ struct ProfileEditView: View {
     
     var body: some View {
         
-        // Button to trigger the photo picker
-        Button(action: { showingPhotoPicker = true }) {
-            ProfilePictureView(startTime: shimmerStartTime, showingShimmer: showingShimmer)
-        }
-        .buttonBorderShape(.circle)
-        .frame(width: 300)
-        
-        // Integrates the PhotosPicker with the SwiftUI view hierarchy
-        .photosPicker(isPresented: $showingPhotoPicker, selection: $photoItem, matching: .images)
-        
-        // Load the selected image
-        .onChange(of: photoItem) {
-            // MARK: Save image to persistence
+        VStack{
+            // Button to trigger the photo picker
+            Button(action: { showingPhotoPicker = true }) {
+                ProfilePictureView(startTime: shimmerStartTime, showingShimmer: showingShimmer)
+            }
+            .buttonBorderShape(.circle)
+            .frame(width: 300)
             
-            // Play shimmer effect
-            playShimmerEffect()
-        }
-        
-        // Text field to enter the user name
-        TextField("Your name", text: $textInput.animation())
-            .font(.largeTitle)
-            .multilineTextAlignment(.center)
-        
-        // On change of the name, immediately save it to user defaults
-            .onChange(of: textInput){
-                UserDefaults.standard.set(textInput, forKey: "userName")
+            // Integrates the PhotosPicker with the SwiftUI view hierarchy
+            .photosPicker(isPresented: $showingPhotoPicker, selection: $photoItem, matching: .images)
+            
+            // Load the selected image
+            .onChange(of: photoItem) {
+                // MARK: Save image to persistence
+                
+                // Play shimmer effect
+                playShimmerEffect()
             }
-        
-        // Play shimmer effect on appear if specified
-            .onAppear(){
-                if showingShimmerOnAppear{
-                    playShimmerEffect()
+            
+            // Text field to enter the user name
+            TextField("Your name", text: $textInput.animation())
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+                .clipShape(.capsule)
+                .padding(.vertical)
+            
+            // On change of the name, immediately save it to user defaults
+                .onChange(of: textInput){
+                    UserDefaults.standard.set(textInput, forKey: "userName")
                 }
-            }
+            
+            // Play shimmer effect on appear if specified
+                .onAppear(){
+                    if showingShimmerOnAppear{
+                        playShimmerEffect()
+                    }
+                }
+        }
+        .padding()
+        
     }
     
     // Function to play shimmer effect
