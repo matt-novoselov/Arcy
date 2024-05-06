@@ -12,10 +12,24 @@ struct ProfileView: View {
     // Showing alert before resetting onboarding
     @State private var showAlert: Bool = false
     
+    // User score from user defaults
+    @State private var userScore: Int = 0
+    
     var body: some View {
         
         VStack{
             Spacer()
+            
+            Text("\(userScore)XP")
+                .contentTransition(.numericText())
+                .font(.extraLargeTitle)
+                .onAppear(){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        withAnimation{
+                            userScore = UserDefaults.standard.integer(forKey: "userXpScore")
+                        }
+                    }
+                }
             
             // Present view to edit properties of the profile
             ProfileEditView(showingShimmerOnAppear: true)

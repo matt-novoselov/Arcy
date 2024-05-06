@@ -7,7 +7,7 @@ struct ProgressBar: View {
     @State private var size: CGSize = .zero
     
     // Progress is the value from 0 to 1
-    @Binding var progress: Double
+    var progress: Double
     
     var body: some View {
         

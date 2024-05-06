@@ -16,7 +16,6 @@ struct ContentView: View {
     // Animated wrapper that states if onboarding is completed
     @State private var animatedOnboardingCompleted: Bool = false
     
-    
     var body: some View {
         
         // Display main view or onboarding based on saved value

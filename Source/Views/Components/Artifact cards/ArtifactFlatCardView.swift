@@ -29,7 +29,8 @@ struct ArtifactFlatCardView: View {
                 .multilineTextAlignment(.center)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(.regularMaterial, in: .rect(cornerRadius: 20))
+                .background(.regularMaterial, in: .rect(cornerRadius: buttonCornerRadius-10))
+                .padding()
         }
         .aspectRatio(1, contentMode: .fit)
         .background(.ultraThinMaterial.opacity(0.3), in: .rect(cornerRadius: buttonCornerRadius))

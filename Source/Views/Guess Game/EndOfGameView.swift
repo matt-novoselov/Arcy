@@ -11,6 +11,13 @@ import RealityKitContent
 
 struct EndOfGameView: View {
     
+    var countCorrectAnswers: Int
+    
+    @State private var gainedXp: Int = 0
+    
+    // Get user score value from the user defaults
+    @AppStorage("userXpScore") private var userXpScore: Int = 0
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -19,9 +26,13 @@ struct EndOfGameView: View {
             Text("Hello, World!")
                 .font(.title)
             
+            Text("+\(gainedXp)XP")
+                .font(.extraLargeTitle)
+                .contentTransition(.numericText())
+            
             Spacer()
             
-            Button("Back to collection", systemImage: "chevron.left", action: {dismiss()})
+            Button("Exit", systemImage: "chevron.left", action: {dismiss()})
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
@@ -30,10 +41,23 @@ struct EndOfGameView: View {
         .overlay{
             Model3D(named: "Fireworks", bundle: realityKitContentBundle)
         }
-
+        
+        // Update score
+        .onAppear(){
+            let calculateXp = countCorrectAnswers * 15
+            
+            userXpScore+=calculateXp
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                withAnimation{
+                    gainedXp = calculateXp
+                }
+            }
+        }
+        
     }
 }
 
 #Preview(windowStyle: .automatic) {
-    EndOfGameView()
+    EndOfGameView(countCorrectAnswers: 3)
 }

@@ -18,6 +18,8 @@ struct GuessGameButton: View {
     // Property that stores the name of the answer that user selected
     @Binding var selectedAnswer: String?
     
+    @Binding var countCorrectAnswers: Int
+    
     private var buttonHighlighted: Bool {
         return withAnimation(.none){
             (selectedAnswer != nil && singleArtifact == hiddenArtifact.name || singleArtifact == selectedAnswer)
@@ -28,6 +30,10 @@ struct GuessGameButton: View {
         Button(action: {
             withAnimation{
                 selectedAnswer=singleArtifact
+            }
+            
+            if selectedAnswer == hiddenArtifact.name{
+                countCorrectAnswers+=1
             }
         }, label: {
             Text(singleArtifact)
@@ -65,5 +71,5 @@ struct GuessGameButton: View {
 }
 
 #Preview {
-    GuessGameButton(singleArtifact: "Test", hiddenArtifact: ArtifactsCollection().artifacts.first!, selectedAnswer: .constant(nil))
+    GuessGameButton(singleArtifact: "Test", hiddenArtifact: ArtifactsCollection().artifacts.first!, selectedAnswer: .constant(nil), countCorrectAnswers: .constant(0))
 }

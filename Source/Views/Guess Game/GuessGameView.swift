@@ -82,7 +82,7 @@ struct GuessGameView: View {
         // Display variants as buttons
         LazyVGrid(columns: columns) {
             ForEach(artifactVariantsNames, id: \.self) { singleArtifact in
-                GuessGameButton(singleArtifact: singleArtifact, hiddenArtifact: hiddenArtifact, selectedAnswer: $selectedAnswer)
+                GuessGameButton(singleArtifact: singleArtifact, hiddenArtifact: hiddenArtifact, selectedAnswer: $selectedAnswer, countCorrectAnswers: $countCorrectAnswers)
             }
         }
         .padding(.all, 20)

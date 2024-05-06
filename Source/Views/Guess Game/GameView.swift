@@ -15,8 +15,6 @@ struct GameView: View {
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        @State var currentProgress: Double = Double(currentLevel)/3
-        
         VStack{
             // Custom toolbar visible during game phase
             if currentLevel < 3{
@@ -35,7 +33,7 @@ struct GameView: View {
                     .foregroundStyle(.clear)
                     .allowsHitTesting(false)
                     .overlay{
-                        ProgressBar(progress: $currentProgress)
+                        ProgressBar(progress: Double(currentLevel)/3)
                             .padding()
                     }
                 }
@@ -51,7 +49,7 @@ struct GameView: View {
                 case 2:
                     GuessGameView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
                 default:
-                    EndOfGameView()
+                    EndOfGameView(countCorrectAnswers: countCorrectAnswers)
                 }
             }
             .frame(maxWidth: .infinity)

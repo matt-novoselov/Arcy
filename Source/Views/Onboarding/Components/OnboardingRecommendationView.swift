@@ -27,6 +27,14 @@ struct OnboardingRecommendationView: View {
                 
                 Spacer()
                 
+                CircleWaveEffectView()
+                    .blur(radius: 5)
+                    .padding()
+                    .glassBackgroundEffect(in: .circle)
+                    .frame(width: 200)
+                
+                Spacer()
+                
                 Text("Laborum irure occaecat eiusmod ipsum sunt ipsum ut tempor occaecat aliquip ipsum non.")
                     .foregroundStyle(.secondary)
                 
