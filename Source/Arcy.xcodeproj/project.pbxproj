@@ -48,6 +48,7 @@
 		1AE7D1372BE91ADB002A98D6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1362BE91ADB002A98D6 /* GameView.swift */; };
 		1AE7D1392BE91D64002A98D6 /* ExtensionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */; };
 		1AE7D1412BE92034002A98D6 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1402BE92034002A98D6 /* ProgressBar.swift */; };
+		1AE7D1432BE93BF1002A98D6 /* EndOfGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1422BE93BF1002A98D6 /* EndOfGameView.swift */; };
 		1AE9B2DC2BE9007700465DDE /* GuessGameButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */; };
 		1AEA7C512BE82F1F006791FD /* ArtifactButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA7C502BE82F1F006791FD /* ArtifactButtonView.swift */; };
 		1AEA7C542BE83635006791FD /* DevelopedWithLoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA7C532BE83635006791FD /* DevelopedWithLoveView.swift */; };
@@ -102,6 +103,7 @@
 		1AE7D1362BE91ADB002A98D6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTransition.swift; sourceTree = "<group>"; };
 		1AE7D1402BE92034002A98D6 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		1AE7D1422BE93BF1002A98D6 /* EndOfGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfGameView.swift; sourceTree = "<group>"; };
 		1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessGameButtonView.swift; sourceTree = "<group>"; };
 		1AEA7C502BE82F1F006791FD /* ArtifactButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactButtonView.swift; sourceTree = "<group>"; };
 		1AEA7C532BE83635006791FD /* DevelopedWithLoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopedWithLoveView.swift; sourceTree = "<group>"; };
@@ -272,13 +274,22 @@
 			path = "Like Buttons";
 			sourceTree = "<group>";
 		};
+		1AE7D1442BE93C06002A98D6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */,
+				1AE7D1402BE92034002A98D6 /* ProgressBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		1AE9B2DA2BE9005C00465DDE /* Guess Game */ = {
 			isa = PBXGroup;
 			children = (
-				1A24732D2BE568CA001A0275 /* GuessGameView.swift */,
-				1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */,
+				1AE7D1442BE93C06002A98D6 /* Components */,
 				1AE7D1362BE91ADB002A98D6 /* GameView.swift */,
-				1AE7D1402BE92034002A98D6 /* ProgressBar.swift */,
+				1A24732D2BE568CA001A0275 /* GuessGameView.swift */,
+				1AE7D1422BE93BF1002A98D6 /* EndOfGameView.swift */,
 			);
 			path = "Guess Game";
 			sourceTree = "<group>";
@@ -467,6 +478,7 @@
 				1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */,
 				1A3B77EA2BE7DE8D008DCBF4 /* BackgroundGradientView.swift in Sources */,
 				1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */,
+				1AE7D1432BE93BF1002A98D6 /* EndOfGameView.swift in Sources */,
 				1A24732A2BE550C8001A0275 /* ArtifactFlatCardView.swift in Sources */,
 				1AE9B2DC2BE9007700465DDE /* GuessGameButtonView.swift in Sources */,
 				1A2473362BE578AF001A0275 /* OnboardingFeaturesView.swift in Sources */,

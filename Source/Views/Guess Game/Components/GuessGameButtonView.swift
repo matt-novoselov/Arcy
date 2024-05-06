@@ -43,9 +43,15 @@ struct GuessGameButton: View {
         .background(selectedAnswer != nil && singleArtifact == hiddenArtifact.name ? Color.green : Color.clear)
         
         // Highlight incorrect answer
-        .background(selectedAnswer != nil && singleArtifact == selectedAnswer ? Color.red : Color.clear)
+        .background(selectedAnswer != nil && singleArtifact == selectedAnswer && selectedAnswer != hiddenArtifact.name ? Color.red : Color.clear)
         
         .clipShape(.capsule)
+        
+        // Highlight correct answer
+        .shadow(color: selectedAnswer != nil && singleArtifact == hiddenArtifact.name ? Color.green : Color.clear, radius: 10)
+        
+        // Highlight incorrect answer
+        .shadow(color: selectedAnswer != nil && singleArtifact == selectedAnswer && selectedAnswer != hiddenArtifact.name ? Color.red : Color.clear, radius: 10)
         
         // Highlight correct and incorrect answers
         .overlay{

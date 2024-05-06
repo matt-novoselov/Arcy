@@ -10,54 +10,53 @@ import SwiftUI
 struct GameView: View {
     
     @State private var currentLevel: Int = 0
+    @State private var countCorrectAnswers: Int = 0
     
     @Environment(\.dismiss) var dismiss
-    
+
     var body: some View {
         @State var currentProgress: Double = Double(currentLevel)/3
         
         VStack{
-            HStack{
-                Button(action: {dismiss()}){
-                    Image(systemName: "chevron.left")
+            // Custom toolbar visible during game phase
+            if currentLevel < 3{
+                HStack{
+                    Button(action: {dismiss()}){
+                        Image(systemName: "chevron.left")
+                    }
+                    .buttonBorderShape(.circle)
+                    .help("Back")
+                    
+                    Button(action: {}){
+                        Image(systemName: "circle")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .tint(.clear)
+                    .foregroundStyle(.clear)
+                    .allowsHitTesting(false)
+                    .overlay{
+                        ProgressBar(progress: $currentProgress)
+                            .padding()
+                    }
                 }
-                .buttonBorderShape(.circle)
-                .help("Back")
-                
-                Button(action: {}){
-                    Image(systemName: "chevron.left")
-                        .frame(maxWidth: .infinity)
-                }
-                .tint(.clear)
-                .foregroundStyle(.clear)
-                .allowsHitTesting(false)
-                .overlay{
-                    ProgressBar(progress: $currentProgress)
-                        .padding()
-                }
+                .padding(.all, 10)
             }
-            .padding(.all, 10)
-            .toolbar(.hidden)
             
             Group{
                 switch currentLevel {
                 case 0:
-                    GuessGameView()
+                    GuessGameView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
                 case 1:
-                    GuessGameView()
+                    GuessGameView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
                 case 2:
-                    GuessGameView()
-                    
+                    GuessGameView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
                 default:
-                    FavoritesView()
+                    EndOfGameView()
                 }
             }
             .frame(maxWidth: .infinity)
+            .toolbar(.hidden)
             .transition(.pushLeftTransition)
-            
-            Button("Next"){
-                nextLevel()
-            }
         }
         .padding()
         

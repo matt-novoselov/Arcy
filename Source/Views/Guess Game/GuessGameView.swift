@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import RealityKit
-import RealityKitContent
 
 struct GuessGameView: View {
     
@@ -31,7 +29,19 @@ struct GuessGameView: View {
     // Property that stores the name of the answer that user selected
     @State private var selectedAnswer: String?
     
-    init(){
+    // Pass action that should be executed, when clicking on the next button
+    var nextButtonAction: () -> Void
+    
+    @Binding var countCorrectAnswers: Int
+    
+    init(nextButtonAction: @escaping () -> Void, countCorrectAnswers: Binding<Int>) {
+        // Assign binding
+        _countCorrectAnswers = countCorrectAnswers
+        
+        // Assign button action
+        self.nextButtonAction = nextButtonAction
+        
+        
         // Load all artifacts from the library
         let artifactsCollection: [Artifact] = ArtifactsCollection().artifacts
         
@@ -68,6 +78,16 @@ struct GuessGameView: View {
         self.artifactVariantsNames = Array(randomArtifactNames).shuffled()
     }
     
+    private var lazyGridContent: some View {
+        // Display variants as buttons
+        LazyVGrid(columns: columns) {
+            ForEach(artifactVariantsNames, id: \.self) { singleArtifact in
+                GuessGameButton(singleArtifact: singleArtifact, hiddenArtifact: hiddenArtifact, selectedAnswer: $selectedAnswer)
+            }
+        }
+        .padding(.all, 20)
+     }
+    
     var body: some View {
         
         VStack{
@@ -81,43 +101,34 @@ struct GuessGameView: View {
             
             Spacer()
 
-            ScrollView{
-                // Display variants as buttons
-                LazyVGrid(columns: columns) {
-                    ForEach(artifactVariantsNames, id: \.self) { singleArtifact in
-                        GuessGameButton(singleArtifact: singleArtifact, hiddenArtifact: hiddenArtifact, selectedAnswer: $selectedAnswer)
-                    }
+            // Wrap in scroll view to fix animation transition
+            lazyGridContent
+                .hidden()
+                .overlay {
+                    ScrollView { lazyGridContent }
+                        .scrollDisabled(true)
                 }
-            }
             
         }
         .padding()
-        
-        // Display confetti on correct answer
-        .overlay{
-            if selectedAnswer == hiddenArtifact.name {
-                Model3D(named: "Fireworks", bundle: realityKitContentBundle)
+
+        // Ornament
+        .toolbar{
+            ToolbarItem(placement: .bottomOrnament){
+                Button(action: {getHint()}){
+                    Label("Get hint", systemImage: "lightbulb.max")
+                        .labelStyle(CenteredLabelStyle())
+                }
+                .disabled(artifactVariantsNames == artifactVariantsNamesHinted || selectedAnswer != nil)
+            }
+            
+            ToolbarItem(placement: .bottomOrnament){
+                Button(action: {nextButtonAction()}){
+                    Label("Next", systemImage: "arrow.right")
+                }
+                .disabled(selectedAnswer == nil)
             }
         }
-//        
-//        // Ornament
-//        .toolbar{
-//            ToolbarItem(placement: .bottomOrnament){
-//                HStack{
-//                    if artifactVariantsNames != artifactVariantsNamesHinted && selectedAnswer == nil{
-//                        Button(action: {getHint()}){
-//                            Label("Get hint", systemImage: "lightbulb.max")
-//                                .labelStyle(CenteredLabelStyle())
-//                        }
-//                    }
-//                    
-//                    Button(action: {}){
-//                        Label("Next", systemImage: "arrow.right")
-//                    }
-//                    .disabled(selectedAnswer == nil)
-//                }
-//            }
-//        }
         
     }
     
@@ -130,5 +141,5 @@ struct GuessGameView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    GuessGameView()
+    GuessGameView(nextButtonAction: {}, countCorrectAnswers: .constant(0))
 }
