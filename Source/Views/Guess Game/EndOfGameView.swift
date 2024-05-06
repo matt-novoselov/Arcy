@@ -44,7 +44,8 @@ struct EndOfGameView: View {
         
         // Update score
         .onAppear(){
-            let calculateXp = countCorrectAnswers * 15
+            let baseReward: Int = 5
+            let calculateXp = countCorrectAnswers * 20 + baseReward
             
             userXpScore+=calculateXp
             
