@@ -15,6 +15,8 @@ struct ExpandableMapView: View {
     let latitude: Double
     let longitude: Double
     
+    private let cornerRadius: Double = 20
+    
     var body: some View {
         
         let position = MapCameraPosition.region(
@@ -25,13 +27,18 @@ struct ExpandableMapView: View {
         )
         
         ZStack(alignment: .bottom){
-            Button(action: {switchState()}){
-                Map(initialPosition: position)
-                    .mapStyle(.imagery)
-                    .scaledToFill()
-            }
-            .buttonBorderShape(.roundedRectangle(radius: 20))
+            Map(initialPosition: position)
+                .mapStyle(.imagery)
+                .scaledToFill()
+                .onTapGesture {
+                    if !isExpanded{
+                        switchState()
+                    }
+                }
+            .buttonBorderShape(.roundedRectangle(radius: cornerRadius))
             .frame(maxWidth: isExpanded ? .infinity : 400, maxHeight: isExpanded ? .infinity : 400)
+            .hoverEffect()
+            .hoverEffectDisabled(isExpanded)
             
             if isExpanded{
                 Button(action: {switchState()}){
@@ -41,7 +48,7 @@ struct ExpandableMapView: View {
             }
             
         }
-        .cornerRadius(20)
+        .cornerRadius(cornerRadius)
         
     }
     
@@ -51,6 +58,6 @@ struct ExpandableMapView: View {
         }
     }
 }
-#Preview {
-    ExpandableMapView(latitude: 0, longitude: 9)
+#Preview(windowStyle: .automatic) {
+    ExpandableMapView(latitude: 0, longitude: 0)
 }
