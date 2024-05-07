@@ -19,6 +19,9 @@ struct EndOfGameView: View {
     @AppStorage("userXpScore") private var userXpScore: Int = 0
     
     @Environment(\.dismiss) var dismiss
+
+    @Environment(\.openImmersiveSpace) var openImmersiveSpace
+    @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     
     var body: some View {
         
@@ -36,12 +39,7 @@ struct EndOfGameView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        
-        // Display confetti on correct answer
-        .overlay{
-            Model3D(named: "Fireworks", bundle: realityKitContentBundle)
-        }
-        
+
         // Update score
         .onAppear(){
             let baseReward: Int = 5
@@ -53,6 +51,20 @@ struct EndOfGameView: View {
                 withAnimation{
                     gainedXp = calculateXp
                 }
+            }
+        }
+        
+        // Present confetti
+        .onAppear(){
+            Task{
+                await openImmersiveSpace(id: "ConfettiImmersiveSpace")
+            }
+        }
+        
+        // Hide confetti
+        .onDisappear(){
+            Task{
+                await dismissImmersiveSpace()
             }
         }
         

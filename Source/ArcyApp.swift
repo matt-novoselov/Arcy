@@ -15,5 +15,9 @@ struct ArcyApp: App {
             ContentView()
         }
         .modelContainer(for: LikeModel.self)
+        
+        ImmersiveSpace(id: "ConfettiImmersiveSpace") {
+            ConfettiImmersive()
+        }
     }
 }
