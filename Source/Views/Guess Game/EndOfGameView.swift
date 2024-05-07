@@ -26,7 +26,7 @@ struct EndOfGameView: View {
     var body: some View {
         
         VStack{
-            Text("Hello, World!")
+            Text("You did it!")
                 .font(.title)
             
             Text("+\(gainedXp)XP")
