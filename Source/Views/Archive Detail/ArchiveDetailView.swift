@@ -46,7 +46,7 @@ struct ArchiveDetailView: View {
                     Text(selectedArtifact.name)
                         .font(.largeTitle)
                     
-                    Text(selectedArtifact.description)
+                    Text(selectedArtifact.description.replacingOccurrences(of: "\\n", with: "\n"))
                         .foregroundStyle(.secondary)
                 }
                 .padding()
@@ -64,7 +64,7 @@ struct ArchiveDetailView: View {
             .frame(width: 400)
             
             // Map
-            ExpandableMapView()
+            ExpandableMapView(latitude: selectedArtifact.location.latitude, longitude: selectedArtifact.location.longitude)
             
         }
         

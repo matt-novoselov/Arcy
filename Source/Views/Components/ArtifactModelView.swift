@@ -40,5 +40,5 @@ struct ArtifactModelView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ArtifactModelView(modelName: "Pinax_with_depiction_of_Zeus")
+    ArtifactModelView(modelName: "Attic_red_figured_krater")
 }

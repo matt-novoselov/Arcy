@@ -9,15 +9,77 @@ import Foundation
 import SwiftUI
 
 struct ArtifactsCollection {
-    var artifacts: [Artifact] = [
-        Artifact(artifactID: 0, modelName: "Terracotta_figurine_of_a_seated_goddess", name: "Terracotta figurine of a seated goddess", description: "Terracotta figurines of a seated goddess in the Museum of the University of Tübingen", location: (20.0, 20.0), previewImage: Image(.placeholder)),
-        Artifact(artifactID: 1, modelName: "Male_head_from_an_Etruscan_Tomb", name: "Male head from an Etruscan Tomb", description: "Male head from an Etruscan Tomb in the Museum of the University of Tübingen", location: (20.0, 20.0), previewImage: Image(.placeholder)),
-        Artifact(artifactID: 2, modelName: "Terracotta_figurine_of_a_veiled_woman", name: "Terracotta figurine of a veiled woman", description: "Terracotta figurine of a veiled woman in the Museum of the University of Tübingen, Inv. 5459", location: (20.0, 20.0), previewImage: Image(.placeholder)),
-        Artifact(artifactID: 3, modelName: "Pinax_with_depiction_of_Zeus", name: "Pinax with depiction of Zeus", description: "Pinax with depiction of Zeus in the Museum of the University of Tübingen, Inv. 1478", location: (20.0, 20.0), previewImage: Image(.placeholder)),
-        Artifact(artifactID: 4, modelName: "Pomegranate", name: "Pomegranate", description: "Terrcotta pomegranate in the Museum of the University of Tübingen", location: (20.0, 20.0), previewImage: Image(.placeholder)),
-        Artifact(artifactID: 5, modelName: "Carved_gourd_mate_burilado", name: "Carved gourd (mate burilado)", description: "Terracotta figurines of a seated goddess in the Museum of the University of Tübingen", location: (20.0, 20.0), previewImage: Image(.placeholder)),
-        Artifact(artifactID: 6, modelName: "Attic_red-figure_Pelike", name: "Attic red-figure Pelike", description: "Terracotta figurines of a seated goddess in the Museum of the University of Tübingen", location: (20.0, 20.0), previewImage: Image(.placeholder)),
-        Artifact(artifactID: 7, modelName: "Corinthian_Oinochoe", name: "Corinthian Oinochoe", description: "Terracotta figurines of a seated goddess in the Museum of the University of Tübingen", location: (20.0, 20.0), previewImage: Image(.placeholder)),
-        Artifact(artifactID: 8, modelName: "Laconian_Kylix", name: "Laconian Kylix", description: "Terracotta figurines of a seated goddess in the Museum of the University of Tübingen", location: (20.0, 20.0), previewImage: Image(.placeholder)),
-    ]
+    var artifacts: [Artifact]
+    
+    init() {
+        do {
+            self.artifacts = try ArtifactsCollection.loadArtifactsFromCSV()
+        } catch {
+            // Handle error here, such as logging or showing an alert
+            print("Error initializing artifacts collection: \(error)")
+            self.artifacts = []
+        }
+    }
+    
+    private static func loadArtifactsFromCSV() throws -> [Artifact] {
+        guard let url = Bundle.main.url(forResource: "Artifacts", withExtension: "csv") else {
+            throw NSError(domain: "FileNotFoundError", code: 404, userInfo: [NSLocalizedDescriptionKey: "CSV file not found."])
+        }
+        
+        let data = try String(contentsOf: url)
+        let lines = data.components(separatedBy: .newlines)
+        var artifacts: [Artifact] = []
+        
+        for (index, line) in lines.enumerated() {
+            if index == 0 { continue } // Skip header
+            if index == lines.count-1 { continue }
+            
+            let components = line.components(separatedBy: ";")
+            
+            // Guard for artifactID
+            guard let artifactIDString = components.first,
+                  let artifactID = Int(artifactIDString.trimmingCharacters(in: .whitespaces)) else {
+                print(components)
+                print(artifacts.count)
+                print("Error: Unable to extract artifactID")
+                throw NSError(domain: "FileBroken", code: 400, userInfo: [NSLocalizedDescriptionKey: "CSV file is broken."])
+            }
+            
+            // Guard for locationComponents
+            guard components.count > 6 else {
+                print("Error: Insufficient components")
+                // Handle the error condition here, if necessary
+                // For example, return or throw an error
+                throw NSError(domain: "FileBroken", code: 400, userInfo: [NSLocalizedDescriptionKey: "CSV file is broken."])
+            }
+            
+            let locationString = components[6]
+            // Now you can use locationString safely
+            
+            
+            let locationComponents = locationString.components(separatedBy: ",")
+            
+            // Guard for latitude and longitude
+            guard locationComponents.count > 1,
+                  let latitudeString = locationComponents.first,
+                  let longitudeString = locationComponents.last,
+                  let latitude = Double(latitudeString.trimmingCharacters(in: .whitespaces)),
+                  let longitude = Double(longitudeString.trimmingCharacters(in: .whitespaces)) else {
+                print("Error: Unable to extract latitude or longitude")
+                throw NSError(domain: "FileBroken", code: 400, userInfo: [NSLocalizedDescriptionKey: "CSV file is broken."])
+            }
+            
+            // Continue with latitude and longitude variables
+            
+            let artifact = Artifact(artifactID: artifactID,
+                                    modelName: components[4],
+                                    name: components[1],
+                                    description: components[5],
+                                    location: (latitude, longitude),
+                                    previewImage: components[3])
+            artifacts.append(artifact)
+        }
+        
+        return artifacts
+    }
 }

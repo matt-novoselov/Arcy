@@ -12,11 +12,21 @@ struct ExpandableMapView: View {
     
     @State private var isExpanded: Bool = false
     
+    let latitude: Double
+    let longitude: Double
+    
     var body: some View {
+        
+        let position = MapCameraPosition.region(
+            MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),
+                span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+            )
+        )
         
         ZStack(alignment: .bottom){
             Button(action: {switchState()}){
-                Map()
+                Map(initialPosition: position)
                     .mapStyle(.imagery)
                     .scaledToFill()
             }
@@ -42,5 +52,5 @@ struct ExpandableMapView: View {
     }
 }
 #Preview {
-    ExpandableMapView()
+    ExpandableMapView(latitude: 0, longitude: 9)
 }

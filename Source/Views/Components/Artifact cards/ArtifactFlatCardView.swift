@@ -18,13 +18,22 @@ struct ArtifactFlatCardView: View {
         
         ZStack (alignment: .bottom){
             // Display image that represent the artifact
-            selectedArtifact.previewImage
-                .resizable()
-                .padding(.all, 30)
+            Rectangle()
+                .foregroundStyle(.clear)
+                .scaledToFit()
+                .aspectRatio(1, contentMode: .fit)
+                .overlay{
+                    Image(selectedArtifact.previewImage)
+                        .interpolation(.high)
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.all, 30)
+                }
             
             // Display the name of the artifact
             Text(selectedArtifact.name)
                 .font(.body)
+                .fontWeight(.bold)
                 .multilineTextAlignment(.center)
                 .padding()
                 .frame(maxWidth: .infinity)

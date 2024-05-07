@@ -58,10 +58,8 @@ struct ArchiveGridView: View {
         return artifactCollection.filter { artifact in
             let searchTextLowercased = searchTextTrimmed.lowercased()
             let artifactNameLowercased = artifact.name.lowercased().replacingOccurrences(of: " ", with: "")
-            let artifactDescriptionLowercased = artifact.description.lowercased().replacingOccurrences(of: " ", with: "")
             
-            return artifactNameLowercased.contains(searchTextLowercased) ||
-            artifactDescriptionLowercased.contains(searchTextLowercased)
+            return artifactNameLowercased.contains(searchTextLowercased)
         }
     }
     

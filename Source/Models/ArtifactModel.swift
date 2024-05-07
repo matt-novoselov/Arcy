@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
-import SwiftData
 
 struct Artifact: Identifiable {
     var id: UUID = UUID()
@@ -16,5 +14,5 @@ struct Artifact: Identifiable {
     var name: String
     var description: String
     var location: (latitude: Double, longitude: Double)
-    var previewImage: Image
+    var previewImage: String
 }
