@@ -70,6 +70,7 @@
 		1A3B77EE2BE7E88B008DCBF4 /* CircleWaveTransformation.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77ED2BE7E88B008DCBF4 /* CircleWaveTransformation.metal */; };
 		1A3B77F42BE7E9E8008DCBF4 /* Shimmer.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77F32BE7E9E8008DCBF4 /* Shimmer.metal */; };
 		1A44CC5F2BEAA87B00A3D95B /* ConfettiImmersive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44CC5E2BEAA87B00A3D95B /* ConfettiImmersive.swift */; };
+		1A44CC632BEAB86800A3D95B /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44CC622BEAB86800A3D95B /* UserDataModel.swift */; };
 		1A50A2482BEA9C3800B3D7E6 /* Artifacts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1A50A2472BEA9C3800B3D7E6 /* Artifacts.csv */; };
 		1A56D1CA2BE6557E00247B85 /* like_animation.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A56D1C92BE6557E00247B85 /* like_animation.lottie */; };
 		1A595FF12BE96BD20040469C /* LikesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A595FF02BE96BD20040469C /* LikesModel.swift */; };
@@ -153,6 +154,7 @@
 		1A3B77ED2BE7E88B008DCBF4 /* CircleWaveTransformation.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = CircleWaveTransformation.metal; sourceTree = "<group>"; };
 		1A3B77F32BE7E9E8008DCBF4 /* Shimmer.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shimmer.metal; sourceTree = "<group>"; };
 		1A44CC5E2BEAA87B00A3D95B /* ConfettiImmersive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiImmersive.swift; sourceTree = "<group>"; };
+		1A44CC622BEAB86800A3D95B /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		1A50A2472BEA9C3800B3D7E6 /* Artifacts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Artifacts.csv; sourceTree = "<group>"; };
 		1A56D1C92BE6557E00247B85 /* like_animation.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation.lottie; sourceTree = "<group>"; };
 		1A595FF02BE96BD20040469C /* LikesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesModel.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */,
 				1A595FF02BE96BD20040469C /* LikesModel.swift */,
+				1A44CC622BEAB86800A3D95B /* UserDataModel.swift */,
 				1A31C8A22BE42E0B004CCB0B /* View Models */,
 			);
 			path = Models;
@@ -587,6 +590,7 @@
 				1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */,
 				1A44CC5F2BEAA87B00A3D95B /* ConfettiImmersive.swift in Sources */,
 				1AEA7C512BE82F1F006791FD /* ArtifactButtonView.swift in Sources */,
+				1A44CC632BEAB86800A3D95B /* UserDataModel.swift in Sources */,
 				1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */,
 				1A3B77EA2BE7DE8D008DCBF4 /* BackgroundGradientView.swift in Sources */,
 				1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */,
