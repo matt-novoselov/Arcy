@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "small_terracotta_figurine_of_a_veiled_woman.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
