@@ -15,6 +15,9 @@ struct LikeButtonView: View {
     @Environment(\.modelContext) private var context
     
     @Query private var items: [LikeModel]
+    
+    @State private var wasInteracted: Bool = false
+    @State private var wasInteractedSymbol: Bool = false
 
     let artifactID: Int
     
@@ -22,13 +25,15 @@ struct LikeButtonView: View {
         
         Button(action: {
             updateLike()
+            wasInteractedSymbol.toggle()
+            wasInteracted=true
             withAnimation(.none){
                 isLiked.toggle()
             }
         }, label: {
             Image(systemName: isLiked ? "heart.fill" : "heart")
                 .foregroundStyle(isLiked ? .redPastel : .white)
-                .symbolEffect(.bounce, value: isLiked)
+                .symbolEffect(.bounce, value: wasInteractedSymbol)
         })
         
         // Add Lottie animation
@@ -37,6 +42,7 @@ struct LikeButtonView: View {
                 UILottieView(lottieName: "like_animation", playOnce: true)
                     .padding(.all, -20)
                     .allowsHitTesting(false)
+                    .opacity(wasInteracted ? 1 : 0)
             }
         }
         
@@ -71,4 +77,5 @@ struct LikeButtonView: View {
 
 #Preview(windowStyle: .automatic) {
     LikeButtonView(artifactID: 1000)
+        .modelContainer(for: LikeModel.self)
 }
