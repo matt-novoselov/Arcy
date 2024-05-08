@@ -16,7 +16,7 @@ struct DevelopedWithLoveView: View {
             
             Text("by Matt Novoselov")
         }
-        .font(.caption)
+        .font(.callout)
         .opacity(0.5)
     }
 }

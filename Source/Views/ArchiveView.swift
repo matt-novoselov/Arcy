@@ -15,6 +15,8 @@ struct ArchiveView: View {
     // Currently selected page
     @State private var selectionPage: SelectionPage = .collection
     
+    @State private var showingLiked: Bool = false
+    
     var body: some View {
         
         NavigationStack{
@@ -27,7 +29,7 @@ struct ArchiveView: View {
                             .transition(.move(edge: .trailing))
                         
                     case .collection:
-                        ArchiveGridView(searchText: $searchText)
+                        ArchiveGridView(searchText: $searchText, showingLiked: $showingLiked)
                             .transition(.move(edge: .leading))
                     }
                 }
@@ -72,11 +74,10 @@ struct ArchiveView: View {
                 }
                 
                 // Favorites View
-                ToolbarItem(placement: .topBarLeading){
-                    NavigationLink(destination: FavoritesView()){
+                ToolbarItem(placement: .topBarTrailing){
+                    Toggle(isOn: $showingLiked){
                         Label("Favorites", systemImage: "heart")
                     }
-                    .buttonBorderShape(.circle)
                 }
                 
                 // Guess Game View
@@ -84,7 +85,6 @@ struct ArchiveView: View {
                     NavigationLink(destination: GameView()){
                         Label("Game", systemImage: "trophy")
                     }
-                    .buttonBorderShape(.circle)
                 }
             }
             

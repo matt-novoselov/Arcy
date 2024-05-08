@@ -13,7 +13,6 @@ struct FavoritesView: View {
         ZStack{
             // Display ContentUnavailableView if there are no favorite artifacts
             ContentUnavailableView("No favorites", systemImage: "heart.slash", description: Text("Add favorite artifacts by clicking the like button."))
-                .navigationTitle("Favorites artifacts")
         }
         
     }

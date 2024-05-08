@@ -21,6 +21,8 @@ struct ArchiveGridView: View {
     // Binding for text that user inputs to the search bar
     @Binding var searchText: String
     
+    @Binding var showingLiked: Bool
+    
     var body: some View {
         
         let filteredArchive: [Artifact] = filterArtifacts()
@@ -66,5 +68,5 @@ struct ArchiveGridView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ArchiveGridView(searchText: .constant(""))
+    ArchiveGridView(searchText: .constant(""), showingLiked: .constant(false))
 }
