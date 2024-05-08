@@ -15,11 +15,13 @@ struct EndOfGameView: View {
     
     @State private var gainedXp: Int = 0
     
+    @State private var gainedProgress: Double = 0
+    
     // Get user score value from the user defaults
     @AppStorage("userXpScore") private var userXpScore: Int = 0
     
     @Environment(\.dismiss) var dismiss
-
+    
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     
@@ -29,17 +31,21 @@ struct EndOfGameView: View {
             Text("You did it!")
                 .font(.title)
             
-            Text("+\(gainedXp)XP")
-                .font(.extraLargeTitle)
-                .contentTransition(.numericText())
-            
-            Spacer()
-            
+            ProfileStatsView(progress: $gainedProgress)
+                .padding(.all, 40)
+                .overlay{
+                    Text("+\(gainedXp) xp")
+                        .font(.extraLargeTitle)
+                        .contentTransition(.numericText())
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                }
+                .padding(.all, 50)
+
             Button("Exit", systemImage: "chevron.left", action: {dismiss()})
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding()
-
+        .padding(.all, 40)
+        
         // Update score
         .onAppear(){
             let baseReward: Int = 5
@@ -50,6 +56,10 @@ struct EndOfGameView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation{
                     gainedXp = calculateXp
+                }
+                
+                withAnimation(.spring(duration: 3)){
+                    gainedProgress = Double(gainedXp) / 65
                 }
             }
         }

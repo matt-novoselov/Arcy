@@ -75,6 +75,8 @@
 		1A80A29F2BEAC0A1001C8192 /* Artifacts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */; };
 		1AE1ADBF2BEC0F6A00E60AC6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADBE2BEC0F6A00E60AC6 /* SettingsView.swift */; };
 		1AE1ADC32BEC142000E60AC6 /* AppVersionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADC22BEC142000E60AC6 /* AppVersionExtension.swift */; };
+		1AE1ADC52BEC191200E60AC6 /* ProfileStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADC42BEC191200E60AC6 /* ProfileStatsView.swift */; };
+		1AE1ADC82BEC19B200E60AC6 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADC72BEC19B200E60AC6 /* CircularProgressView.swift */; };
 		1AE7D1372BE91ADB002A98D6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1362BE91ADB002A98D6 /* GameView.swift */; };
 		1AE7D1392BE91D64002A98D6 /* ExtensionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */; };
 		1AE7D1412BE92034002A98D6 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1402BE92034002A98D6 /* ProgressBar.swift */; };
@@ -160,6 +162,8 @@
 		1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Artifacts.csv; sourceTree = "<group>"; };
 		1AE1ADBE2BEC0F6A00E60AC6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1AE1ADC22BEC142000E60AC6 /* AppVersionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionExtension.swift; sourceTree = "<group>"; };
+		1AE1ADC42BEC191200E60AC6 /* ProfileStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsView.swift; sourceTree = "<group>"; };
+		1AE1ADC72BEC19B200E60AC6 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		1AE7D1362BE91ADB002A98D6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTransition.swift; sourceTree = "<group>"; };
 		1AE7D1402BE92034002A98D6 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
@@ -362,6 +366,15 @@
 			path = "Like Buttons";
 			sourceTree = "<group>";
 		};
+		1AE1ADC62BEC19A100E60AC6 /* Profile Stats */ = {
+			isa = PBXGroup;
+			children = (
+				1AE1ADC42BEC191200E60AC6 /* ProfileStatsView.swift */,
+				1AE1ADC72BEC19B200E60AC6 /* CircularProgressView.swift */,
+			);
+			path = "Profile Stats";
+			sourceTree = "<group>";
+		};
 		1AE7D1442BE93C06002A98D6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +388,7 @@
 		1AE9B2DA2BE9005C00465DDE /* Guess Game */ = {
 			isa = PBXGroup;
 			children = (
+				1AE1ADC62BEC19A100E60AC6 /* Profile Stats */,
 				1AE7D1442BE93C06002A98D6 /* Components */,
 				1AE7D1362BE91ADB002A98D6 /* GameView.swift */,
 				1A24732D2BE568CA001A0275 /* GuessGameView.swift */,
@@ -567,6 +581,7 @@
 				1A2473322BE574A1001A0275 /* ProfileEditView.swift in Sources */,
 				1AE7D1392BE91D64002A98D6 /* ExtensionTransition.swift in Sources */,
 				1A595FF12BE96BD20040469C /* LikesModel.swift in Sources */,
+				1AE1ADC52BEC191200E60AC6 /* ProfileStatsView.swift in Sources */,
 				1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */,
 				1A2473302BE5690C001A0275 /* ArtifactModelView.swift in Sources */,
 				1A2473702BE5A47F001A0275 /* ArchiveGridView.swift in Sources */,
@@ -576,6 +591,7 @@
 				1AF111992BD40973004D77EB /* ArcyApp.swift in Sources */,
 				1AE1ADBF2BEC0F6A00E60AC6 /* SettingsView.swift in Sources */,
 				1A2473632BE58514001A0275 /* LottieView.swift in Sources */,
+				1AE1ADC82BEC19B200E60AC6 /* CircularProgressView.swift in Sources */,
 				1A31C8A52BE42E8A004CCB0B /* ArtifactViewModel.swift in Sources */,
 				1A3B77EE2BE7E88B008DCBF4 /* CircleWaveTransformation.metal in Sources */,
 				1A24732E2BE568CA001A0275 /* GuessGameView.swift in Sources */,

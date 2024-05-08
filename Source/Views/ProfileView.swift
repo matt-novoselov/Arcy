@@ -15,7 +15,7 @@ struct ProfileView: View {
     var body: some View {
         
         VStack{
-            Text("\(userScore)XP")
+            Text("\(userScore) xp")
                 .contentTransition(.numericText())
                 .font(.extraLargeTitle)
                 .onAppear(){
