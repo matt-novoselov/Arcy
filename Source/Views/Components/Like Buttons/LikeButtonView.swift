@@ -14,7 +14,7 @@ struct LikeButtonView: View {
     
     @Environment(\.modelContext) private var context
     
-    @Query private var items: [LikeModel]
+    @Query private var storedLikedArtifacts: [LikeModel]
     
     @State private var wasInteracted: Bool = false
     @State private var wasInteractedSymbol: Bool = false
@@ -55,7 +55,7 @@ struct LikeButtonView: View {
     }
     
     func getInitValue() -> Bool {
-        if let matchedItem = items.first(where: { $0.artifactID == self.artifactID }) {
+        if let matchedItem = storedLikedArtifacts.first(where: { $0.artifactID == self.artifactID }) {
             return matchedItem.isLiked
         } else{
             return false
@@ -64,7 +64,7 @@ struct LikeButtonView: View {
     
     func updateLike() {
         // Check if an item with the given artifactID exists
-        if let existingItem = items.first(where: { $0.artifactID == artifactID }) {
+        if let existingItem = storedLikedArtifacts.first(where: { $0.artifactID == artifactID }) {
             // If it exists, toggle the like status
             existingItem.isLiked.toggle()
         } else {

@@ -8,13 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct ArchiveGridView: View {
-    
-    // Adapt to different screen sizes
-    // Fill remaining space even if column rows are specified as two
-    private let columns = [
-        GridItem(.adaptive(minimum: 300))
-    ]
+struct CollectionView: View {
     
     // Load all artifacts from the collection
     private let artifactCollection: [Artifact] = ArtifactsCollection().artifacts
@@ -24,7 +18,7 @@ struct ArchiveGridView: View {
     
     @Binding var showingLiked: Bool
     
-    @Query private var items: [LikeModel]
+    @Query private var storedLikedArtifacts: [LikeModel]
     
     var body: some View {
         
@@ -36,34 +30,18 @@ struct ArchiveGridView: View {
             } else if filteredArchive.isEmpty && showingLiked {
                 ContentUnavailableView("No favorites", systemImage: "heart.slash", description: Text("Add favorite artifacts by clicking the like button."))
             } else{
-                ScrollView{
-                    LazyVGrid(columns: columns) {
-                        ForEach(filterArtifacts()) { artifact in
-                            ArtifactButtonView(selectedArtifact: artifact)
-                                .padding()
-                            
-                            // Add scroll transition that fades out element on the top
-                                .scrollTransition() { content, phase in
-                                    content
-                                    // Use phase.value < 0 to apply transition effects only to the top leading of scrollview
-                                        .opacity(phase.value < 0 ? 0 : 1)
-                                        .scaleEffect(phase.value < 0 ? 0.8 : 1)
-                                }
-                        }
-                    }
-                }
-                .padding(.bottom)
+                GridView(gridToDisplay: filterArtifacts())
             }
         }
 
-    }
-
+    }   
+    
     func filterArtifacts() -> [Artifact] {
         let searchTextTrimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         
         // If the search text is empty and showingLiked is true, return all liked artifacts
         if searchTextTrimmed.isEmpty && showingLiked {
-            let likedArtifactIDs = items.filter { $0.isLiked }.map { $0.artifactID }
+            let likedArtifactIDs = storedLikedArtifacts.filter { $0.isLiked }.map { $0.artifactID }
             return artifactCollection.filter { likedArtifactIDs.contains($0.artifactID) }
         }
         
@@ -82,7 +60,7 @@ struct ArchiveGridView: View {
             // If showingLiked is true, also check if the artifact is liked
             if showingLiked {
                 // Check if there is a LikeModel for this artifactID that indicates it's liked
-                let isLiked = items.contains { likeModel in
+                let isLiked = storedLikedArtifacts.contains { likeModel in
                     likeModel.artifactID == artifact.artifactID && likeModel.isLiked
                 }
                 
@@ -92,10 +70,9 @@ struct ArchiveGridView: View {
             }
         }
     }
-    
 }
 
 #Preview(windowStyle: .automatic) {
-    ArchiveGridView(searchText: .constant(""), showingLiked: .constant(false))
+    CollectionView(searchText: .constant(""), showingLiked: .constant(false))
         .modelContainer(for: LikeModel.self)
 }

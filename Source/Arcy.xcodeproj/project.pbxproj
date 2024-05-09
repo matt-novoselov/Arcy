@@ -40,6 +40,9 @@
 		1A03E6562BE98ED200A0ACBB /* Vessel_with_geometric_pattern.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E6332BE98ED200A0ACBB /* Vessel_with_geometric_pattern.usdz */; };
 		1A03E6572BE98ED200A0ACBB /* Vessel_with_inscription.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E6342BE98ED200A0ACBB /* Vessel_with_inscription.usdz */; };
 		1A03E6582BE98ED200A0ACBB /* Zapotec_ceramic_vessel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E6352BE98ED200A0ACBB /* Zapotec_ceramic_vessel.usdz */; };
+		1A07A28C2BED5862002E103D /* ArcyRecommender.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1A07A28B2BED5862002E103D /* ArcyRecommender.mlmodel */; };
+		1A07A28E2BED58BC002E103D /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07A28D2BED58BC002E103D /* RecommendationView.swift */; };
+		1A07A2902BED6344002E103D /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07A28F2BED6344002E103D /* GridView.swift */; };
 		1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A185AE32BE44EEC00B7843C /* Sinebow.metal */; };
 		1A2405332BED263A00AD9D17 /* MeetAIAnimatedGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2405322BED263A00AD9D17 /* MeetAIAnimatedGradient.swift */; };
 		1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473272BE538E4001A0275 /* ProfilePictureView.swift */; };
@@ -55,13 +58,12 @@
 		1A2473642BE58514001A0275 /* UILottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473602BE58514001A0275 /* UILottieView.swift */; };
 		1A24736C2BE59638001A0275 /* OneShotLikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */; };
 		1A24736E2BE597A1001A0275 /* like_animation_white.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A24736D2BE597A1001A0275 /* like_animation_white.lottie */; };
-		1A2473702BE5A47F001A0275 /* ArchiveGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */; };
+		1A2473702BE5A47F001A0275 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736F2BE5A47F001A0275 /* CollectionView.swift */; };
 		1A31C88D2BE4245E004CCB0B /* ArtifactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */; };
 		1A31C8A52BE42E8A004CCB0B /* ArtifactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8A42BE42E8A004CCB0B /* ArtifactViewModel.swift */; };
 		1A31C8AB2BE43BA5004CCB0B /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */; };
 		1A31C8AE2BE43D68004CCB0B /* OnboardingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */; };
 		1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8AF2BE44310004CCB0B /* ProfileView.swift */; };
-		1A31C8B42BE44654004CCB0B /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C8B32BE44654004CCB0B /* RecommendationView.swift */; };
 		1A358F7F2BE6BFDF001AB224 /* CenteredLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A358F7E2BE6BFDF001AB224 /* CenteredLabelStyle.swift */; };
 		1A3B77E62BE7B33B008DCBF4 /* OnboardingRecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77E52BE7B33B008DCBF4 /* OnboardingRecommendationView.swift */; };
 		1A3B77EA2BE7DE8D008DCBF4 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77E92BE7DE8D008DCBF4 /* BackgroundGradientView.swift */; };
@@ -126,6 +128,9 @@
 		1A03E6332BE98ED200A0ACBB /* Vessel_with_geometric_pattern.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Vessel_with_geometric_pattern.usdz; sourceTree = "<group>"; };
 		1A03E6342BE98ED200A0ACBB /* Vessel_with_inscription.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Vessel_with_inscription.usdz; sourceTree = "<group>"; };
 		1A03E6352BE98ED200A0ACBB /* Zapotec_ceramic_vessel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Zapotec_ceramic_vessel.usdz; sourceTree = "<group>"; };
+		1A07A28B2BED5862002E103D /* ArcyRecommender.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ArcyRecommender.mlmodel; sourceTree = "<group>"; };
+		1A07A28D2BED58BC002E103D /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
+		1A07A28F2BED6344002E103D /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		1A185AE32BE44EEC00B7843C /* Sinebow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sinebow.metal; sourceTree = "<group>"; };
 		1A2405322BED263A00AD9D17 /* MeetAIAnimatedGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetAIAnimatedGradient.swift; sourceTree = "<group>"; };
 		1A2473272BE538E4001A0275 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
@@ -140,13 +145,12 @@
 		1A2473602BE58514001A0275 /* UILottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILottieView.swift; sourceTree = "<group>"; };
 		1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneShotLikeButtonView.swift; sourceTree = "<group>"; };
 		1A24736D2BE597A1001A0275 /* like_animation_white.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation_white.lottie; sourceTree = "<group>"; };
-		1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveGridView.swift; sourceTree = "<group>"; };
+		1A24736F2BE5A47F001A0275 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactModel.swift; sourceTree = "<group>"; };
 		1A31C8A42BE42E8A004CCB0B /* ArtifactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactViewModel.swift; sourceTree = "<group>"; };
 		1A31C8AA2BE43BA5004CCB0B /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		1A31C8AD2BE43D68004CCB0B /* OnboardingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProfileView.swift; sourceTree = "<group>"; };
 		1A31C8AF2BE44310004CCB0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		1A31C8B32BE44654004CCB0B /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
 		1A358F7E2BE6BFDF001AB224 /* CenteredLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredLabelStyle.swift; sourceTree = "<group>"; };
 		1A3B77E52BE7B33B008DCBF4 /* OnboardingRecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRecommendationView.swift; sourceTree = "<group>"; };
 		1A3B77E92BE7DE8D008DCBF4 /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
@@ -232,6 +236,31 @@
 			path = "Artifacts Models";
 			sourceTree = "<group>";
 		};
+		1A07A2912BED67C1002E103D /* ML Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A07A28B2BED5862002E103D /* ArcyRecommender.mlmodel */,
+			);
+			path = "ML Model";
+			sourceTree = "<group>";
+		};
+		1A07A2922BED67C8002E103D /* SCV Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */,
+			);
+			path = "SCV Files";
+			sourceTree = "<group>";
+		};
+		1A07A2932BED6837002E103D /* Secondary View */ = {
+			isa = PBXGroup;
+			children = (
+				1AE1ADBE2BEC0F6A00E60AC6 /* SettingsView.swift */,
+				1A31C8AF2BE44310004CCB0B /* ProfileView.swift */,
+			);
+			path = "Secondary View";
+			sourceTree = "<group>";
+		};
 		1A185AE52BE4508900B7843C /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +293,8 @@
 		1A2473672BE585D6001A0275 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */,
+				1A07A2922BED67C8002E103D /* SCV Files */,
+				1A07A2912BED67C1002E103D /* ML Model */,
 				1A2473682BE585EC001A0275 /* Lotties */,
 				1A31C88E2BE42532004CCB0B /* 3D Content */,
 				1A185AE52BE4508900B7843C /* Shaders */,
@@ -397,7 +427,7 @@
 			children = (
 				1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */,
 				1AEA7C502BE82F1F006791FD /* ArtifactButtonView.swift */,
-				1A24736F2BE5A47F001A0275 /* ArchiveGridView.swift */,
+				1A07A28F2BED6344002E103D /* GridView.swift */,
 			);
 			path = "Artifact cards";
 			sourceTree = "<group>";
@@ -437,15 +467,15 @@
 		1AF111932BD40973004D77EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1AF1119A2BD40973004D77EB /* ContentView.swift */,
 				1A2473712BE638CE001A0275 /* Components */,
 				1A31C8AC2BE43D52004CCB0B /* Onboarding */,
 				1AEA7C552BE836E2006791FD /* Archive Detail */,
 				1AE9B2DA2BE9005C00465DDE /* Guess Game */,
-				1AF1119A2BD40973004D77EB /* ContentView.swift */,
+				1A07A2932BED6837002E103D /* Secondary View */,
 				1AFA26202BE4101900FD8152 /* ArchiveView.swift */,
-				1A31C8AF2BE44310004CCB0B /* ProfileView.swift */,
-				1A31C8B32BE44654004CCB0B /* RecommendationView.swift */,
-				1AE1ADBE2BEC0F6A00E60AC6 /* SettingsView.swift */,
+				1A07A28D2BED58BC002E103D /* RecommendationView.swift */,
+				1A24736F2BE5A47F001A0275 /* CollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -570,18 +600,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A07A28C2BED5862002E103D /* ArcyRecommender.mlmodel in Sources */,
 				1A31C8AB2BE43BA5004CCB0B /* OnboardingWelcomeView.swift in Sources */,
-				1A31C8B42BE44654004CCB0B /* RecommendationView.swift in Sources */,
 				1A2473322BE574A1001A0275 /* ProfileEditView.swift in Sources */,
 				1AE7D1392BE91D64002A98D6 /* ExtensionTransition.swift in Sources */,
 				1A595FF12BE96BD20040469C /* LikesModel.swift in Sources */,
+				1A07A28E2BED58BC002E103D /* RecommendationView.swift in Sources */,
 				1AE1ADC52BEC191200E60AC6 /* ProfileStatsView.swift in Sources */,
 				1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */,
 				1A2473302BE5690C001A0275 /* ArtifactModelView.swift in Sources */,
-				1A2473702BE5A47F001A0275 /* ArchiveGridView.swift in Sources */,
+				1A2473702BE5A47F001A0275 /* CollectionView.swift in Sources */,
 				1A24736C2BE59638001A0275 /* OneShotLikeButtonView.swift in Sources */,
 				1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */,
 				1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */,
+				1A07A2902BED6344002E103D /* GridView.swift in Sources */,
 				1AF111992BD40973004D77EB /* ArcyApp.swift in Sources */,
 				1AE1ADBF2BEC0F6A00E60AC6 /* SettingsView.swift in Sources */,
 				1A2473632BE58514001A0275 /* LottieView.swift in Sources */,

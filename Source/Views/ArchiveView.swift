@@ -25,11 +25,11 @@ struct ArchiveView: View {
                 Group{
                     switch selectionPage{
                     case .recommendation:
-                        RecommendationView()
+                        RecommendationProxyView()
                             .transition(.move(edge: .trailing))
                         
                     case .collection:
-                        ArchiveGridView(searchText: $searchText, showingLiked: $showingLiked)
+                        CollectionView(searchText: $searchText, showingLiked: $showingLiked)
                             .transition(.move(edge: .leading))
                     }
                 }
