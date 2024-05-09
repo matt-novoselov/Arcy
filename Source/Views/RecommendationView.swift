@@ -15,6 +15,8 @@ struct RecommendationView: View {
     // Value that is reverse to onboardingRecommendationCompleted
     @State private var showingRecommendationOnboarding: Bool = true
     
+    @State private var viewIsVisible: Bool = false
+    
     var body: some View {
         
         ZStack{
@@ -25,6 +27,8 @@ struct RecommendationView: View {
         // Present onboarding sheet that explains the purpose of onboarding
         .sheet(isPresented: $showingRecommendationOnboarding) {
             OnboardingRecommendationView()
+                .opacity(viewIsVisible ? 1 : 0)
+                .allowsHitTesting(viewIsVisible ? true : false)
         }
         
         // Control showingRecommendationOnboarding value
@@ -33,6 +37,14 @@ struct RecommendationView: View {
         }
         .onChange(of: onboardingRecommendationCompleted){
             showingRecommendationOnboarding = !onboardingRecommendationCompleted
+        }
+        
+        .onAppear{
+            viewIsVisible = true
+        }
+        
+        .onDisappear{
+            viewIsVisible = false
         }
         
     }

@@ -14,44 +14,28 @@ struct OnboardingRecommendationView: View {
     
     var body: some View {
         
-        // Timeline for Metal shader effects
-        TimelineView(.animation) { timeline in
-            
-            // Time elapsed since view appear
-            // Needed for Metal shader effect
-            let elapsedTime = startTime.distance(to: timeline.date)
-            
-            VStack(spacing: 20){
-                Label("AI Recommendations", systemImage: "sparkles")
-                    .font(.title)
-                
-                Spacer()
-                
-                CircleWaveEffectView()
-                    .blur(radius: 5)
-                    .padding()
-                    .glassBackgroundEffect(in: .circle)
-                    .frame(width: 200)
-                
-                Spacer()
-                
-                Text("Laborum irure occaecat eiusmod ipsum sunt ipsum ut tempor occaecat aliquip ipsum non.")
-                    .foregroundStyle(.secondary)
-                
-                Spacer()
-                
-                Button("Lets try!") {
-                    UserDefaults.standard.set(true, forKey: "onboardingRecommendationCompleted")
+        VStack(spacing: 20){
+            MeetAIAnimatedGradient()
+                .background{
+                    MeetAIAnimatedGradient()
                 }
-            }
-            .padding(.all, 20)
+                .padding()
+                .padding(.horizontal)
+                .background(.thickMaterial, in: .capsule)
             
-            // Add gradient flow background effect
-            .background{
-                BackgroundGradientView(elapsedTime: elapsedTime)
-                    .scaledToFill()
+            Spacer()
+            
+            Text("Laborum irure occaecat eiusmod ipsum sunt ipsum ut tempor occaecat aliquip ipsum non.")
+                .foregroundStyle(.secondary)
+                .lineLimit(nil)
+            
+            Spacer()
+            
+            Button("Lets try!") {
+                UserDefaults.standard.set(true, forKey: "onboardingRecommendationCompleted")
             }
         }
+        .padding(.all, 20)
         
     }
 }
