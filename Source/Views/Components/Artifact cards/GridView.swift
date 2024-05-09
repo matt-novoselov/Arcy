@@ -17,11 +17,13 @@ struct GridView: View {
     
     var gridToDisplay: [Artifact]
     
+    var showingLikes: Bool = true
+    
     var body: some View {
         ScrollView{
             LazyVGrid(columns: columns) {
                 ForEach(gridToDisplay) { artifact in
-                    ArtifactButtonView(selectedArtifact: artifact)
+                    ArtifactButtonView(selectedArtifact: artifact, showingLike: showingLikes)
                         .padding()
                     
                     // Add scroll transition that fades out element on the top

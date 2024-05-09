@@ -78,6 +78,7 @@ struct ArchiveView: View {
                     Toggle(isOn: $showingLiked.animation()){
                         Label("Favorites", systemImage: "heart")
                     }
+                    .disabled(selectionPage == .recommendation)
                 }
                 
                 // Guess Game View

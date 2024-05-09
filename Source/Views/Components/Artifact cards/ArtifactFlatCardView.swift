@@ -11,6 +11,7 @@ struct ArtifactFlatCardView: View {
     
     let selectedArtifact: Artifact
     let buttonCornerRadius: Double
+    var showingLike: Bool = true
     
     @State private var isLiked: Bool = false
     
@@ -44,11 +45,13 @@ struct ArtifactFlatCardView: View {
         
         // Display like button
         .overlay{
-            LikeButtonView(artifactID: selectedArtifact.artifactID)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                .buttonStyle(PlainButtonStyle())
-                .buttonBorderShape(.circle)
-                .padding()
+            if showingLike{
+                LikeButtonView(artifactID: selectedArtifact.artifactID)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    .buttonStyle(PlainButtonStyle())
+                    .buttonBorderShape(.circle)
+                    .padding()
+            }
         }
         
     }

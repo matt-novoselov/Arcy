@@ -95,7 +95,7 @@ struct RecommendationView: View {
                 ContentUnavailableView("No recommendations", systemImage: "sparkle.magnifyingglass", description: Text("Try liking a few artifacts to see recommendations."))
             } else{
                 // Or display grid with AI recommendations
-                GridView(gridToDisplay: gridToDisplay)
+                GridView(gridToDisplay: gridToDisplay, showingLikes: false)
             }
         }
         
@@ -141,7 +141,7 @@ struct ArtifactRecommendation: Identifiable {
     }
     
     // The number of similar items to be returned by the model output.
-    let amountOfResults: Int64 = 5
+    let amountOfResults: Int64 = 6
     
     func load() {
         do{

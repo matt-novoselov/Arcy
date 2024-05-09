@@ -15,9 +15,11 @@ struct ArtifactButtonView: View {
     // Define corner radius for all buttons
     private let buttonCornerRadius: Double = 25
     
+    var showingLike: Bool = true
+    
     var body: some View {
         NavigationLink(destination: ArchiveDetailView(selectedArtifact: selectedArtifact)){
-            ArtifactFlatCardView(selectedArtifact: selectedArtifact, buttonCornerRadius: buttonCornerRadius)
+            ArtifactFlatCardView(selectedArtifact: selectedArtifact, buttonCornerRadius: buttonCornerRadius, showingLike: showingLike)
         }
         .buttonStyle(PlainButtonStyle())
         .buttonBorderShape(.roundedRectangle(radius: buttonCornerRadius))
