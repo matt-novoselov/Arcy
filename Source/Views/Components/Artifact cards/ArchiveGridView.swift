@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ArchiveGridView: View {
     
@@ -23,12 +24,16 @@ struct ArchiveGridView: View {
     
     @Binding var showingLiked: Bool
     
+    @Query private var items: [LikeModel]
+    
     var body: some View {
         
         let filteredArchive: [Artifact] = filterArtifacts()
         
-        if filteredArchive.isEmpty{
+        if filteredArchive.isEmpty && !searchText.isEmpty {
             ContentUnavailableView("No results for \(searchText)", systemImage: "magnifyingglass", description: Text("Check the spelling or try a new search."))
+        } else if filteredArchive.isEmpty && showingLiked {
+            ContentUnavailableView("No favorites", systemImage: "heart.slash", description: Text("Add favorite artifacts by clicking the like button."))
         } else{
             ScrollView{
                 LazyVGrid(columns: columns) {
@@ -50,18 +55,53 @@ struct ArchiveGridView: View {
         }
     }
     
-    // Function to filter search of artifacts based on their names or descriptions
+//    // Function to filter search of artifacts based on their names or descriptions
+//    func filterArtifacts() -> [Artifact] {
+//        let searchTextTrimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+//        guard !searchTextTrimmed.isEmpty else {
+//            return artifactCollection // if showingLiked == true, then return only liked artifacts out of artifactCollection
+//        }
+//        
+//        return artifactCollection.filter { artifact in
+//            let searchTextLowercased = searchTextTrimmed.lowercased()
+//            let artifactNameLowercased = artifact.name.lowercased().replacingOccurrences(of: " ", with: "")
+//            
+//            return artifactNameLowercased.contains(searchTextLowercased) // if showingLiked == true, then return only if the artifact is liked
+//        }
+//    }
+    
     func filterArtifacts() -> [Artifact] {
         let searchTextTrimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !searchTextTrimmed.isEmpty else {
+        
+        // If the search text is empty and showingLiked is true, return all liked artifacts
+        if searchTextTrimmed.isEmpty && showingLiked {
+            let likedArtifactIDs = items.filter { $0.isLiked }.map { $0.artifactID }
+            return artifactCollection.filter { likedArtifactIDs.contains($0.artifactID) }
+        }
+        
+        // If the search text is empty and showingLiked is false, return all artifacts
+        guard !searchTextTrimmed.isEmpty || showingLiked else {
             return artifactCollection
         }
         
         return artifactCollection.filter { artifact in
+            // Check if the artifact matches the search text (if provided) and if it's liked (if showingLiked is true)
             let searchTextLowercased = searchTextTrimmed.lowercased()
             let artifactNameLowercased = artifact.name.lowercased().replacingOccurrences(of: " ", with: "")
             
-            return artifactNameLowercased.contains(searchTextLowercased)
+            let nameMatches = artifactNameLowercased.contains(searchTextLowercased)
+            
+            // If showingLiked is true, also check if the artifact is liked
+            if showingLiked {
+                // Check if there is a LikeModel for this artifactID that indicates it's liked
+                let isLiked = items.contains { likeModel in
+                    likeModel.artifactID == artifact.artifactID && likeModel.isLiked
+                }
+                
+                return nameMatches && isLiked
+            } else {
+                return nameMatches
+            }
         }
     }
     
@@ -69,4 +109,5 @@ struct ArchiveGridView: View {
 
 #Preview(windowStyle: .automatic) {
     ArchiveGridView(searchText: .constant(""), showingLiked: .constant(false))
+        .modelContainer(for: LikeModel.self)
 }

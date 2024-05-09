@@ -32,13 +32,12 @@ struct ArtifactFlatCardView: View {
             
             // Display the name of the artifact
             Text(selectedArtifact.name)
-                .font(.body)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
-                .padding()
                 .frame(maxWidth: .infinity)
-                .background(.regularMaterial, in: .rect(cornerRadius: buttonCornerRadius-10))
                 .padding()
+                .background(.regularMaterial, in: .rect(cornerRadius: buttonCornerRadius-10))
+                .padding(.all, 10)
         }
         .aspectRatio(1, contentMode: .fit)
         .background(.ultraThinMaterial.opacity(0.3), in: .rect(cornerRadius: buttonCornerRadius))

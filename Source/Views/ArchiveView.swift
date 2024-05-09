@@ -75,7 +75,7 @@ struct ArchiveView: View {
                 
                 // Favorites View
                 ToolbarItem(placement: .topBarTrailing){
-                    Toggle(isOn: $showingLiked){
+                    Toggle(isOn: $showingLiked.animation()){
                         Label("Favorites", systemImage: "heart")
                     }
                 }
