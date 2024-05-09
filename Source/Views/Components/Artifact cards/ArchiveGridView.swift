@@ -30,46 +30,34 @@ struct ArchiveGridView: View {
         
         let filteredArchive: [Artifact] = filterArtifacts()
         
-        if filteredArchive.isEmpty && !searchText.isEmpty {
-            ContentUnavailableView("No results for \(searchText)", systemImage: "magnifyingglass", description: Text("Check the spelling or try a new search."))
-        } else if filteredArchive.isEmpty && showingLiked {
-            ContentUnavailableView("No favorites", systemImage: "heart.slash", description: Text("Add favorite artifacts by clicking the like button."))
-        } else{
-            ScrollView{
-                LazyVGrid(columns: columns) {
-                    ForEach(filterArtifacts()) { artifact in
-                        ArtifactButtonView(selectedArtifact: artifact)
-                            .padding()
-                        
-                        // Add scroll transition that fades out element on the top
-                            .scrollTransition() { content, phase in
-                                content
-                                // Use phase.value < 0 to apply transition effects only to the top leading of scrollview
-                                    .opacity(phase.value < 0 ? 0 : 1)
-                                    .scaleEffect(phase.value < 0 ? 0.8 : 1)
-                            }
+        ZStack{
+            if filteredArchive.isEmpty && !searchText.isEmpty {
+                ContentUnavailableView("No results for \(searchText)", systemImage: "magnifyingglass", description: Text("Check the spelling or try a new search."))
+            } else if filteredArchive.isEmpty && showingLiked {
+                ContentUnavailableView("No favorites", systemImage: "heart.slash", description: Text("Add favorite artifacts by clicking the like button."))
+            } else{
+                ScrollView{
+                    LazyVGrid(columns: columns) {
+                        ForEach(filterArtifacts()) { artifact in
+                            ArtifactButtonView(selectedArtifact: artifact)
+                                .padding()
+                            
+                            // Add scroll transition that fades out element on the top
+                                .scrollTransition() { content, phase in
+                                    content
+                                    // Use phase.value < 0 to apply transition effects only to the top leading of scrollview
+                                        .opacity(phase.value < 0 ? 0 : 1)
+                                        .scaleEffect(phase.value < 0 ? 0.8 : 1)
+                                }
+                        }
                     }
                 }
+                .padding(.bottom)
             }
-            .padding(.bottom)
         }
+
     }
-    
-//    // Function to filter search of artifacts based on their names or descriptions
-//    func filterArtifacts() -> [Artifact] {
-//        let searchTextTrimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
-//        guard !searchTextTrimmed.isEmpty else {
-//            return artifactCollection // if showingLiked == true, then return only liked artifacts out of artifactCollection
-//        }
-//        
-//        return artifactCollection.filter { artifact in
-//            let searchTextLowercased = searchTextTrimmed.lowercased()
-//            let artifactNameLowercased = artifact.name.lowercased().replacingOccurrences(of: " ", with: "")
-//            
-//            return artifactNameLowercased.contains(searchTextLowercased) // if showingLiked == true, then return only if the artifact is liked
-//        }
-//    }
-    
+
     func filterArtifacts() -> [Artifact] {
         let searchTextTrimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         

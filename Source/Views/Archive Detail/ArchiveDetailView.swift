@@ -14,7 +14,7 @@ struct ArchiveDetailView: View {
     // Animated rotation of the model
     @State private var modelRotation = Angle.zero
     
-    var selectedArtifact: Artifact
+    let selectedArtifact: Artifact
     
     var body: some View {
         
@@ -64,7 +64,7 @@ struct ArchiveDetailView: View {
             .frame(width: 400)
             
             // Map
-            ExpandableMapView(latitude: selectedArtifact.location.latitude, longitude: selectedArtifact.location.longitude)
+            ExpandableMapView(selectedArtifact: selectedArtifact)
             
         }
         
