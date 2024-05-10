@@ -11,7 +11,7 @@ import SwiftData
 struct CollectionView: View {
     
     // Load all artifacts from the collection
-    private let artifactCollection: [Artifact] = ArtifactsCollection().artifacts
+    let artifactCollection: [Artifact]
     
     // Binding for text that user inputs to the search bar
     @Binding var searchText: String
@@ -73,6 +73,6 @@ struct CollectionView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    CollectionView(searchText: .constant(""), showingLiked: .constant(false))
+    CollectionView(artifactCollection: ArtifactsCollection().artifacts, searchText: .constant(""), showingLiked: .constant(false))
         .modelContainer(for: LikeModel.self)
 }

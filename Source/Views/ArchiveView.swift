@@ -17,6 +17,9 @@ struct ArchiveView: View {
     
     @State private var showingLiked: Bool = false
     
+    // Load all artifacts from the collection
+    private let artifactCollection: [Artifact] = ArtifactsCollection().artifacts
+    
     var body: some View {
         
         NavigationStack{
@@ -25,11 +28,11 @@ struct ArchiveView: View {
                 Group{
                     switch selectionPage{
                     case .recommendation:
-                        RecommendationProxyView()
+                        RecommendationProxyView(artifactCollection: artifactCollection)
                             .transition(.move(edge: .trailing))
                         
                     case .collection:
-                        CollectionView(searchText: $searchText, showingLiked: $showingLiked)
+                        CollectionView(artifactCollection: artifactCollection, searchText: $searchText, showingLiked: $showingLiked)
                             .transition(.move(edge: .leading))
                     }
                 }

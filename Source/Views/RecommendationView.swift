@@ -17,9 +17,13 @@ struct RecommendationProxyView: View {
     // Get stored artifacts with likes from SwiftData model
     @Query var storedLikedArtifacts: [LikeModel]
     
+    
+    // Load all artifacts from the collection
+    let artifactCollection: [Artifact]
+    
     // Display main RecommendationView
     var body: some View {
-        RecommendationView(compiledModel: compileModel())
+        RecommendationView(compiledModel: compileModel(), artifactCollection: artifactCollection)
     }
     
     //
@@ -68,12 +72,13 @@ struct RecommendationView: View {
     @State private var noneArtifactsAreLiked: Bool
     
     // Load all artifacts from the collection
-    private let artifactCollection: [Artifact] = ArtifactsCollection().artifacts
+    let artifactCollection: [Artifact]
     
     // An array of Artifacts that should be displayed in the grid after processing of ML model recommendations output
     var gridToDisplay: [Artifact] = []
     
-    init(compiledModel: [Int64 : Double]) {
+    init(compiledModel: [Int64 : Double], artifactCollection: [Artifact]) {
+        self.artifactCollection = artifactCollection
         self.compiledModel = compiledModel
         self.topRecommendations = Recommender(compiledModel: compiledModel)
         
