@@ -16,12 +16,12 @@ struct OnboardingRecommendationView: View {
         
         VStack(spacing: 20){
             MeetAIAnimatedGradient()
-                .background{
-                    MeetAIAnimatedGradient()
-                }
                 .padding()
                 .padding(.horizontal)
                 .background(.thickMaterial, in: .capsule)
+                .overlay{
+                    MeetAIAnimatedGradient()
+                }
             
             Spacer()
             

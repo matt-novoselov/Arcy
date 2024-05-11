@@ -19,13 +19,13 @@ struct MeetAIAnimatedGradient: View {
             Text("AI Recommendations")
                 .fontWeight(.black)
                 .foregroundStyle(
-                    LinearGradient(colors: [.blue, .green], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    LinearGradient(colors: [.iconPurple, .iconBlue], startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
         }
         .font(.largeTitle)
-        .hueRotation(.degrees(animateGradient ? 45 : 0))
+        .hueRotation(.degrees(animateGradient ? 90 : 0))
         .onAppear {
-            withAnimation(.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
+            withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
                 animateGradient.toggle()
             }
         }

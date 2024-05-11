@@ -15,9 +15,17 @@ struct OnboardingWelcomeView: View {
     var body: some View {
         
         VStack{
-            Text("Arcy")
-                .font(.title2)
-                .foregroundStyle(.secondary)
+            Text("arcy")
+                .font(.title)
+                .foregroundStyle(.clear)
+                .overlay{
+                    Image(.arcyLogoText)
+                        .interpolation(.high)
+                        .resizable()
+                        .scaledToFit()
+                        .opacity(0.5)
+                }
+
             
             Spacer()
             

@@ -19,8 +19,8 @@ struct CircularProgressView: View {
     
     let myGradient = Gradient(
         colors: [
-            Color(.systemPurple),
-            Color(.systemTeal)
+            Color(.iconPurple),
+            Color(.iconBlue)
         ]
     )
     
