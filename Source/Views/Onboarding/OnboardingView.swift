@@ -76,4 +76,5 @@ struct OnboardingView: View {
 
 #Preview(windowStyle: .automatic) {
     OnboardingView()
+        .previewVariables()
 }

@@ -142,4 +142,5 @@ struct GuessGameView: View {
 
 #Preview(windowStyle: .automatic) {
     GuessGameView(nextButtonAction: {}, countCorrectAnswers: .constant(0))
+        .previewVariables()
 }

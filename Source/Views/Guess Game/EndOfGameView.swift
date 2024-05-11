@@ -83,4 +83,5 @@ struct EndOfGameView: View {
 
 #Preview(windowStyle: .automatic) {
     EndOfGameView(countCorrectAnswers: 3)
+        .previewVariables()
 }

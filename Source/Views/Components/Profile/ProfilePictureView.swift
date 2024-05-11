@@ -66,4 +66,5 @@ struct ProfilePictureView: View {
 
 #Preview(windowStyle: .automatic) {
     ProfilePictureView(showingShimmer: true)
+        .previewVariables()
 }

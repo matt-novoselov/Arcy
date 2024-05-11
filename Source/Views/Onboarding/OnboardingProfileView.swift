@@ -58,4 +58,5 @@ struct OnboardingProfileView: View {
 
 #Preview(windowStyle: .automatic) {
     OnboardingProfileView(onboardingState: .constant(.profile))
+        .previewVariables()
 }

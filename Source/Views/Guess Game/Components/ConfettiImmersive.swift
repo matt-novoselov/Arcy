@@ -22,4 +22,5 @@ struct ConfettiImmersive: View {
 
 #Preview(immersionStyle: .mixed) {
     ConfettiImmersive()
+        .previewVariables()
 }

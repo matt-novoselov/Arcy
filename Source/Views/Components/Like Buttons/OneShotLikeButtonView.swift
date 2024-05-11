@@ -54,4 +54,5 @@ struct OneShotLikeButtonView: View {
 
 #Preview {
     OneShotLikeButtonView()
+        .previewVariables()
 }

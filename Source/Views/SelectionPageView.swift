@@ -114,7 +114,5 @@ enum SelectionPage: CaseIterable {
 
 #Preview(windowStyle: .automatic) {
     SelectionPageView()
-        .environment(PhotoViewModel())
-        .environment(VolumeModelView())
-        .modelContainer(for: LikeModel.self)
+        .previewVariables()
 }

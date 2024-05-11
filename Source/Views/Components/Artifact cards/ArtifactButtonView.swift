@@ -28,4 +28,5 @@ struct ArtifactButtonView: View {
 
 #Preview {
     ArtifactButtonView(selectedArtifact: ArtifactsCollection().artifacts.first!)
+        .previewVariables()
 }

@@ -58,4 +58,5 @@ struct ArtifactFlatCardView: View {
 #Preview(windowStyle: .automatic) {
     ArtifactFlatCardView(selectedArtifact: ArtifactsCollection().artifacts.first!, buttonCornerRadius: 20)
         .frame(width: 300, height: 300)
+        .previewVariables()
 }

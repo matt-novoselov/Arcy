@@ -48,4 +48,5 @@ struct ProfileView: View {
 
 #Preview(windowStyle: .automatic) {
     ProfileView()
+        .previewVariables()
 }

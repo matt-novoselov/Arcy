@@ -44,4 +44,5 @@ struct OnboardingRecommendationView: View {
 // Use simulator
 #Preview(windowStyle: .automatic) {
     OnboardingRecommendationView()
+        .previewVariables()
 }

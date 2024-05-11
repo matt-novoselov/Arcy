@@ -41,4 +41,5 @@ struct ArtifactModelView: View {
 
 #Preview(windowStyle: .automatic) {
     ArtifactModelView(modelName: "Attic_red_figured_krater")
+        .previewVariables()
 }

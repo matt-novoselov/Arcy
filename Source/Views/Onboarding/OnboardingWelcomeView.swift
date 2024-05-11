@@ -52,4 +52,5 @@ struct OnboardingWelcomeView: View {
 
 #Preview(windowStyle: .automatic) {
     OnboardingWelcomeView(onboardingState: .constant(.welcome))
+        .previewVariables()
 }

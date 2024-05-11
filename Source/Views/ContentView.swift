@@ -45,4 +45,5 @@ struct ContentView: View {
 
 #Preview(windowStyle: .automatic) {
     ContentView()
+        .previewVariables()
 }

@@ -63,4 +63,5 @@ struct GuessGameButton: View {
 
 #Preview {
     GuessGameButton(singleArtifact: "Test", hiddenArtifact: ArtifactsCollection().artifacts.first!, selectedAnswer: .constant(nil), countCorrectAnswers: .constant(0))
+        .previewVariables()
 }

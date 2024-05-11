@@ -44,4 +44,5 @@ struct VolumetricModelView: View {
 
 #Preview {
     VolumetricModelView(modelName: "Female_terracotta_head_from_an_etruscan_tomb")
+        .previewVariables()
 }

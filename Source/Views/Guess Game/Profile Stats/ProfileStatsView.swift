@@ -24,4 +24,5 @@ struct ProfileStatsView: View {
 
 #Preview(windowStyle: .automatic) {
     ProfileStatsView(progress: .constant(0.5))
+        .previewVariables()
 }

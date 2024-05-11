@@ -21,5 +21,5 @@ struct SecondaryVolumeView: View {
 
 #Preview {
     SecondaryVolumeView()
-        .environment(VolumeModelView())
+        .previewVariables()
 }

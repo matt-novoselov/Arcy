@@ -69,4 +69,5 @@ struct GameView: View {
 
 #Preview(windowStyle: .automatic) {
     GameView()
+        .previewVariables()
 }

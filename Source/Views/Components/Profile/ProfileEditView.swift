@@ -105,4 +105,5 @@ struct ProfileEditView: View {
 
 #Preview(windowStyle: .automatic) {
     ProfileEditView(showingShimmerOnAppear: true)
+        .previewVariables()
 }

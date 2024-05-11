@@ -37,4 +37,5 @@ struct OnboardingCardView: View {
 
 #Preview {
     OnboardingCardView(iconName: "sun.min", title: "Lorem ipsum", description: "Lorem ipsum lorem ipsum orem ipsum")
+        .previewVariables()
 }

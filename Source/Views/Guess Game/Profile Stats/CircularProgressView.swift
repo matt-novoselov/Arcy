@@ -54,4 +54,5 @@ struct CircularProgressView: View {
 
 #Preview {
     CircularProgressView(progress: .constant(1))
+        .previewVariables()
 }

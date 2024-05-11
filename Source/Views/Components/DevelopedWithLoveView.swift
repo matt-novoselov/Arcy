@@ -23,4 +23,5 @@ struct DevelopedWithLoveView: View {
 
 #Preview {
     DevelopedWithLoveView()
+        .previewVariables()
 }

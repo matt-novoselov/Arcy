@@ -44,4 +44,5 @@ struct OnboardingFeaturesView: View {
 
 #Preview(windowStyle: .automatic) {
     OnboardingFeaturesView(onboardingState: .constant(.features))
+        .previewVariables()
 }

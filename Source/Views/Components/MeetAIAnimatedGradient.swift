@@ -35,4 +35,5 @@ struct MeetAIAnimatedGradient: View {
 
 #Preview {
     MeetAIAnimatedGradient()
+        .previewVariables()
 }

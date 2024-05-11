@@ -33,5 +33,6 @@ struct UILottieView: View {
 }
 
 #Preview {
-    UILottieView(lottieName: "dog_main")
+    UILottieView(lottieName: "like_animation")
+        .previewVariables()
 }

@@ -98,4 +98,5 @@ struct ExpandableMapView: View {
 
 #Preview(windowStyle: .automatic) {
     ExpandableMapView(selectedArtifact: ArtifactsCollection().artifacts.first!)
+        .previewVariables()
 }

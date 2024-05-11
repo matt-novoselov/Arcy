@@ -82,4 +82,5 @@ struct SettingsView: View {
 
 #Preview(windowStyle: .automatic) {
     SettingsView()
+        .previewVariables()
 }

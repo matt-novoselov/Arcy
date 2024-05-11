@@ -90,5 +90,5 @@ struct ArchiveDetailView: View {
 
 #Preview(windowStyle: .automatic) {
     ArchiveDetailView(selectedArtifact: ArtifactsCollection().artifacts.first!)
-        .environment(VolumeModelView())
+        .previewVariables()
 }

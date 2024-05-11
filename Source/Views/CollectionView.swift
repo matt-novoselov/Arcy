@@ -75,5 +75,5 @@ struct CollectionView: View {
 
 #Preview(windowStyle: .automatic) {
     CollectionView(artifactCollection: ArtifactsCollection().artifacts, showingLiked: .constant(false))
-        .modelContainer(for: LikeModel.self)
+        .previewVariables()
 }
