@@ -10,6 +10,9 @@ import PhotosUI
 
 struct ProfileEditView: View {
     
+    @Environment(PhotoViewModel.self)
+    private var photoVM
+    
     // Value for the textInput user name
     @State private var textInput: String = UserDefaults.standard.string(forKey: "userName") ?? ""
     
@@ -47,6 +50,23 @@ struct ProfileEditView: View {
             // Load the selected image
             .onChange(of: photoItem) {
                 // MARK: Save image to persistence
+                Task {
+                     if let loaded = try? await photoItem?.loadTransferable(type: Data.self) {
+                         
+                         if let savableImage = UIImage(data: loaded){
+                             if let compressedImage = UIImage(data: savableImage.jpegData(compressionQuality: 0.5) ?? Data()){
+                                 photoVM.saveImage(compressedImage)
+                             } else {
+                                 print("Failed to compress Data")
+                             }
+                         } else {
+                             print("Failed to transform Data to UIImage")
+                         }
+                        
+                     } else {
+                         print("Failed to load Data from Photos Picker")
+                     }
+                 }
                 
                 // Play shimmer effect
                 playShimmerEffect()

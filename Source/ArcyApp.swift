@@ -12,12 +12,14 @@ import SwiftData
 struct ArcyApp: App {
     
     @State private var volumeModel = VolumeModelView()
+    @State private var photoVM = PhotoViewModel()
     
     var body: some Scene {
         
         WindowGroup {
             ContentView()
                 .environment(volumeModel)
+                .environment(photoVM)
                 .modelContainer(for: LikeModel.self)
         }
         

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SecondaryVolumeView: View {
     
-    @Environment(VolumeModelView.self) private var volumeModel
+    @Environment(VolumeModelView.self)
+    private var volumeModel
     
     var body: some View {
         

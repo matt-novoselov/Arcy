@@ -21,34 +21,37 @@ struct OnboardingProfileView: View {
     
     var body: some View {
         
-        NavigationStack{
-            VStack(spacing: 20){
-                
-                Text("Let's setup your profile")
-                    .font(.title)
-                
-                ProfileEditView()
-                
-                Button(action: {
-                    // Set onboarding complete value to the user defaults
-                    UserDefaults.standard.set(true, forKey: "onboardingCompleted")
-                }, label: {
-                    Text(inputFieldEmpty ? "Enter name to continue" : "Continue")
-                        .clipped()
-                })
-                
-                // Disable button if there is no user input
-                .disabled(inputFieldEmpty)
-                
-                // Animate inputFieldEmpty on change of username
-                .onChange(of: userName){
-                    withAnimation{
-                        inputFieldEmpty = userName.isEmpty
-                    }
+        VStack(spacing: 20){
+            
+            Text("Let's setup your profile")
+                .font(.title)
+            
+            Spacer()
+            
+            ProfileEditView()
+            
+            Spacer()
+            
+            Button(action: {
+                // Set onboarding complete value to the user defaults
+                UserDefaults.standard.set(true, forKey: "onboardingCompleted")
+            }, label: {
+                Text(inputFieldEmpty ? "Enter name to continue" : "Continue")
+                    .clipped()
+            })
+            
+            // Disable button if there is no user input
+            .disabled(inputFieldEmpty)
+            
+            // Animate inputFieldEmpty on change of username
+            .onChange(of: userName){
+                withAnimation{
+                    inputFieldEmpty = userName.isEmpty
                 }
-                
             }
+            
         }
+        .padding(.all, 40)
         
     }
 }

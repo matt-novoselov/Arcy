@@ -15,17 +15,12 @@ struct OnboardingWelcomeView: View {
     var body: some View {
         
         VStack{
-            Text("arcy")
-                .font(.title)
-                .foregroundStyle(.clear)
-                .overlay{
-                    Image(.arcyLogoText)
-                        .interpolation(.high)
-                        .resizable()
-                        .scaledToFit()
-                        .opacity(0.5)
-                }
-
+            Image(.arcyLogoText)
+                .interpolation(.high)
+                .resizable()
+                .scaledToFit()
+                .opacity(0.5)
+                .frame(height: 20)
             
             Spacer()
             
@@ -44,7 +39,7 @@ struct OnboardingWelcomeView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding()
+        .padding(.all, 40)
         
     }
     

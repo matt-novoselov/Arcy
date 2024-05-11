@@ -18,16 +18,21 @@ struct OnboardingFeaturesView: View {
                 .font(.extraLargeTitle)
                 .padding()
             
-            OnboardingCardView(iconName: "sun.min", title: "Lorem ipsum", description: "Lorem ipsum lorem ipsum orem ipsum")
+            Spacer()
             
             OnboardingCardView(iconName: "sun.min", title: "Lorem ipsum", description: "Lorem ipsum lorem ipsum orem ipsum")
             
             OnboardingCardView(iconName: "sun.min", title: "Lorem ipsum", description: "Lorem ipsum lorem ipsum orem ipsum")
+            
+            OnboardingCardView(iconName: "sun.min", title: "Lorem ipsum", description: "Lorem ipsum lorem ipsum orem ipsum")
+            
+            Spacer()
             
             Button(action: {switchState()}){
                 Text("Continue")
             }
         }
+        .padding(.all, 40)
     }
     
     func switchState(){

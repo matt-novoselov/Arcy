@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ProfilePictureView: View {
     
+    @Environment(PhotoViewModel.self)
+    private var photoVM
+    
     // Specify time for shimmer glance to happen
     var startTime = Date.now
     
@@ -21,10 +24,23 @@ struct ProfilePictureView: View {
             let elapsedTime = startTime.distance(to: timeline.date)
             
             Group{
-                // MARK: Load image from persistence
-                Image(.profilePicturePlaceholder)
-                    .interpolation(.high)
-                    .resizable()
+                // Load image from persistence
+                if let image = photoVM.image {
+                    Circle()
+                        .aspectRatio(1, contentMode: .fit)
+                        .foregroundStyle(.clear)
+                        .overlay{
+                            Image(uiImage: image)
+                                .interpolation(.high)
+                                .resizable()
+                                .scaledToFill()
+                        }
+                } else {
+                    // Display placeholder if no profile picture
+                    Image(.profilePicturePlaceholder)
+                        .interpolation(.high)
+                        .resizable()
+                }
             }
             .clipShape(.circle)
             .scaledToFit()
