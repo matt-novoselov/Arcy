@@ -21,7 +21,7 @@ struct ContentView: View {
         // Display main view or onboarding based on saved value
         Group{
             if animatedOnboardingCompleted{
-                ArchiveView()
+                SelectionPageView()
                     .transition(.blurReplace)
             } else{
                 OnboardingView()

@@ -97,7 +97,7 @@
 		1AF111992BD40973004D77EB /* ArcyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF111982BD40973004D77EB /* ArcyApp.swift */; };
 		1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF1119A2BD40973004D77EB /* ContentView.swift */; };
 		1AF1119F2BD40974004D77EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF1119E2BD40974004D77EB /* Assets.xcassets */; };
-		1AFA26212BE4101900FD8152 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26202BE4101900FD8152 /* ArchiveView.swift */; };
+		1AFA26212BE4101900FD8152 /* SelectionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26202BE4101900FD8152 /* SelectionPageView.swift */; };
 		1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */; };
 		1AFA26252BE41B1C00FD8152 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
@@ -194,7 +194,7 @@
 		1AF1119A2BD40973004D77EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1AF1119E2BD40974004D77EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF111A32BD40974004D77EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AFA26202BE4101900FD8152 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		1AFA26202BE4101900FD8152 /* SelectionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionPageView.swift; sourceTree = "<group>"; };
 		1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailView.swift; sourceTree = "<group>"; };
 		1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -513,7 +513,7 @@
 				1AEA7C552BE836E2006791FD /* Artifact Detail */,
 				1AE9B2DA2BE9005C00465DDE /* Guess Game */,
 				1A07A2932BED6837002E103D /* Secondary View */,
-				1AFA26202BE4101900FD8152 /* ArchiveView.swift */,
+				1AFA26202BE4101900FD8152 /* SelectionPageView.swift */,
 				1A07A28D2BED58BC002E103D /* RecommendationView.swift */,
 				1A24736F2BE5A47F001A0275 /* CollectionView.swift */,
 			);
@@ -690,7 +690,7 @@
 				1AE9B2DC2BE9007700465DDE /* GuessGameButtonView.swift in Sources */,
 				1A0CE8542BEFB438009203F1 /* CoreDataManager.swift in Sources */,
 				1A2473362BE578AF001A0275 /* OnboardingFeaturesView.swift in Sources */,
-				1AFA26212BE4101900FD8152 /* ArchiveView.swift in Sources */,
+				1AFA26212BE4101900FD8152 /* SelectionPageView.swift in Sources */,
 				1A0CE8502BEFB27B009203F1 /* PhotosModel.xcdatamodeld in Sources */,
 				1A3B77E62BE7B33B008DCBF4 /* OnboardingRecommendationView.swift in Sources */,
 				1A31C88D2BE4245E004CCB0B /* ArtifactModel.swift in Sources */,

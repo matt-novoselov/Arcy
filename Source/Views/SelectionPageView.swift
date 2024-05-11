@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArchiveView: View {
+struct SelectionPageView: View {
     
     // Currently selected page
     @State private var selectionPage: SelectionPage = .collection
@@ -113,5 +113,8 @@ enum SelectionPage: CaseIterable {
 }
 
 #Preview(windowStyle: .automatic) {
-    ArchiveView()
+    SelectionPageView()
+        .environment(PhotoViewModel())
+        .environment(VolumeModelView())
+        .modelContainer(for: LikeModel.self)
 }
