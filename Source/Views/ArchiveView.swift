@@ -9,9 +9,6 @@ import SwiftUI
 
 struct ArchiveView: View {
     
-    // Search text
-    @State private var searchText: String = ""
-    
     // Currently selected page
     @State private var selectionPage: SelectionPage = .collection
     
@@ -32,7 +29,7 @@ struct ArchiveView: View {
                             .transition(.move(edge: .trailing))
                         
                     case .collection:
-                        CollectionView(artifactCollection: artifactCollection, searchText: $searchText, showingLiked: $showingLiked)
+                        CollectionView(artifactCollection: artifactCollection, showingLiked: $showingLiked)
                             .transition(.move(edge: .leading))
                     }
                 }
@@ -77,11 +74,12 @@ struct ArchiveView: View {
                 }
                 
                 // Favorites View
-                ToolbarItem(placement: .topBarTrailing){
-                    Toggle(isOn: $showingLiked.animation()){
-                        Label("Favorites", systemImage: "heart")
+                if selectionPage == .collection{
+                    ToolbarItem(placement: .topBarTrailing){
+                        Toggle(isOn: $showingLiked.animation()){
+                            Label("Favorites", systemImage: showingLiked ? "heart.fill" : "heart")
+                        }
                     }
-                    .disabled(selectionPage == .recommendation)
                 }
                 
                 // Guess Game View
@@ -93,7 +91,6 @@ struct ArchiveView: View {
             }
             
         }
-        .searchable(text: $searchText)
         
     }
     

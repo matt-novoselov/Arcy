@@ -13,8 +13,8 @@ struct CollectionView: View {
     // Load all artifacts from the collection
     let artifactCollection: [Artifact]
     
-    // Binding for text that user inputs to the search bar
-    @Binding var searchText: String
+    // Search text
+    @State private var searchText: String = ""
     
     @Binding var showingLiked: Bool
     
@@ -33,6 +33,7 @@ struct CollectionView: View {
                 GridView(gridToDisplay: filterArtifacts())
             }
         }
+        .searchable(text: $searchText)
 
     }   
     
@@ -73,6 +74,6 @@ struct CollectionView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    CollectionView(artifactCollection: ArtifactsCollection().artifacts, searchText: .constant(""), showingLiked: .constant(false))
+    CollectionView(artifactCollection: ArtifactsCollection().artifacts, showingLiked: .constant(false))
         .modelContainer(for: LikeModel.self)
 }

@@ -33,6 +33,7 @@ struct GridView: View {
                                 .opacity(phase.value < 0 ? 0 : 1)
                                 .scaleEffect(phase.value < 0 ? 0.8 : 1)
                         }
+                        .transition(.scale)
                 }
             }
         }

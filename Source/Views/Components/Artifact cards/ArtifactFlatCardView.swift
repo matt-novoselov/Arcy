@@ -12,9 +12,7 @@ struct ArtifactFlatCardView: View {
     let selectedArtifact: Artifact
     let buttonCornerRadius: Double
     var showingLike: Bool = true
-    
-    @State private var isLiked: Bool = false
-    
+
     var body: some View {
         
         ZStack (alignment: .bottom){

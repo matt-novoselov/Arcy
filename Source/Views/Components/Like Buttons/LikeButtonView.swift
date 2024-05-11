@@ -24,10 +24,10 @@ struct LikeButtonView: View {
     var body: some View {
         
         Button(action: {
-            updateLike()
             wasInteractedSymbol.toggle()
             wasInteracted=true
             withAnimation(.none){
+                updateLike()
                 isLiked.toggle()
             }
         }, label: {
