@@ -74,6 +74,7 @@ struct ArchiveDetailView: View {
             ExpandableMapView(selectedArtifact: selectedArtifact)
             
         }
+        .padding(.all, 20)
         
         .onAppear{
             openWindow(id: "secondaryVolume")
@@ -89,4 +90,5 @@ struct ArchiveDetailView: View {
 
 #Preview(windowStyle: .automatic) {
     ArchiveDetailView(selectedArtifact: ArtifactsCollection().artifacts.first!)
+        .environment(VolumeModelView())
 }

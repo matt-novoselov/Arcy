@@ -33,9 +33,8 @@ struct ExpandableMapView: View {
                 Marker(selectedCity, systemImage: "scroll", coordinate: CLLocationCoordinate2D(latitude: selectedArtifact.location.latitude, longitude: selectedArtifact.location.longitude))
                     .tint(.cyan)
             }
-            .edgesIgnoringSafeArea(.all)
             .mapStyle(.standard(elevation: .realistic))
-            .scaledToFill()
+            .mapControlVisibility(.hidden)
             .onTapGesture {
                 if !isExpanded{
                     switchState()
@@ -45,7 +44,6 @@ struct ExpandableMapView: View {
             .buttonBorderShape(.roundedRectangle(radius: cornerRadius))
             .hoverEffect()
             .hoverEffectDisabled(isExpanded)
-            .background(.red)
             
             .onAppear(){
                 lookUpCurrentLocation { placemark in

@@ -289,6 +289,15 @@
 			path = Persistancy;
 			sourceTree = "<group>";
 		};
+		1A1753A92BEFD0D600229329 /* Volume */ = {
+			isa = PBXGroup;
+			children = (
+				1AADF0A92BEF877B0095333C /* SecondaryVolumeView.swift */,
+				1AADF0A52BEF87550095333C /* VolumetricModelView.swift */,
+			);
+			path = Volume;
+			sourceTree = "<group>";
+		};
 		1A185AE52BE4508900B7843C /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,15 +470,14 @@
 			path = "Artifact cards";
 			sourceTree = "<group>";
 		};
-		1AEA7C552BE836E2006791FD /* Archive Detail */ = {
+		1AEA7C552BE836E2006791FD /* Artifact Detail */ = {
 			isa = PBXGroup;
 			children = (
-				1AADF0A92BEF877B0095333C /* SecondaryVolumeView.swift */,
-				1AADF0A52BEF87550095333C /* VolumetricModelView.swift */,
+				1A1753A92BEFD0D600229329 /* Volume */,
 				1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */,
 				1AEA7C562BE83707006791FD /* ExpandableMapView.swift */,
 			);
-			path = "Archive Detail";
+			path = "Artifact Detail";
 			sourceTree = "<group>";
 		};
 		1AF111882BD40973004D77EB = {
@@ -502,7 +510,7 @@
 				1AF1119A2BD40973004D77EB /* ContentView.swift */,
 				1A2473712BE638CE001A0275 /* Components */,
 				1A31C8AC2BE43D52004CCB0B /* Onboarding */,
-				1AEA7C552BE836E2006791FD /* Archive Detail */,
+				1AEA7C552BE836E2006791FD /* Artifact Detail */,
 				1AE9B2DA2BE9005C00465DDE /* Guess Game */,
 				1A07A2932BED6837002E103D /* Secondary View */,
 				1AFA26202BE4101900FD8152 /* ArchiveView.swift */,
