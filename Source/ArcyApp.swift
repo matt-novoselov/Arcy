@@ -9,15 +9,28 @@ import SwiftUI
 import SwiftData
 
 @main
-struct ArcyApp: App {    
+struct ArcyApp: App {
+    
+    @State private var volumeModel = VolumeModelView()
+    
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
+                .environment(volumeModel)
+                .modelContainer(for: LikeModel.self)
         }
-        .modelContainer(for: LikeModel.self)
         
         ImmersiveSpace(id: "ConfettiImmersiveSpace") {
             ConfettiImmersive()
         }
+        
+        WindowGroup(id: "secondaryVolume") {
+            SecondaryVolumeView()
+                .environment(volumeModel)
+        }
+        .windowStyle(.volumetric)
+        .defaultSize(width: 0.5, height: 0.5, depth: 0.5, in: .meters)
+        
     }
 }

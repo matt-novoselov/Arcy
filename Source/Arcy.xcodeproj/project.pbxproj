@@ -73,6 +73,9 @@
 		1A56D1CA2BE6557E00247B85 /* like_animation.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A56D1C92BE6557E00247B85 /* like_animation.lottie */; };
 		1A595FF12BE96BD20040469C /* LikesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A595FF02BE96BD20040469C /* LikesModel.swift */; };
 		1A80A29F2BEAC0A1001C8192 /* Artifacts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */; };
+		1AADF0A62BEF87550095333C /* VolumetricModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF0A52BEF87550095333C /* VolumetricModelView.swift */; };
+		1AADF0A82BEF87680095333C /* VolumeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF0A72BEF87680095333C /* VolumeModelView.swift */; };
+		1AADF0AA2BEF877B0095333C /* SecondaryVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF0A92BEF877B0095333C /* SecondaryVolumeView.swift */; };
 		1AE1ADBF2BEC0F6A00E60AC6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADBE2BEC0F6A00E60AC6 /* SettingsView.swift */; };
 		1AE1ADC32BEC142000E60AC6 /* AppVersionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADC22BEC142000E60AC6 /* AppVersionExtension.swift */; };
 		1AE1ADC52BEC191200E60AC6 /* ProfileStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADC42BEC191200E60AC6 /* ProfileStatsView.swift */; };
@@ -160,6 +163,9 @@
 		1A56D1C92BE6557E00247B85 /* like_animation.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation.lottie; sourceTree = "<group>"; };
 		1A595FF02BE96BD20040469C /* LikesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesModel.swift; sourceTree = "<group>"; };
 		1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Artifacts.csv; sourceTree = "<group>"; };
+		1AADF0A52BEF87550095333C /* VolumetricModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumetricModelView.swift; sourceTree = "<group>"; };
+		1AADF0A72BEF87680095333C /* VolumeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeModelView.swift; sourceTree = "<group>"; };
+		1AADF0A92BEF877B0095333C /* SecondaryVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryVolumeView.swift; sourceTree = "<group>"; };
 		1AE1ADBE2BEC0F6A00E60AC6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1AE1ADC22BEC142000E60AC6 /* AppVersionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionExtension.swift; sourceTree = "<group>"; };
 		1AE1ADC42BEC191200E60AC6 /* ProfileStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsView.swift; sourceTree = "<group>"; };
@@ -346,6 +352,7 @@
 		1A31C8A22BE42E0B004CCB0B /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				1AADF0A72BEF87680095333C /* VolumeModelView.swift */,
 				1A31C8A42BE42E8A004CCB0B /* ArtifactViewModel.swift */,
 			);
 			path = "View Models";
@@ -435,6 +442,8 @@
 		1AEA7C552BE836E2006791FD /* Archive Detail */ = {
 			isa = PBXGroup;
 			children = (
+				1AADF0A92BEF877B0095333C /* SecondaryVolumeView.swift */,
+				1AADF0A52BEF87550095333C /* VolumetricModelView.swift */,
 				1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */,
 				1AEA7C562BE83707006791FD /* ExpandableMapView.swift */,
 			);
@@ -622,11 +631,14 @@
 				1A24732E2BE568CA001A0275 /* GuessGameView.swift in Sources */,
 				1A31C8AE2BE43D68004CCB0B /* OnboardingProfileView.swift in Sources */,
 				1AEA7C572BE83707006791FD /* ExpandableMapView.swift in Sources */,
+				1AADF0A82BEF87680095333C /* VolumeModelView.swift in Sources */,
+				1AADF0AA2BEF877B0095333C /* SecondaryVolumeView.swift in Sources */,
 				1AFA26252BE41B1C00FD8152 /* OnboardingView.swift in Sources */,
 				1A3B77F42BE7E9E8008DCBF4 /* Shimmer.metal in Sources */,
 				1AE7D1412BE92034002A98D6 /* ProgressBar.swift in Sources */,
 				1AEA7C542BE83635006791FD /* DevelopedWithLoveView.swift in Sources */,
 				1A358F7F2BE6BFDF001AB224 /* CenteredLabelStyle.swift in Sources */,
+				1AADF0A62BEF87550095333C /* VolumetricModelView.swift in Sources */,
 				1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */,
 				1AE7D1372BE91ADB002A98D6 /* GameView.swift in Sources */,
 				1A2473642BE58514001A0275 /* UILottieView.swift in Sources */,
