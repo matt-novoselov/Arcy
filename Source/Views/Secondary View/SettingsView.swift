@@ -46,11 +46,10 @@ struct SettingsView: View {
             
             // Button to reset onboarding
             Button(action: {showAlert = true}, label: {
-                Label("Reset onboarding", systemImage: "arrow.counterclockwise")
+                Label("Reset Onboarding", systemImage: "arrow.counterclockwise")
                     .labelStyle(CenteredLabelStyle())
             })
-            
-            Spacer()
+            .padding()
             
             DevelopedWithLoveView()
                 .padding()
