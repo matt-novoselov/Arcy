@@ -38,6 +38,7 @@ struct GridView: View {
             }
             .padding(.bottom)
         }
+        .animation(.easeInOut, value: gridToDisplay.count)
     }
 }
 
