@@ -28,7 +28,7 @@ struct ArcyApp: App {
         }
         
         WindowGroup(id: "secondaryVolume") {
-            SecondaryVolumeView()
+            VolumetricModelView()
                 .environment(volumeModel)
         }
         .windowStyle(.volumetric)

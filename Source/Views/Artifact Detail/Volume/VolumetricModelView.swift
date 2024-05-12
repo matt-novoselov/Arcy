@@ -9,14 +9,13 @@ import SwiftUI
 import RealityKit
 
 struct VolumetricModelView: View {
-        
-    let modelName: String
     
-    @State private var angle: Angle = .degrees(0)
+    @Environment(VolumeModelView.self)
+    private var volumeModel
     
     var body: some View {
         
-        Model3D(named: modelName) { model in
+        Model3D(named: volumeModel.nameOfModel) { model in
             switch model {
             case .empty:
                 ProgressView()
@@ -25,11 +24,6 @@ struct VolumetricModelView: View {
                 resolvedModel3D
                     .resizable()
                     .scaledToFit()
-                    .rotation3DEffect(angle, axis: .y)
-                    .animation(.linear(duration: 18).repeatForever(), value: angle)
-                    .onAppear {
-                        angle = .degrees(359)
-                    }
                 
             case .failure(let error):
                 Text(error.localizedDescription)
@@ -43,6 +37,6 @@ struct VolumetricModelView: View {
 }
 
 #Preview {
-    VolumetricModelView(modelName: "Female_terracotta_head_from_an_etruscan_tomb")
+    VolumetricModelView()
         .previewVariables()
 }
