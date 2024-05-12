@@ -76,6 +76,6 @@ struct LikeButtonView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    LikeButtonView(artifactID: 1000)
+    LikeButtonView(artifactID: 0)
         .previewVariables()
 }
