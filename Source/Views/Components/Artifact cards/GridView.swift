@@ -36,7 +36,11 @@ struct GridView: View {
                         .transition(.scale)
                 }
             }
+            .padding(.bottom)
         }
-        .padding(.bottom)
     }
+}
+
+#Preview(windowStyle: .automatic){
+    GridView(gridToDisplay: ArtifactsCollection().artifacts, showingLikes: true)
 }
