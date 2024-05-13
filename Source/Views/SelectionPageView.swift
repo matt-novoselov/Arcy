@@ -1,5 +1,5 @@
 //
-//  Test2.swift
+//  SelectionPageView.swift
 //  Arcy
 //
 //  Created by Matt Novoselov on 02/05/24.
@@ -12,6 +12,7 @@ struct SelectionPageView: View {
     // Currently selected page
     @State private var selectionPage: SelectionPage = .collection
     
+    // Property that controls if only liked Artifacts should be shown
     @State private var showingLiked: Bool = false
     
     // Load all artifacts from the collection
@@ -20,6 +21,7 @@ struct SelectionPageView: View {
     var body: some View {
         
         NavigationStack{
+            // Display Recommendations or Collection view based on the state of view picker
             // Wrap up in ZStack for animation
             ZStack{
                 Group{
@@ -96,7 +98,7 @@ struct SelectionPageView: View {
     
 }
 
-// Add tabs for the Archive view
+// Add tabs for the Selection Page view
 enum SelectionPage: CaseIterable {
     case collection // Represent the view with all available artifacts
     case recommendation // Represent AI powered search

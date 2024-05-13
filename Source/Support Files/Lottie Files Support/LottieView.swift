@@ -1,8 +1,8 @@
 //
+//  LottieView.swift
+//  Arcy
 //
-//
-//
-//
+//  Created by Matt Novoselov on 04/05/24.
 //
 
 import SwiftUI

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArchiveDetailView: View {
+struct ArtifactDetailView: View {
     
     @Environment(VolumeModelView.self) var volumeModel
     
@@ -89,6 +89,6 @@ struct ArchiveDetailView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    ArchiveDetailView(selectedArtifact: ArtifactsCollection().artifacts.first!)
+    ArtifactDetailView(selectedArtifact: ArtifactsCollection().artifacts.first!)
         .previewVariables()
 }

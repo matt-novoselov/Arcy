@@ -7,22 +7,31 @@
 
 import SwiftUI
 
+// A single card that is visible during onboarding phase
 struct OnboardingCardView: View {
     
+    // Name of the SF symbol
     let iconName: String
+    
+    // Title of the card
     let title: String
+    
+    // Full description of the card
     let description: String
     
     var body: some View {
         
         HStack(spacing: 15){
+            // Display SF Symbol
             Image(systemName: iconName)
                 .font(.extraLargeTitle)
             
             VStack(alignment: .leading){
+                // Display title
                 Text(title)
                     .font(.title)
                 
+                // Display description
                 Text(description)
                     .font(.body)
                     .foregroundStyle(.secondary)
@@ -30,6 +39,8 @@ struct OnboardingCardView: View {
             }
         }
         .padding(.all, 20)
+        
+        // Apply glass effect background
         .glassBackgroundEffect()
         
     }

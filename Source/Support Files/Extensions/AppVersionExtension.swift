@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Extension to extract app version from the Bundle
 extension UIApplication {
     static var appVersion: String? {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String

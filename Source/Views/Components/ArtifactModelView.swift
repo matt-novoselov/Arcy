@@ -8,8 +8,13 @@
 import SwiftUI
 import RealityKit
 
+// Artifact Model View is a 3D representation of an Artifact
 struct ArtifactModelView: View {
     
+    // Name of the 3D model that represents the artifact
+    // Note: Pass only the name of the model in the .usdz format without an extension itself
+    // Example:
+    // If the model in the Resource folder is named MyModel.usdz, you only need to pass MyModel
     let modelName: String
     
     // Animate model opacity on appear
@@ -17,6 +22,7 @@ struct ArtifactModelView: View {
     
     var body: some View {
         
+        // Display the 3D model of an Artifact
         Model3D(named: modelName) { model in
             model
                 .resizable()
@@ -24,13 +30,14 @@ struct ArtifactModelView: View {
                 .opacity(modelOpacity)
                 .padding()
             
-            // Animate model opacity on appear
+                // Animate model opacity on appear
                 .onAppear(){
                     withAnimation(.interpolatingSpring(duration: 1.5)){
                         modelOpacity = 1
                     }
                 }
         } placeholder: {
+            // Display placeholder while view loads
             ProgressView()
                 .frame(height: 300)
         }

@@ -11,22 +11,28 @@ import SwiftData
 @main
 struct ArcyApp: App {
     
+    // Initialize volume Model that is responsible for controlling what Artifact should currently be displayed in the 3D volume
     @State private var volumeModel = VolumeModelView()
-    @State private var photoVM = PhotoViewModel()
+    
+    // Initialize photo View Model that is responsible for controlling and storing user Profile Picture
+    @State private var photoViewModel = PhotoViewModel()
     
     var body: some Scene {
         
+        // Main window is used for displaying main UI content
         WindowGroup {
             ContentView()
                 .environment(volumeModel)
-                .environment(photoVM)
+                .environment(photoViewModel)
                 .modelContainer(for: LikeModel.self)
         }
         
+        // Immersive Space is used for displaying Confetti in the end of the Game Session
         ImmersiveSpace(id: "ConfettiImmersiveSpace") {
             ConfettiImmersive()
         }
         
+        // Volume is used for displaying 3D model of the Artifacts in the Detail View
         WindowGroup(id: "secondaryVolume") {
             VolumetricModelView()
                 .environment(volumeModel)

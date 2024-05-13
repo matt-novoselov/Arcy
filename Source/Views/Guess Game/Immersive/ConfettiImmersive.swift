@@ -9,6 +9,8 @@ import SwiftUI
 import RealityKit
 import RealityKitContent
 
+// Display Reality Kit Scene in the Immersive View
+// Confetti is emitted after the user completes the game
 struct ConfettiImmersive: View {
     var body: some View {
         RealityView { content in

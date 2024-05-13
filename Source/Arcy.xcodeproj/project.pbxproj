@@ -54,7 +54,7 @@
 		1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473272BE538E4001A0275 /* ProfilePictureView.swift */; };
 		1A24732A2BE550C8001A0275 /* ArtifactFlatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */; };
 		1A24732C2BE563D6001A0275 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732B2BE563D6001A0275 /* LikeButtonView.swift */; };
-		1A24732E2BE568CA001A0275 /* GuessGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732D2BE568CA001A0275 /* GuessGameView.swift */; };
+		1A24732E2BE568CA001A0275 /* GuessArtifactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732D2BE568CA001A0275 /* GuessArtifactView.swift */; };
 		1A2473302BE5690C001A0275 /* ArtifactModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24732F2BE5690B001A0275 /* ArtifactModelView.swift */; };
 		1A2473322BE574A1001A0275 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473312BE574A1001A0275 /* ProfileEditView.swift */; };
 		1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473332BE576FD001A0275 /* OnboardingCardView.swift */; };
@@ -62,7 +62,7 @@
 		1A24735D2BE584AA001A0275 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1A24735C2BE584AA001A0275 /* Lottie */; };
 		1A2473632BE58514001A0275 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24735F2BE58514001A0275 /* LottieView.swift */; };
 		1A2473642BE58514001A0275 /* UILottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2473602BE58514001A0275 /* UILottieView.swift */; };
-		1A24736C2BE59638001A0275 /* OneShotLikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */; };
+		1A24736C2BE59638001A0275 /* DecorativeLikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736B2BE59638001A0275 /* DecorativeLikeButtonView.swift */; };
 		1A24736E2BE597A1001A0275 /* like_animation_white.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A24736D2BE597A1001A0275 /* like_animation_white.lottie */; };
 		1A2473702BE5A47F001A0275 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24736F2BE5A47F001A0275 /* CollectionView.swift */; };
 		1A31C88D2BE4245E004CCB0B /* ArtifactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */; };
@@ -75,7 +75,6 @@
 		1A3B77EA2BE7DE8D008DCBF4 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77E92BE7DE8D008DCBF4 /* BackgroundGradientView.swift */; };
 		1A3B77F42BE7E9E8008DCBF4 /* Shimmer.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B77F32BE7E9E8008DCBF4 /* Shimmer.metal */; };
 		1A44CC5F2BEAA87B00A3D95B /* ConfettiImmersive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44CC5E2BEAA87B00A3D95B /* ConfettiImmersive.swift */; };
-		1A44CC632BEAB86800A3D95B /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44CC622BEAB86800A3D95B /* UserDataModel.swift */; };
 		1A56D1CA2BE6557E00247B85 /* like_animation.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A56D1C92BE6557E00247B85 /* like_animation.lottie */; };
 		1A595FF12BE96BD20040469C /* LikesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A595FF02BE96BD20040469C /* LikesModel.swift */; };
 		1A80A29F2BEAC0A1001C8192 /* Artifacts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */; };
@@ -98,7 +97,7 @@
 		1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF1119A2BD40973004D77EB /* ContentView.swift */; };
 		1AF1119F2BD40974004D77EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF1119E2BD40974004D77EB /* Assets.xcassets */; };
 		1AFA26212BE4101900FD8152 /* SelectionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26202BE4101900FD8152 /* SelectionPageView.swift */; };
-		1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */; };
+		1AFA26232BE417EA00FD8152 /* ArtifactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26222BE417EA00FD8152 /* ArtifactDetailView.swift */; };
 		1AFA26252BE41B1C00FD8152 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -150,14 +149,14 @@
 		1A2473272BE538E4001A0275 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
 		1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactFlatCardView.swift; sourceTree = "<group>"; };
 		1A24732B2BE563D6001A0275 /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
-		1A24732D2BE568CA001A0275 /* GuessGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessGameView.swift; sourceTree = "<group>"; };
+		1A24732D2BE568CA001A0275 /* GuessArtifactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessArtifactView.swift; sourceTree = "<group>"; };
 		1A24732F2BE5690B001A0275 /* ArtifactModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactModelView.swift; sourceTree = "<group>"; };
 		1A2473312BE574A1001A0275 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		1A2473332BE576FD001A0275 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		1A2473352BE578AF001A0275 /* OnboardingFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeaturesView.swift; sourceTree = "<group>"; };
 		1A24735F2BE58514001A0275 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		1A2473602BE58514001A0275 /* UILottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILottieView.swift; sourceTree = "<group>"; };
-		1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneShotLikeButtonView.swift; sourceTree = "<group>"; };
+		1A24736B2BE59638001A0275 /* DecorativeLikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorativeLikeButtonView.swift; sourceTree = "<group>"; };
 		1A24736D2BE597A1001A0275 /* like_animation_white.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation_white.lottie; sourceTree = "<group>"; };
 		1A24736F2BE5A47F001A0275 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactModel.swift; sourceTree = "<group>"; };
@@ -170,7 +169,6 @@
 		1A3B77E92BE7DE8D008DCBF4 /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
 		1A3B77F32BE7E9E8008DCBF4 /* Shimmer.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shimmer.metal; sourceTree = "<group>"; };
 		1A44CC5E2BEAA87B00A3D95B /* ConfettiImmersive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiImmersive.swift; sourceTree = "<group>"; };
-		1A44CC622BEAB86800A3D95B /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		1A56D1C92BE6557E00247B85 /* like_animation.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation.lottie; sourceTree = "<group>"; };
 		1A595FF02BE96BD20040469C /* LikesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesModel.swift; sourceTree = "<group>"; };
 		1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Artifacts.csv; sourceTree = "<group>"; };
@@ -195,7 +193,7 @@
 		1AF1119E2BD40974004D77EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF111A32BD40974004D77EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AFA26202BE4101900FD8152 /* SelectionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionPageView.swift; sourceTree = "<group>"; };
-		1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailView.swift; sourceTree = "<group>"; };
+		1AFA26222BE417EA00FD8152 /* ArtifactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactDetailView.swift; sourceTree = "<group>"; };
 		1AFA26242BE41B1C00FD8152 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -268,13 +266,13 @@
 			path = "SCV Files";
 			sourceTree = "<group>";
 		};
-		1A07A2932BED6837002E103D /* Secondary View */ = {
+		1A07A2932BED6837002E103D /* Profile View */ = {
 			isa = PBXGroup;
 			children = (
 				1AE1ADBE2BEC0F6A00E60AC6 /* SettingsView.swift */,
 				1A31C8AF2BE44310004CCB0B /* ProfileView.swift */,
 			);
-			path = "Secondary View";
+			path = "Profile View";
 			sourceTree = "<group>";
 		};
 		1A0CE8592BEFB6E0009203F1 /* Persistancy */ = {
@@ -283,8 +281,7 @@
 				1A0CE84E2BEFB27B009203F1 /* PhotosModel.xcdatamodeld */,
 				1A0CE8532BEFB438009203F1 /* CoreDataManager.swift */,
 				1A0CE8552BEFB5C0009203F1 /* UIImageTransformer.swift */,
-				1A0CE8572BEFB6DB009203F1 /* PhotosViewModel.swift */,
-				1A0CE8512BEFB353009203F1 /* Photo.swift */,
+				1AEB0DA02BF24C1900FDFB53 /* Models */,
 			);
 			path = Persistancy;
 			sourceTree = "<group>";
@@ -306,22 +303,21 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
-		1A2473612BE58514001A0275 /* Lottie Files */ = {
+		1A2473612BE58514001A0275 /* Lottie Files Support */ = {
 			isa = PBXGroup;
 			children = (
 				1A24735F2BE58514001A0275 /* LottieView.swift */,
 				1A2473602BE58514001A0275 /* UILottieView.swift */,
 			);
-			path = "Lottie Files";
+			path = "Lottie Files Support";
 			sourceTree = "<group>";
 		};
 		1A2473652BE58587001A0275 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1A2473612BE58514001A0275 /* Lottie Files */,
+				1AEB0D9F2BF24ABE00FDFB53 /* Extensions */,
+				1A2473612BE58514001A0275 /* Lottie Files Support */,
 				1A358F7E2BE6BFDF001AB224 /* CenteredLabelStyle.swift */,
-				1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */,
-				1AE1ADC22BEC142000E60AC6 /* AppVersionExtension.swift */,
 				1A1753AA2BEFFD4700229329 /* PreviewModifier.swift */,
 			);
 			path = "Support Files";
@@ -332,20 +328,20 @@
 			children = (
 				1A07A2922BED67C8002E103D /* SCV Files */,
 				1A07A2912BED67C1002E103D /* ML Model */,
-				1A2473682BE585EC001A0275 /* Lotties */,
+				1A2473682BE585EC001A0275 /* Lottie Files */,
 				1A31C88E2BE42532004CCB0B /* 3D Content */,
 				1A185AE52BE4508900B7843C /* Shaders */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		1A2473682BE585EC001A0275 /* Lotties */ = {
+		1A2473682BE585EC001A0275 /* Lottie Files */ = {
 			isa = PBXGroup;
 			children = (
 				1A56D1C92BE6557E00247B85 /* like_animation.lottie */,
 				1A24736D2BE597A1001A0275 /* like_animation_white.lottie */,
 			);
-			path = Lotties;
+			path = "Lottie Files";
 			sourceTree = "<group>";
 		};
 		1A2473712BE638CE001A0275 /* Components */ = {
@@ -354,8 +350,8 @@
 				1A41C1912BE63DC4002252B9 /* Like Buttons */,
 				1A41C1902BE63DAA002252B9 /* Profile */,
 				1AEA7C522BE82F27006791FD /* Artifact cards */,
+				1A07A28F2BED6344002E103D /* GridView.swift */,
 				1A24732F2BE5690B001A0275 /* ArtifactModelView.swift */,
-				1A2405322BED263A00AD9D17 /* MeetAIAnimatedGradient.swift */,
 				1AEA7C532BE83635006791FD /* DevelopedWithLoveView.swift */,
 			);
 			path = Components;
@@ -374,7 +370,6 @@
 			children = (
 				1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */,
 				1A595FF02BE96BD20040469C /* LikesModel.swift */,
-				1A44CC622BEAB86800A3D95B /* UserDataModel.swift */,
 				1A31C8A22BE42E0B004CCB0B /* View Models */,
 			);
 			path = Models;
@@ -405,6 +400,7 @@
 		1A3B77E42BE7AF80008DCBF4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1A2405322BED263A00AD9D17 /* MeetAIAnimatedGradient.swift */,
 				1A2473332BE576FD001A0275 /* OnboardingCardView.swift */,
 				1A3B77E52BE7B33B008DCBF4 /* OnboardingRecommendationView.swift */,
 			);
@@ -424,24 +420,24 @@
 			isa = PBXGroup;
 			children = (
 				1A24732B2BE563D6001A0275 /* LikeButtonView.swift */,
-				1A24736B2BE59638001A0275 /* OneShotLikeButtonView.swift */,
+				1A24736B2BE59638001A0275 /* DecorativeLikeButtonView.swift */,
 			);
 			path = "Like Buttons";
 			sourceTree = "<group>";
 		};
-		1AE1ADC62BEC19A100E60AC6 /* Profile Stats */ = {
+		1AE1ADC62BEC19A100E60AC6 /* Profile Statistics */ = {
 			isa = PBXGroup;
 			children = (
 				1AE1ADC42BEC191200E60AC6 /* ProfileStatsView.swift */,
 				1AE1ADC72BEC19B200E60AC6 /* CircularProgressView.swift */,
 			);
-			path = "Profile Stats";
+			path = "Profile Statistics";
 			sourceTree = "<group>";
 		};
 		1AE7D1442BE93C06002A98D6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1A44CC5E2BEAA87B00A3D95B /* ConfettiImmersive.swift */,
+				1AE1ADC62BEC19A100E60AC6 /* Profile Statistics */,
 				1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */,
 				1AE7D1402BE92034002A98D6 /* ProgressBar.swift */,
 			);
@@ -451,10 +447,10 @@
 		1AE9B2DA2BE9005C00465DDE /* Guess Game */ = {
 			isa = PBXGroup;
 			children = (
-				1AE1ADC62BEC19A100E60AC6 /* Profile Stats */,
+				1AEB0DA22BF24E0400FDFB53 /* Immersive */,
 				1AE7D1442BE93C06002A98D6 /* Components */,
 				1AE7D1362BE91ADB002A98D6 /* GameView.swift */,
-				1A24732D2BE568CA001A0275 /* GuessGameView.swift */,
+				1A24732D2BE568CA001A0275 /* GuessArtifactView.swift */,
 				1AE7D1422BE93BF1002A98D6 /* EndOfGameView.swift */,
 			);
 			path = "Guess Game";
@@ -465,7 +461,6 @@
 			children = (
 				1A2473292BE550C8001A0275 /* ArtifactFlatCardView.swift */,
 				1AEA7C502BE82F1F006791FD /* ArtifactButtonView.swift */,
-				1A07A28F2BED6344002E103D /* GridView.swift */,
 			);
 			path = "Artifact cards";
 			sourceTree = "<group>";
@@ -473,11 +468,45 @@
 		1AEA7C552BE836E2006791FD /* Artifact Detail */ = {
 			isa = PBXGroup;
 			children = (
+				1AEB0DA12BF24DBC00FDFB53 /* Components */,
 				1A1753A92BEFD0D600229329 /* Volume */,
-				1AFA26222BE417EA00FD8152 /* ArchiveDetailView.swift */,
-				1AEA7C562BE83707006791FD /* ExpandableMapView.swift */,
+				1AFA26222BE417EA00FD8152 /* ArtifactDetailView.swift */,
 			);
 			path = "Artifact Detail";
+			sourceTree = "<group>";
+		};
+		1AEB0D9F2BF24ABE00FDFB53 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */,
+				1AE1ADC22BEC142000E60AC6 /* AppVersionExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1AEB0DA02BF24C1900FDFB53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A0CE8572BEFB6DB009203F1 /* PhotosViewModel.swift */,
+				1A0CE8512BEFB353009203F1 /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1AEB0DA12BF24DBC00FDFB53 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1AEA7C562BE83707006791FD /* ExpandableMapView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1AEB0DA22BF24E0400FDFB53 /* Immersive */ = {
+			isa = PBXGroup;
+			children = (
+				1A44CC5E2BEAA87B00A3D95B /* ConfettiImmersive.swift */,
+			);
+			path = Immersive;
 			sourceTree = "<group>";
 		};
 		1AF111882BD40973004D77EB = {
@@ -489,8 +518,8 @@
 				1A0CE8592BEFB6E0009203F1 /* Persistancy */,
 				1AF111932BD40973004D77EB /* Views */,
 				1A2473652BE58587001A0275 /* Support Files */,
-				1A2473672BE585D6001A0275 /* Resources */,
 				1A31C8A12BE42E05004CCB0B /* Models */,
+				1A2473672BE585D6001A0275 /* Resources */,
 				1AF111942BD40973004D77EB /* Packages */,
 				1AF111922BD40973004D77EB /* Products */,
 			);
@@ -507,12 +536,12 @@
 		1AF111932BD40973004D77EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1AF1119A2BD40973004D77EB /* ContentView.swift */,
 				1A2473712BE638CE001A0275 /* Components */,
 				1A31C8AC2BE43D52004CCB0B /* Onboarding */,
 				1AEA7C552BE836E2006791FD /* Artifact Detail */,
 				1AE9B2DA2BE9005C00465DDE /* Guess Game */,
-				1A07A2932BED6837002E103D /* Secondary View */,
+				1A07A2932BED6837002E103D /* Profile View */,
+				1AF1119A2BD40973004D77EB /* ContentView.swift */,
 				1AFA26202BE4101900FD8152 /* SelectionPageView.swift */,
 				1A07A28D2BED58BC002E103D /* RecommendationView.swift */,
 				1A24736F2BE5A47F001A0275 /* CollectionView.swift */,
@@ -651,7 +680,7 @@
 				1A2473302BE5690C001A0275 /* ArtifactModelView.swift in Sources */,
 				1A0CE8562BEFB5C0009203F1 /* UIImageTransformer.swift in Sources */,
 				1A2473702BE5A47F001A0275 /* CollectionView.swift in Sources */,
-				1A24736C2BE59638001A0275 /* OneShotLikeButtonView.swift in Sources */,
+				1A24736C2BE59638001A0275 /* DecorativeLikeButtonView.swift in Sources */,
 				1AF1119B2BD40973004D77EB /* ContentView.swift in Sources */,
 				1A31C8B02BE44310004CCB0B /* ProfileView.swift in Sources */,
 				1A07A2902BED6344002E103D /* GridView.swift in Sources */,
@@ -661,7 +690,7 @@
 				1A1753AB2BEFFD4700229329 /* PreviewModifier.swift in Sources */,
 				1AE1ADC82BEC19B200E60AC6 /* CircularProgressView.swift in Sources */,
 				1A31C8A52BE42E8A004CCB0B /* ArtifactViewModel.swift in Sources */,
-				1A24732E2BE568CA001A0275 /* GuessGameView.swift in Sources */,
+				1A24732E2BE568CA001A0275 /* GuessArtifactView.swift in Sources */,
 				1A31C8AE2BE43D68004CCB0B /* OnboardingProfileView.swift in Sources */,
 				1AEA7C572BE83707006791FD /* ExpandableMapView.swift in Sources */,
 				1AADF0A82BEF87680095333C /* VolumeModelView.swift in Sources */,
@@ -675,10 +704,9 @@
 				1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */,
 				1AE7D1372BE91ADB002A98D6 /* GameView.swift in Sources */,
 				1A2473642BE58514001A0275 /* UILottieView.swift in Sources */,
-				1AFA26232BE417EA00FD8152 /* ArchiveDetailView.swift in Sources */,
+				1AFA26232BE417EA00FD8152 /* ArtifactDetailView.swift in Sources */,
 				1A44CC5F2BEAA87B00A3D95B /* ConfettiImmersive.swift in Sources */,
 				1AEA7C512BE82F1F006791FD /* ArtifactButtonView.swift in Sources */,
-				1A44CC632BEAB86800A3D95B /* UserDataModel.swift in Sources */,
 				1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */,
 				1A3B77EA2BE7DE8D008DCBF4 /* BackgroundGradientView.swift in Sources */,
 				1A2405332BED263A00AD9D17 /* MeetAIAnimatedGradient.swift in Sources */,

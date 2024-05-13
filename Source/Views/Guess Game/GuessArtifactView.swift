@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct GuessGameView: View {
+// Guess artifacts view shows a random artifact and suggests users 4 options to try to guess the name
+struct GuessArtifactView: View {
     
     // Artifact that users needs to guess
     private let hiddenArtifact: Artifact
@@ -32,15 +33,16 @@ struct GuessGameView: View {
     // Pass action that should be executed, when clicking on the next button
     var nextButtonAction: () -> Void
     
+    // Binding that counts how many times the user guessed the artifacts correctly
     @Binding var countCorrectAnswers: Int
     
+    // Initializer
     init(nextButtonAction: @escaping () -> Void, countCorrectAnswers: Binding<Int>) {
         // Assign binding
         _countCorrectAnswers = countCorrectAnswers
         
         // Assign button action
         self.nextButtonAction = nextButtonAction
-        
         
         // Load all artifacts from the library
         let artifactsCollection: [Artifact] = ArtifactsCollection().artifacts
@@ -78,6 +80,7 @@ struct GuessGameView: View {
         self.artifactVariantsNames = Array(randomArtifactNames).shuffled()
     }
     
+    // Hold lazy grid as a separate view to fix SwiftUI bug
     private var lazyGridContent: some View {
         // Display variants as buttons
         LazyVGrid(columns: columns) {
@@ -91,6 +94,7 @@ struct GuessGameView: View {
     var body: some View {
         
         VStack{
+            // Title
             Text("Guess the name of the artifact")
                 .font(.title)
             
@@ -102,6 +106,7 @@ struct GuessGameView: View {
             Spacer()
 
             // Wrap in scroll view to fix animation transition
+            // Note: Structure should be simplified, if the bug will be fixed in the future versions of SwiftUI for VisionOS
             lazyGridContent
                 .hidden()
                 .overlay {
@@ -114,18 +119,22 @@ struct GuessGameView: View {
 
         // Ornament
         .toolbar{
+            // Get hint button
             ToolbarItem(placement: .bottomOrnament){
                 Button(action: {getHint()}){
                     Label("Get hint", systemImage: "lightbulb.max")
                         .labelStyle(CenteredLabelStyle())
                 }
+                // Disabled if hint was already requested or if the answer was already given
                 .disabled(artifactVariantsNames == artifactVariantsNamesHinted || selectedAnswer != nil)
             }
             
+            // Next level button
             ToolbarItem(placement: .bottomOrnament){
                 Button(action: {nextButtonAction()}){
                     Label("Next", systemImage: "arrow.right")
                 }
+                // Disabled until the answer is given
                 .disabled(selectedAnswer == nil)
             }
         }
@@ -141,6 +150,6 @@ struct GuessGameView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    GuessGameView(nextButtonAction: {}, countCorrectAnswers: .constant(0))
+    GuessArtifactView(nextButtonAction: {}, countCorrectAnswers: .constant(0))
         .previewVariables()
 }

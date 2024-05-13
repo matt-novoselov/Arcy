@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// The first view during onboarding phase that user sees after opening the app
 struct OnboardingWelcomeView: View {
     
     // Binding for controlling current onboarding scene
@@ -15,6 +16,7 @@ struct OnboardingWelcomeView: View {
     var body: some View {
         
         VStack{
+            // Display app logo in the written form
             Image(.arcyLogoText)
                 .interpolation(.high)
                 .resizable()
@@ -24,16 +26,19 @@ struct OnboardingWelcomeView: View {
             
             Spacer()
             
+            // Main title
             Text("Welcome, Explorer")
                 .font(.extraLargeTitle)
                 .fontWidth(.expanded)
             
+            // Sub description
             Text("Lorem ipsum")
                 .font(.title3)
                 .foregroundStyle(.secondary)
             
             Spacer()
             
+            // Button to switch onboarding state and navigate to the next View
             Button(action: {switchState()}){
                 Text("Continue")
             }
@@ -43,6 +48,7 @@ struct OnboardingWelcomeView: View {
         
     }
     
+    // Function to switch onboarding state and navigate to the next View
     func switchState(){
         withAnimation{
             onboardingState = .features

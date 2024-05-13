@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-
+// Onboarding view to help user setup their profile
 struct OnboardingProfileView: View {
     
     // Binding for controlling current onboarding scene
@@ -23,15 +23,19 @@ struct OnboardingProfileView: View {
         
         VStack(spacing: 20){
             
+            // Main title
             Text("Let's setup your profile")
                 .font(.title)
             
             Spacer()
             
+            // Display View for editing profile picture and username
             ProfileEditView()
             
             Spacer()
             
+            // Button to switch onboarding state and navigate to the next View
+            // Button is disabled until the user enters his name
             Button(action: {
                 // Set onboarding complete value to the user defaults
                 UserDefaults.standard.set(true, forKey: "onboardingCompleted")

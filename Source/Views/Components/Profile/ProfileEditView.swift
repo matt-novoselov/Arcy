@@ -8,10 +8,12 @@
 import SwiftUI
 import PhotosUI
 
+// Profile edit View lets users to change their profile picture and name
 struct ProfileEditView: View {
     
+    // Load model for managing photo data and interactions
     @Environment(PhotoViewModel.self)
-    private var photoVM
+    private var photoViewModel
     
     // Value for the textInput user name
     @State private var textInput: String = UserDefaults.standard.string(forKey: "userName") ?? ""
@@ -49,26 +51,30 @@ struct ProfileEditView: View {
             
             // Load the selected image
             .onChange(of: photoItem) {
-                // MARK: Save image to persistence
+                // Save image to persistence
                 Task {
-                     if let loaded = try? await photoItem?.loadTransferable(type: Data.self) {
-                         
-                         if let savableImage = UIImage(data: loaded){
-                             if let compressedImage = UIImage(data: savableImage.jpegData(compressionQuality: 0.5) ?? Data()){
-                                 photoVM.saveImage(compressedImage)
-                             } else {
-                                 print("Failed to compress Data")
-                             }
-                         } else {
-                             print("Failed to transform Data to UIImage")
-                         }
-                        
-                     } else {
-                         print("Failed to load Data from Photos Picker")
-                     }
-                 }
+                    // Try to load the transferable data of type Data from photoItem asynchronously
+                    if let loaded = try? await photoItem?.loadTransferable(type: Data.self) {
+                        // If data is successfully loaded, try to create a UIImage from the loaded data
+                        if let savableImage = UIImage(data: loaded) {
+                            // If UIImage is successfully created, compress the image and save it
+                            if let compressedImage = UIImage(data: savableImage.jpegData(compressionQuality: 0.5) ?? Data()) {
+                                photoViewModel.saveImage(compressedImage)
+                            } else {
+                                // If compression fails, print an error message
+                                print("Failed to compress Data")
+                            }
+                        } else {
+                            // If transformation to UIImage fails, print an error message
+                            print("Failed to transform Data to UIImage")
+                        }
+                    } else {
+                        // If loading data fails, print an error message
+                        print("Failed to load Data from Photos Picker")
+                    }
+                }
                 
-                // Play shimmer effect
+                // Play shimmer effect after changing the photo
                 playShimmerEffect()
             }
             
@@ -79,12 +85,12 @@ struct ProfileEditView: View {
                 .clipShape(.capsule)
                 .padding(.vertical)
             
-            // On change of the name, immediately save it to user defaults
+                // On change of the name, immediately save it to user defaults
                 .onChange(of: textInput){
                     UserDefaults.standard.set(textInput, forKey: "userName")
                 }
             
-            // Play shimmer effect on appear if specified
+                // Play shimmer effect on appear if specified
                 .onAppear(){
                     if showingShimmerOnAppear{
                         playShimmerEffect()

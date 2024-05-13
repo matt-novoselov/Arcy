@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Settings view contains debug information about the app, as well as legal information, credits and possibility to reset the onboarding
 struct SettingsView: View {
     
     // Showing alert before resetting onboarding
@@ -17,15 +18,21 @@ struct SettingsView: View {
         VStack{
             Spacer()
             
+            // Displaying the app icon, composed from Icon Assets
             VStack{
                 ZStack {
+                    // Back layer of an icon
                     Image("AppIcon/Back/Content")
                         .interpolation(.high)
                         .resizable()
+                    
+                    // Middle layer, that is slightly shifted
                     Image("AppIcon/Middle/Content")
                         .interpolation(.high)
                         .resizable()
                         .offset(z: 5)
+                    
+                    // Front layer, that is located in front of every other layer
                     Image("AppIcon/Front/Content")
                         .interpolation(.high)
                         .resizable()
@@ -34,9 +41,11 @@ struct SettingsView: View {
                 .clipShape(.circle)
                 .frame(width: 120, height: 120)
 
+                // App name
                 Text("Arcy")
                     .font(.largeTitle)
                 
+                // Programmatically get the app version
                 Text("\(UIApplication.appVersion ?? "Unknown")")
                     .font(.caption)
                     .foregroundStyle(.secondary)
@@ -51,6 +60,7 @@ struct SettingsView: View {
             })
             .padding()
             
+            // Developed with ❤️ by Matt Novoselov
             DevelopedWithLoveView()
                 .padding()
             

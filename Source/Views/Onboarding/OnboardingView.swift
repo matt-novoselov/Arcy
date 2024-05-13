@@ -14,6 +14,7 @@ enum onboardingState{
     case features
 }
 
+// OnboardingView is responsible for controlling different states of the onboarding phase
 struct OnboardingView: View {
     
     // Get onboarding complete value from the user defaults
@@ -38,15 +39,17 @@ struct OnboardingView: View {
             Group{
                 switch onboardingState {
                     
-                    // Display main game menu
+                // Display main game menu
                 case .welcome:
                     OnboardingWelcomeView(onboardingState: $onboardingState)
                         .transition(.blurReplace)
                     
+                // Display profile setup
                 case .profile:
                     OnboardingProfileView(onboardingState: $onboardingState)
                         .transition(.blurReplace)
-                    
+                  
+                // Display view with app features
                 case .features:
                     OnboardingFeaturesView(onboardingState: $onboardingState)
                         .transition(.blurReplace)

@@ -1,8 +1,8 @@
 //
 //  UILottieView.swift
-//  Linguine (iOS)
+//  Arcy
 //
-//  Created by Matt Novoselov on 25/04/24.
+//  Created by Matt Novoselov on 04/05/24.
 //
 
 import SwiftUI

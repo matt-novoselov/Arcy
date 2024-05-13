@@ -7,16 +7,23 @@
 
 import SwiftUI
 
+// Artifact Flat Card is used to display preview information about an Artifact before entering the Detail View
 struct ArtifactFlatCardView: View {
     
+    // Pass the selected Artifact to get information from
     let selectedArtifact: Artifact
+    
+    // Pass the corner radius for the button
     let buttonCornerRadius: Double
+    
+    // Property that controls if the like should be displayed or not
+    // Likes should be displayed in the collection grid, but not in the recommendations
     var showingLike: Bool = true
-
+    
     var body: some View {
         
         ZStack (alignment: .bottom){
-            // Display image that represent the artifact
+            // Display image that represent the artifact in the form of square
             Rectangle()
                 .foregroundStyle(.clear)
                 .scaledToFit()
@@ -29,7 +36,7 @@ struct ArtifactFlatCardView: View {
                         .padding(.all, 30)
                 }
             
-            // Display the name of the artifact
+            // Display the name of the artifact with darken background
             Text(selectedArtifact.name)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)

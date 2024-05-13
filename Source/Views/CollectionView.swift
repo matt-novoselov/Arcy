@@ -8,6 +8,8 @@
 import SwiftUI
 import SwiftData
 
+// Collection view displays a grid of all available artifacts
+// Users can filter artifacts by toggling "Showing only liked" or/and by using search
 struct CollectionView: View {
     
     // Load all artifacts from the collection
@@ -16,20 +18,28 @@ struct CollectionView: View {
     // Search text
     @State private var searchText: String = ""
     
+    // Property that controls if only liked Artifacts should be shown
     @Binding var showingLiked: Bool
     
+    // Extract information about Artifacts that are already liked from the Swift Data
     @Query private var storedLikedArtifacts: [LikeModel]
     
     var body: some View {
         
-        let filteredArchive: [Artifact] = filterArtifacts()
+        // Array that stores a filtered list of artifacts if filters (search text or showing only liked) are applied
+        let filteredCollection: [Artifact] = filterArtifacts()
         
         ZStack{
-            if filteredArchive.isEmpty && !searchText.isEmpty {
+            // If search results return nil
+            if filteredCollection.isEmpty && !searchText.isEmpty {
                 ContentUnavailableView("No results for \(searchText)", systemImage: "magnifyingglass", description: Text("Check the spelling or try a new search."))
-            } else if filteredArchive.isEmpty && showingLiked {
+            } 
+            // If user doesn't has any liked artifacts
+            else if filteredCollection.isEmpty && showingLiked {
                 ContentUnavailableView("No favorites", systemImage: "heart.slash", description: Text("Add favorite artifacts by clicking the like button."))
-            } else{
+            } 
+            // Display full collection
+            else{
                 GridView(gridToDisplay: filterArtifacts())
             }
         }
@@ -37,7 +47,10 @@ struct CollectionView: View {
 
     }   
     
+    // Function to filter artifacts collection based on user search and/or if users toggle "Showing only liked"
     func filterArtifacts() -> [Artifact] {
+        
+        // Trim and remove white spaces in the search text
         let searchTextTrimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         
         // If the search text is empty and showingLiked is true, return all liked artifacts

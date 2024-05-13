@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// The guess game button represents one of the variants for answering in the guess artifact game
 struct GuessGameButton: View {
     
     // Name of the artifact for button
@@ -18,23 +19,28 @@ struct GuessGameButton: View {
     // Property that stores the name of the answer that user selected
     @Binding var selectedAnswer: String?
     
+    // Binding that counts how many times the user guessed the artifacts correctly
     @Binding var countCorrectAnswers: Int
     
+    // Button will be highlighted in green, indicating the correct answer, after user selects a response
     private var highlightedCorrectly: Bool {
         selectedAnswer != nil && singleArtifact == hiddenArtifact.name
     }
     
+    // Button will be highlighted in red, indicating the wrong answer, if user selects incorrect answer
     private var highlightedIncorrectly: Bool {
         selectedAnswer != nil && singleArtifact != hiddenArtifact.name && singleArtifact == selectedAnswer
     }
     
     var body: some View {
         Button(action: {
+            // Make sure that the user can only answer one time
             if selectedAnswer == nil{
                 withAnimation{
                     selectedAnswer=singleArtifact
                 }
                 
+                // Adjust an amount of correctly answered questions
                 if selectedAnswer == hiddenArtifact.name{
                     countCorrectAnswers+=1
                 }
@@ -45,6 +51,8 @@ struct GuessGameButton: View {
                 .font(.title)
                 .frame(maxWidth: .infinity)
         })
+        
+        // Disable button after user has posted a reponse
         .disabled(selectedAnswer != nil && !highlightedCorrectly && !highlightedIncorrectly)
         
         // Highlight correct answer

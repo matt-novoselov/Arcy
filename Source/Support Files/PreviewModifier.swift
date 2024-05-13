@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// Custom modifier that simplifies work with SwiftUI Previews by injecting all necessary models and storage containers
+// Note: Never use outside of the Preview scope
+// Design ONLY for Previews purposes
 struct PreviewVariables: ViewModifier {
     func body(content: Content) -> some View {
         content

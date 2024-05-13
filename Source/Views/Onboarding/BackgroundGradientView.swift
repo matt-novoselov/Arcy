@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// Animated Gradient is displayed in the background during the onboarding phase
+// Note: Not everything (including some Metal shaders) are working in Previews
+// Use simulator
 struct BackgroundGradientView: View {
     
     // Pass time elapsed since appear of the view
@@ -15,8 +18,11 @@ struct BackgroundGradientView: View {
     
     var body: some View {
         
+        // Display animated gradient in the form of the rectangle
         Rectangle()
             .opacity(0.7)
+        
+            // Apply the visual effect with an animated rainbow line
             .visualEffect { content, proxy in
                 content
                     .colorEffect(
@@ -26,6 +32,8 @@ struct BackgroundGradientView: View {
                         )
                     )
             }
+        
+            // Blur animated line to create visual effect
             .blur(radius: 150.0)
         
     }
