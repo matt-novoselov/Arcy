@@ -19,6 +19,8 @@ struct ArtifactDetailView: View {
     // Animated rotation of the model
     @State private var modelRotation = Angle.zero
     
+    @State private var isVolumeExpanded: Bool = false
+    
     let selectedArtifact: Artifact
     
     var body: some View {
@@ -27,24 +29,28 @@ struct ArtifactDetailView: View {
             
             @Bindable var model = volumeModel
             
-            //            // 3D model and label
-            //            ZStack(alignment: .bottom){
-            //
-            //                // 3D model
-            //                ArtifactModelView(modelName: selectedArtifact.modelName)
-            //                    .rotation3DEffect(modelRotation, axis: .y)
-            //                    .onAppear(){
-            //                        withAnimation(.interpolatingSpring(duration: 1.5)){
-            //                            modelRotation.degrees+=360
-            //                        }
-            //                    }
-            //
-            //                // Label
-            //                Button(action: {}, label: {
-            //                    Label("Expand", systemImage: "arrow.up.left.and.arrow.down.right")
-            //                })
-            //            }
-            //            .frame(height: 300)
+            // 3D model and label
+            ZStack(alignment: .bottom){
+                
+                // 3D model
+                ArtifactModelView(modelName: selectedArtifact.modelName)
+                    .rotation3DEffect(modelRotation, axis: .y)
+                    .onAppear {
+                        withAnimation(.interpolatingSpring(duration: 1.5)){
+                            modelRotation.degrees+=360
+                        }
+                    }
+                
+                // Label
+                Button(action: {
+                    volumeModel.nameOfModel = selectedArtifact.modelName
+                    openWindow(id: "secondaryVolume")
+                    isVolumeExpanded=true
+                }, label: {
+                    Label("Expand", systemImage: "arrow.up.left.and.arrow.down.right")
+                })
+            }
+            .frame(height: 300)
             
             // Information card
             VStack(alignment: .leading){
@@ -75,11 +81,6 @@ struct ArtifactDetailView: View {
             
         }
         .padding(.all, 20)
-        
-        .onAppear{
-            openWindow(id: "secondaryVolume")
-            volumeModel.nameOfModel = selectedArtifact.modelName
-        }
         
         .onDisappear {
             dismissWindow(id: "secondaryVolume")
