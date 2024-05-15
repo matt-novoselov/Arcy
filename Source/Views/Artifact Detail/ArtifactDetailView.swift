@@ -12,6 +12,8 @@ struct ArtifactDetailView: View {
     @Environment(VolumeModelView.self) var volumeModel
     
     @Environment(\.openWindow) private var openWindow
+    
+    // Environment variable to dismiss the currently opened window
     @Environment(\.dismissWindow) private var dismissWindow
     
     @State private var isLiked: Bool = false
@@ -41,14 +43,21 @@ struct ArtifactDetailView: View {
                         }
                     }
                 
-                // Label
-                Button(action: {
-                    volumeModel.nameOfModel = selectedArtifact.modelName
-                    openWindow(id: "secondaryVolume")
-                    isVolumeExpanded=true
-                }, label: {
-                    Label("Expand", systemImage: "arrow.up.left.and.arrow.down.right")
-                })
+                // Collapse / Expand button
+                Toggle(isOn: $isVolumeExpanded.animation()){
+                    Label(isVolumeExpanded ? "Collapse" : "Expand", systemImage: isVolumeExpanded ? "arrow.down.right.and.arrow.up.left" : "arrow.up.left.and.arrow.down.right")
+                }
+                .onChange(of: isVolumeExpanded){
+                    if isVolumeExpanded{
+                        volumeModel.nameOfModel = selectedArtifact.modelName
+                        openWindow(id: "secondaryVolume")
+                    } else{
+                        dismissWindow(id: "secondaryVolume")
+                    }
+                }
+                .toggleStyle(ButtonToggleStyle())
+                
+                
             }
             .frame(height: 300)
             

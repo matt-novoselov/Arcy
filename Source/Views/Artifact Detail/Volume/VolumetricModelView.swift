@@ -15,6 +15,9 @@ struct VolumetricModelView: View {
     @Environment(VolumeModelView.self)
     private var volumeModel
     
+    // Environment variable to dismiss the currently opened window
+    @Environment(\.dismissWindow) private var dismissWindow
+    
     var body: some View {
         
         // Display the 3D model of an Artifact
@@ -30,7 +33,7 @@ struct VolumetricModelView: View {
                     .resizable()
                     .scaledToFit()
                 
-                    // Add possibility of rotating the model through a custom modifier
+                // Add possibility of rotating the model through a custom modifier
                     .dragRotation(yawLimit: .degrees(180), pitchLimit: .degrees(180), sensitivity: 5)
                 
             case .failure(let error):
@@ -40,6 +43,18 @@ struct VolumetricModelView: View {
             @unknown default:
                 EmptyView()
             }
+        }
+        .padding3D()
+        .overlay{
+            // Collapse button
+            Button(action: {
+                dismissWindow(id: "secondaryVolume")
+            }, label: {
+                Label("Collapse", systemImage: "arrow.down.right.and.arrow.up.left")
+            })
+            .font(.title)
+            .glassBackgroundEffect()
+//            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         }
         
     }
