@@ -17,6 +17,12 @@ struct ArtifactModelView: View {
     // If the model in the Resource folder is named MyModel.usdz, you only need to pass MyModel
     let modelName: String
     
+    // Allow rotation on y axis
+    var allowYawRotation: Bool = false
+    
+    // Allow rotation on x axis
+    var allowPitchRotation: Bool = false
+    
     // Animate model opacity on appear
     @State private var modelOpacity: Double = 0
     
@@ -29,6 +35,9 @@ struct ArtifactModelView: View {
                 .scaledToFit()
                 .opacity(modelOpacity)
                 .padding()
+            
+                // Add possibility of rotating the model through a custom modifier
+                .dragRotation(yawLimit: .degrees(allowYawRotation ? 180 : 0), pitchLimit: .degrees(allowPitchRotation ? 180 : 0), sensitivity: 5)
             
                 // Animate model opacity on appear
                 .onAppear(){

@@ -30,6 +30,9 @@ struct VolumetricModelView: View {
                     .resizable()
                     .scaledToFit()
                 
+                    // Add possibility of rotating the model through a custom modifier
+                    .dragRotation(yawLimit: .degrees(180), pitchLimit: .degrees(180), sensitivity: 5)
+                
             case .failure(let error):
                 // Display error text if load failed
                 Text(error.localizedDescription)

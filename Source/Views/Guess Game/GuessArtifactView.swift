@@ -100,8 +100,8 @@ struct GuessArtifactView: View {
             
             Spacer()
             
-            // Hidden artifact model
-            ArtifactModelView(modelName: hiddenArtifact.modelName)
+            // Hidden artifact model, that can be rotated on y axis
+            ArtifactModelView(modelName: hiddenArtifact.modelName, allowYawRotation: true)
             
             Spacer()
 

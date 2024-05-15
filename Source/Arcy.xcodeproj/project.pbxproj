@@ -77,6 +77,7 @@
 		1A44CC5F2BEAA87B00A3D95B /* ConfettiImmersive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44CC5E2BEAA87B00A3D95B /* ConfettiImmersive.swift */; };
 		1A56D1CA2BE6557E00247B85 /* like_animation.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 1A56D1C92BE6557E00247B85 /* like_animation.lottie */; };
 		1A595FF12BE96BD20040469C /* LikesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A595FF02BE96BD20040469C /* LikesModel.swift */; };
+		1A6558142BF5503C0080B30A /* DragRotationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6558132BF5503B0080B30A /* DragRotationModifier.swift */; };
 		1A80A29F2BEAC0A1001C8192 /* Artifacts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */; };
 		1AADF0A62BEF87550095333C /* VolumetricModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF0A52BEF87550095333C /* VolumetricModelView.swift */; };
 		1AADF0A82BEF87680095333C /* VolumeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF0A72BEF87680095333C /* VolumeModelView.swift */; };
@@ -171,6 +172,7 @@
 		1A44CC5E2BEAA87B00A3D95B /* ConfettiImmersive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiImmersive.swift; sourceTree = "<group>"; };
 		1A56D1C92BE6557E00247B85 /* like_animation.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = like_animation.lottie; sourceTree = "<group>"; };
 		1A595FF02BE96BD20040469C /* LikesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesModel.swift; sourceTree = "<group>"; };
+		1A6558132BF5503B0080B30A /* DragRotationModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragRotationModifier.swift; sourceTree = "<group>"; };
 		1A80A29E2BEAC0A1001C8192 /* Artifacts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Artifacts.csv; sourceTree = "<group>"; };
 		1AADF0A52BEF87550095333C /* VolumetricModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumetricModelView.swift; sourceTree = "<group>"; };
 		1AADF0A72BEF87680095333C /* VolumeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeModelView.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 		1AEB0D9F2BF24ABE00FDFB53 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1A6558132BF5503B0080B30A /* DragRotationModifier.swift */,
 				1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */,
 				1AE1ADC22BEC142000E60AC6 /* AppVersionExtension.swift */,
 			);
@@ -699,6 +702,7 @@
 				1AE7D1412BE92034002A98D6 /* ProgressBar.swift in Sources */,
 				1A0CE8522BEFB353009203F1 /* Photo.swift in Sources */,
 				1AEA7C542BE83635006791FD /* DevelopedWithLoveView.swift in Sources */,
+				1A6558142BF5503C0080B30A /* DragRotationModifier.swift in Sources */,
 				1A358F7F2BE6BFDF001AB224 /* CenteredLabelStyle.swift in Sources */,
 				1AADF0A62BEF87550095333C /* VolumetricModelView.swift in Sources */,
 				1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */,
