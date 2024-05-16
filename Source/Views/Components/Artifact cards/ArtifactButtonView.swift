@@ -20,10 +20,12 @@ struct ArtifactButtonView: View {
     // Likes should be displayed in the collection grid, but not in the recommendations
     var showingLike: Bool = true
     
+    var showingAi: Bool = true
+    
     var body: some View {
         // Display navigation link that should lead to the Artifact detail view
         NavigationLink(destination: ArtifactDetailView(selectedArtifact: selectedArtifact)){
-            ArtifactFlatCardView(selectedArtifact: selectedArtifact, buttonCornerRadius: buttonCornerRadius, showingLike: showingLike)
+            ArtifactFlatCardView(selectedArtifact: selectedArtifact, buttonCornerRadius: buttonCornerRadius, showingLike: showingLike, showingAi: showingAi)
         }
         // Adjust button shape
         .buttonStyle(PlainButtonStyle())

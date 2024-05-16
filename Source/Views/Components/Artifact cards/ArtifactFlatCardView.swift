@@ -20,6 +20,8 @@ struct ArtifactFlatCardView: View {
     // Likes should be displayed in the collection grid, but not in the recommendations
     var showingLike: Bool = true
     
+    var showingAi: Bool = false
+    
     var body: some View {
         
         ZStack (alignment: .bottom){
@@ -50,13 +52,23 @@ struct ArtifactFlatCardView: View {
         
         // Display like button
         .overlay{
-            if showingLike{
-                LikeButtonView(artifactID: selectedArtifact.artifactID)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                    .buttonStyle(PlainButtonStyle())
-                    .buttonBorderShape(.circle)
-                    .padding()
+            Group{
+                if showingLike {
+                    LikeButtonView(artifactID: selectedArtifact.artifactID)
+                        .buttonStyle(PlainButtonStyle())
+                        .buttonBorderShape(.circle)
+
+                }
+                
+                if showingAi {
+                    Image(systemName: "sparkles")
+                        .fontWeight(.bold)
+                        .foregroundStyle(.tertiary)
+                }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+            .padding()
+
         }
         
     }

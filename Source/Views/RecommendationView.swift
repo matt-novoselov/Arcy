@@ -99,7 +99,7 @@ struct RecommendationView: View {
                 ContentUnavailableView("No recommendations", systemImage: "sparkle.magnifyingglass", description: Text("Try liking a few artifacts to see recommendations."))
             } else{
                 // Or display grid with AI recommendations
-                GridView(gridToDisplay: gridToDisplay, showingLikes: false)
+                GridView(gridToDisplay: gridToDisplay, showingLikes: false, showingAi: true)
             }
         }
         

@@ -40,7 +40,7 @@ struct CollectionView: View {
             } 
             // Display full collection
             else{
-                GridView(gridToDisplay: filterArtifacts())
+                GridView(gridToDisplay: filterArtifacts(), showingAi: false)
             }
         }
         .searchable(text: $searchText)

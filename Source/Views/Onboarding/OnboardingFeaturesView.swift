@@ -22,12 +22,16 @@ struct OnboardingFeaturesView: View {
             
             Spacer()
             
-            // Display several onboarding cards with features description
-            OnboardingCardView(iconName: "sun.min", title: "Lorem ipsum", description: "Lorem ipsum lorem ipsum orem ipsum")
-            
-            OnboardingCardView(iconName: "sun.min", title: "Lorem ipsum", description: "Lorem ipsum lorem ipsum orem ipsum")
-            
-            OnboardingCardView(iconName: "sun.min", title: "Lorem ipsum", description: "Lorem ipsum lorem ipsum orem ipsum")
+            Group{
+                // Display several onboarding cards with features description
+                OnboardingCardView(iconName: "rotate.3d", title: "Intractable Artifacts", description: "Explore and interact with artifacts from every angle")
+                
+                OnboardingCardView(iconName: "sparkles", title: "AI Recommendations", description: "Personalized recommendations powered by AI.")
+                
+                OnboardingCardView(iconName: "puzzlepiece.extension", title: "Play Game", description: "Test your knowledge, guess artifacts, and earn points!")
+            }
+            .frame(maxWidth: 380)
+
             
             Spacer()
             

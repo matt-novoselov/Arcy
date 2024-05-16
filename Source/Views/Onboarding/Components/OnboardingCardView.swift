@@ -37,11 +37,15 @@ struct OnboardingCardView: View {
                     .foregroundStyle(.secondary)
                 
             }
+            
+            Spacer()
         }
         .padding(.all, 20)
         
         // Apply glass effect background
         .glassBackgroundEffect()
+        
+        .clipShape(.capsule)
         
     }
 }

@@ -15,7 +15,7 @@ struct OnboardingWelcomeView: View {
     
     var body: some View {
         
-        VStack{
+        VStack(spacing: 10) {
             // Display app logo in the written form
             Image(.arcyLogoText)
                 .interpolation(.high)
@@ -32,7 +32,7 @@ struct OnboardingWelcomeView: View {
                 .fontWidth(.expanded)
             
             // Sub description
-            Text("Lorem ipsum")
+            Text("Dive into the world of archeology")
                 .font(.title3)
                 .foregroundStyle(.secondary)
             

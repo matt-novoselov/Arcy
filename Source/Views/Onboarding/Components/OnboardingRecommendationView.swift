@@ -13,7 +13,7 @@ struct OnboardingRecommendationView: View {
 
     var body: some View {
         
-        VStack(spacing: 20){
+        VStack(spacing: 40){
             
             // Overlay 2 gradient texts on top of each other to solve SwiftUI rendering bug
             // Note: Structure should be simplified, if the bug will be fixed in the future versions of SwiftUI for VisionOS
@@ -24,15 +24,14 @@ struct OnboardingRecommendationView: View {
                 .overlay{
                     MeetAIAnimatedGradient()
                 }
-            
-            Spacer()
-            
+
             // Display description
-            Text("Laborum irure occaecat eiusmod ipsum sunt ipsum ut tempor occaecat aliquip ipsum non.")
+            Text("Discover personalized artifact recommendations powered by AI, tailored to your unique preferences. Arcy will suggest artifacts based on the ones you have liked.")
+                .font(.headline)
                 .foregroundStyle(.secondary)
-                .lineLimit(nil)
-            
-            Spacer()
+                .multilineTextAlignment(.leading) // Align text to the leading edge
+                .fixedSize(horizontal: false, vertical: true) // Allow text to wrap
+                .frame(maxWidth: 450)
             
             Button("Lets try!") {
                 // Mark AI onboarding as completed which will result in a sheet being closed
@@ -40,6 +39,7 @@ struct OnboardingRecommendationView: View {
             }
         }
         .padding(.all, 20)
+        .padding(.vertical, 30)
         
     }
 }

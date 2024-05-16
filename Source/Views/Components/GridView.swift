@@ -25,6 +25,8 @@ struct GridView: View {
     // Likes should be displayed in the collection grid, but not in the recommendations
     var showingLikes: Bool = true
     
+    var showingAi: Bool = true
+    
     var body: some View {
         
         // Make view scrollable
@@ -34,7 +36,7 @@ struct GridView: View {
                 // Display each artifact
                 ForEach(gridToDisplay) { artifact in
                     // Display Artifact Button
-                    ArtifactButtonView(selectedArtifact: artifact, showingLike: showingLikes)
+                    ArtifactButtonView(selectedArtifact: artifact, showingLike: showingLikes, showingAi: showingAi)
                         .padding()
                     
                         // Add scroll transition that fades out element on the top
