@@ -15,7 +15,6 @@
 		1A03E63C2BE98ED200A0ACBB /* Attic_red_figured_krater.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E6192BE98ED200A0ACBB /* Attic_red_figured_krater.usdz */; };
 		1A03E63D2BE98ED200A0ACBB /* Attic_red-figure_pelike.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E61A2BE98ED200A0ACBB /* Attic_red-figure_pelike.usdz */; };
 		1A03E63E2BE98ED200A0ACBB /* Carved_gourd.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E61B2BE98ED200A0ACBB /* Carved_gourd.usdz */; };
-		1A03E63F2BE98ED200A0ACBB /* Corinthian_bowl.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E61C2BE98ED200A0ACBB /* Corinthian_bowl.usdz */; };
 		1A03E6402BE98ED200A0ACBB /* Corinthian_oinochoe.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E61D2BE98ED200A0ACBB /* Corinthian_oinochoe.usdz */; };
 		1A03E6412BE98ED200A0ACBB /* Cup_with_painted_face.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E61E2BE98ED200A0ACBB /* Cup_with_painted_face.usdz */; };
 		1A03E6422BE98ED200A0ACBB /* Female_terracotta_head_from_an_etruscan_tomb.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1A03E61F2BE98ED200A0ACBB /* Female_terracotta_head_from_an_etruscan_tomb.usdz */; };
@@ -111,7 +110,6 @@
 		1A03E6192BE98ED200A0ACBB /* Attic_red_figured_krater.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Attic_red_figured_krater.usdz; sourceTree = "<group>"; };
 		1A03E61A2BE98ED200A0ACBB /* Attic_red-figure_pelike.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Attic_red-figure_pelike.usdz"; sourceTree = "<group>"; };
 		1A03E61B2BE98ED200A0ACBB /* Carved_gourd.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Carved_gourd.usdz; sourceTree = "<group>"; };
-		1A03E61C2BE98ED200A0ACBB /* Corinthian_bowl.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Corinthian_bowl.usdz; sourceTree = "<group>"; };
 		1A03E61D2BE98ED200A0ACBB /* Corinthian_oinochoe.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Corinthian_oinochoe.usdz; sourceTree = "<group>"; };
 		1A03E61E2BE98ED200A0ACBB /* Cup_with_painted_face.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Cup_with_painted_face.usdz; sourceTree = "<group>"; };
 		1A03E61F2BE98ED200A0ACBB /* Female_terracotta_head_from_an_etruscan_tomb.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Female_terracotta_head_from_an_etruscan_tomb.usdz; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				1A03E6192BE98ED200A0ACBB /* Attic_red_figured_krater.usdz */,
 				1A03E61A2BE98ED200A0ACBB /* Attic_red-figure_pelike.usdz */,
 				1A03E61B2BE98ED200A0ACBB /* Carved_gourd.usdz */,
-				1A03E61C2BE98ED200A0ACBB /* Corinthian_bowl.usdz */,
 				1A03E61D2BE98ED200A0ACBB /* Corinthian_oinochoe.usdz */,
 				1A03E61E2BE98ED200A0ACBB /* Cup_with_painted_face.usdz */,
 				1A03E61F2BE98ED200A0ACBB /* Female_terracotta_head_from_an_etruscan_tomb.usdz */,
@@ -646,7 +643,6 @@
 				1A03E6562BE98ED200A0ACBB /* Vessel_with_geometric_pattern.usdz in Resources */,
 				1A03E6472BE98ED200A0ACBB /* Male_terracotta_figurines.usdz in Resources */,
 				1A03E6462BE98ED200A0ACBB /* Male_head_from_an_etruscan_tomb.usdz in Resources */,
-				1A03E63F2BE98ED200A0ACBB /* Corinthian_bowl.usdz in Resources */,
 				1A03E6372BE98ED200A0ACBB /* Bottle_with_anthropomorphic_head.usdz in Resources */,
 				1A03E6522BE98ED200A0ACBB /* Terracotta_figurine_of_a_veiled_woman.usdz in Resources */,
 				1A03E6502BE98ED200A0ACBB /* Terracotta_figurine_of_a_monkey_grinding_grain.usdz in Resources */,
