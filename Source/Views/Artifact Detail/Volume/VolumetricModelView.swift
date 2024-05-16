@@ -22,6 +22,8 @@ struct VolumetricModelView: View {
         
         // Display the 3D model of an Artifact
         ArtifactModelView(modelName: volumeModel.nameOfModel, allowYawRotation: true, allowPitchRotation: true)
+            .scaledToFit()
+            .padding3D()
             .overlay{
                 // Collapse button
                 Button(action: {
@@ -31,9 +33,11 @@ struct VolumetricModelView: View {
                     }
                 }, label: {
                     Label("Collapse", systemImage: "arrow.down.right.and.arrow.up.left")
+                        .font(.title)
+                        .padding()
                 })
-                .font(.title)
                 .glassBackgroundEffect()
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             }
         
     }
