@@ -56,7 +56,15 @@ struct EndOfGameView: View {
                 .padding(.all, 50)
             
             // Button to exit back to page selection view
-            Button("Play again", systemImage: "arrow.clockwise", action: {resetGame()})
+            Button("Play again", systemImage: "arrow.clockwise", action: {
+                resetGame()
+                gainedXp = 0
+                gainedProgress = 0
+                userXpScore = 0
+                Task{
+                    await dismissImmersiveSpace()
+                }
+            })
                 .labelStyle(CenteredLabelStyle())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

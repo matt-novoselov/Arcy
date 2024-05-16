@@ -19,7 +19,6 @@ struct GameView: View {
 
     var body: some View {
         
-        NavigationStack{
             VStack{
                 
                 // Custom toolbar visible during game phase
@@ -60,7 +59,6 @@ struct GameView: View {
                 .transition(.pushLeftTransition)
             }
             .padding()
-        }
         
     }
     
