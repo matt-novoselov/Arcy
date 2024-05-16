@@ -34,7 +34,7 @@ struct ArtifactModelView: View {
                 .resizable()
                 .scaledToFit()
                 .opacity(modelOpacity)
-                .padding()
+                .padding3D()
             
                 // Add possibility of rotating the model through a custom modifier
                 .dragRotation(yawLimit: .degrees(allowYawRotation ? 180 : 0), pitchLimit: .degrees(allowPitchRotation ? 180 : 0), sensitivity: 5)
