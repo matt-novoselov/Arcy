@@ -20,25 +20,25 @@ struct VolumetricModelView: View {
     
     var body: some View {
         
-        // Display the 3D model of an Artifact
-        ArtifactModelView(modelName: volumeModel.nameOfModel, allowYawRotation: true, allowPitchRotation: true)
-            .scaledToFit()
-            .padding3D()
-            .overlay{
-                // Collapse button
-                Button(action: {
-                    withAnimation{
-                        volumeModel.isExpanded = false
-                        dismissWindow(id: "secondaryVolume")
-                    }
-                }, label: {
-                    Label("Collapse", systemImage: "arrow.down.right.and.arrow.up.left")
-                        .font(.title)
-                        .padding()
-                })
-                .glassBackgroundEffect()
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            }
+        ZStack(alignment: .bottom){
+            // Display the 3D model of an Artifact
+            ArtifactModelView(modelName: volumeModel.nameOfModel, allowYawRotation: true, allowPitchRotation: true)
+                .padding3D()
+            
+            // Collapse button
+            Button(action: {
+                withAnimation{
+                    volumeModel.isExpanded = false
+                    dismissWindow(id: "secondaryVolume")
+                }
+            }, label: {
+                Label("Collapse", systemImage: "arrow.down.right.and.arrow.up.left")
+                    .font(.title)
+                    .padding()
+            })
+            .glassBackgroundEffect()
+        }
+        .scaledToFit()
         
     }
 }

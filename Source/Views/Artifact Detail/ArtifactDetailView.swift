@@ -63,7 +63,8 @@ struct ArtifactDetailView: View {
                 }
                 
             }
-            .frame(height: 300)
+            .frame(maxWidth: 275, maxHeight: 325)
+            .scaledToFit()
             
             // Information card
             VStack(alignment: .leading){
