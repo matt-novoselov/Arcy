@@ -24,7 +24,7 @@ struct OnboardingFeaturesView: View {
             
             Group{
                 // Display several onboarding cards with features description
-                OnboardingCardView(iconName: "rotate.3d", title: "Intractable Artifacts", description: "Explore artifacts from every angle")
+                OnboardingCardView(iconName: "rotate.3d", title: "Intractable Artifacts", description: "Explore artifacts from every angle.")
                 
                 OnboardingCardView(iconName: "sparkles", title: "AI Recommendations", description: "Personalized recommendations powered by AI.")
                 
