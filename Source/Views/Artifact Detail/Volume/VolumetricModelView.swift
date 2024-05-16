@@ -21,46 +21,20 @@ struct VolumetricModelView: View {
     var body: some View {
         
         // Display the 3D model of an Artifact
-        Model3D(named: volumeModel.nameOfModel) { model in
-            switch model {
-            case .empty:
-                // Display Progress View, while model is trying to load
-                ProgressView()
-                
-            case .success(let resolvedModel3D):
-                // Display loaded 3D model of an Artifact
-                resolvedModel3D
-                    .resizable()
-                    .scaledToFit()
-                
-                // Add possibility of rotating the model through a custom modifier
-                    .dragRotation(yawLimit: .degrees(180), pitchLimit: .degrees(180), sensitivity: 5)
-                
-            case .failure(let error):
-                // Display error text if load failed
-                Text(error.localizedDescription)
-                
-            @unknown default:
-                EmptyView()
+        ArtifactModelView(modelName: volumeModel.nameOfModel, allowYawRotation: true, allowPitchRotation: true)
+            .overlay{
+                // Collapse button
+                Button(action: {
+                    withAnimation{
+                        volumeModel.isExpanded = false
+                        dismissWindow(id: "secondaryVolume")
+                    }
+                }, label: {
+                    Label("Collapse", systemImage: "arrow.down.right.and.arrow.up.left")
+                })
+                .font(.title)
+                .glassBackgroundEffect()
             }
-        }
-        .padding3D()
-        .overlay{
-            // Collapse button
-            Button(action: {
-                dismissWindow(id: "secondaryVolume")
-            }, label: {
-                Label("Collapse", systemImage: "arrow.down.right.and.arrow.up.left")
-            })
-            .font(.title)
-            .glassBackgroundEffect()
-//            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-        }
         
     }
-}
-
-#Preview {
-    VolumetricModelView()
-        .previewVariables()
 }

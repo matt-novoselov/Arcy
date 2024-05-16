@@ -48,9 +48,7 @@ struct ArtifactModelView: View {
         } placeholder: {
             // Display placeholder while view loads
             ProgressView()
-                .frame(height: 300)
         }
-        .frame(height: 300)
         
     }
 }

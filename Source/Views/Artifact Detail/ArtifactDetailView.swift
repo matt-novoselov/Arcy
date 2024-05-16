@@ -20,9 +20,7 @@ struct ArtifactDetailView: View {
     
     // Animated rotation of the model
     @State private var modelRotation = Angle.zero
-    
-    @State private var isVolumeExpanded: Bool = false
-    
+
     let selectedArtifact: Artifact
     
     var body: some View {
@@ -43,20 +41,26 @@ struct ArtifactDetailView: View {
                         }
                     }
                 
+                let isExpandedBinding = Binding(
+                    get: { volumeModel.isExpanded },
+                    set: { volumeModel.isExpanded = $0 }
+                )
+                
                 // Collapse / Expand button
-                Toggle(isOn: $isVolumeExpanded.animation()){
-                    Label(isVolumeExpanded ? "Collapse" : "Expand", systemImage: isVolumeExpanded ? "arrow.down.right.and.arrow.up.left" : "arrow.up.left.and.arrow.down.right")
+                Toggle(isOn: isExpandedBinding.animation()){
+                    Label(volumeModel.isExpanded ? "Collapse" : "Expand", systemImage: volumeModel.isExpanded ? "arrow.down.right.and.arrow.up.left" : "arrow.up.left.and.arrow.down.right")
                 }
-                .onChange(of: isVolumeExpanded){
-                    if isVolumeExpanded{
+                
+                .toggleStyle(ButtonToggleStyle())
+                
+                .onChange(of: volumeModel.isExpanded){
+                    if volumeModel.isExpanded{
                         volumeModel.nameOfModel = selectedArtifact.modelName
                         openWindow(id: "secondaryVolume")
                     } else{
                         dismissWindow(id: "secondaryVolume")
                     }
                 }
-                .toggleStyle(ButtonToggleStyle())
-                
                 
             }
             .frame(height: 300)
@@ -93,6 +97,7 @@ struct ArtifactDetailView: View {
         
         .onDisappear {
             dismissWindow(id: "secondaryVolume")
+            volumeModel.isExpanded = false
         }
         
     }

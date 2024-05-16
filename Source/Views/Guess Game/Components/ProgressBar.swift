@@ -13,14 +13,17 @@ struct ProgressBar: View {
         
         ZStack (alignment: .leading){
             // Underlying gray line
-            RoundedRectangle(cornerRadius: .infinity)
+            Capsule()
                 .foregroundStyle(.regularMaterial)
             
             // Main progress indicator
-            RoundedRectangle(cornerRadius: .infinity)
+            Capsule()
                 .foregroundStyle(.fill.secondary)
                 .frame(width: CGFloat(size.width) * CGFloat(progress==0 ? 0.1 : progress))
+                .clipped()
         }
+        .cornerRadius(.infinity)
+        .frame(maxWidth: .infinity)
         
         // Determine frame size using GeometryReader
         .background{

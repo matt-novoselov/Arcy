@@ -16,59 +16,51 @@ struct GameView: View {
     
     // Property that counts how many times the user guessed the artifacts correctly
     @State private var countCorrectAnswers: Int = 0
-    
-    // Value to dismiss the current navigation link view
-    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         
-        VStack{
-            
-            // Custom toolbar visible during game phase
-            if currentLevel < 3{
-                HStack{
-                    // Back / Exit button
-                    Button(action: {dismiss()}){
-                        Image(systemName: "chevron.left")
+        NavigationStack{
+            VStack{
+                
+                // Custom toolbar visible during game phase
+                if currentLevel < 3{
+                    HStack{                        
+                        // Progress bar
+                        // SF Symbol is used to enable adaptive frame size to match size of the back / exit button
+                        Button(action: {}){
+                            Image(systemName: "circle")
+                                .frame(maxWidth: .infinity)
+                        }
+                        .tint(.clear)
+                        .foregroundStyle(.clear)
+                        .allowsHitTesting(false)
+                        .overlay{
+                            ProgressBar(progress: Double(currentLevel)/3)
+                                .padding()
+                        }
                     }
-                    .buttonBorderShape(.circle)
-                    .help("Back")
-                    
-                    // Progress bar
-                    // SF Symbol is used to enable adaptive frame size to match size of the back / exit button
-                    Button(action: {}){
-                        Image(systemName: "circle")
-                            .frame(maxWidth: .infinity)
-                    }
-                    .tint(.clear)
-                    .foregroundStyle(.clear)
-                    .allowsHitTesting(false)
-                    .overlay{
-                        ProgressBar(progress: Double(currentLevel)/3)
-                            .padding()
+                    .padding(.all, 10)
+                }
+                
+                // Control the current level based on the state of the game
+                Group{
+                    switch currentLevel {
+                    case 0:
+                        GuessArtifactView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
+                    case 1:
+                        GuessArtifactView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
+                    case 2:
+                        GuessArtifactView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
+                    default:
+                        EndOfGameView(countCorrectAnswers: countCorrectAnswers, resetGame: {resetGame()})
                     }
                 }
-                .padding(.all, 10)
+                .frame(maxWidth: .infinity)
+                .toolbar(.hidden)
+                .transition(.pushLeftTransition)
             }
-            
-            // Control the current level based on the state of the game
-            Group{
-                switch currentLevel {
-                case 0:
-                    GuessArtifactView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
-                case 1:
-                    GuessArtifactView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
-                case 2:
-                    GuessArtifactView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
-                default:
-                    EndOfGameView(countCorrectAnswers: countCorrectAnswers)
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .toolbar(.hidden)
-            .transition(.pushLeftTransition)
+            .padding()
         }
-        .padding()
         
     }
     
@@ -76,6 +68,13 @@ struct GameView: View {
     func nextLevel(){
         withAnimation{
             currentLevel+=1
+        }
+    }
+    
+    func resetGame(){
+        withAnimation{
+            currentLevel = 0
+            countCorrectAnswers = 0
         }
     }
 }

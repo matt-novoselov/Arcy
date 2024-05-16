@@ -17,4 +17,6 @@ class VolumeModelView {
     // If the model in the Resource folder is named MyModel.usdz, you only need to pass MyModel
     var nameOfModel: String = ""
     
+    var isExpanded: Bool = false
+    
 }

@@ -27,14 +27,13 @@ struct EndOfGameView: View {
     // Get user score value from the user defaults
     @AppStorage("userXpScore") private var userXpScore: Int = 0
     
-    // Environment variable to dismiss the current view
-    @Environment(\.dismiss) var dismiss
-    
     // Environment variable to open Immersive space to display confetti
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     
     // Environment variable to close Immersive space to hide confetti
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
+    
+    var resetGame: () -> Void
     
     var body: some View {
         
@@ -57,7 +56,8 @@ struct EndOfGameView: View {
                 .padding(.all, 50)
             
             // Button to exit back to page selection view
-            Button("Exit", systemImage: "chevron.left", action: {dismiss()})
+            Button("Play again", systemImage: "arrow.clockwise", action: {resetGame()})
+                .labelStyle(CenteredLabelStyle())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.all, 40)
@@ -107,6 +107,6 @@ struct EndOfGameView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    EndOfGameView(countCorrectAnswers: 3)
+    EndOfGameView(countCorrectAnswers: 3, resetGame: {})
         .previewVariables()
 }

@@ -83,13 +83,7 @@ struct SelectionPageView: View {
                         }
                     }
                 }
-                
-                // Guess Game View
-                ToolbarItem(placement: .topBarLeading){
-                    NavigationLink(destination: GameView()){
-                        Label("Game", systemImage: "trophy")
-                    }
-                }
+
             }
             
         }
