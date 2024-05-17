@@ -13,6 +13,9 @@ struct OnboardingWelcomeView: View {
     // Binding for controlling current onboarding scene
     @Binding var onboardingState: onboardingState
     
+    @State private var blurRadius: Double = 10
+    @State private var buttonVisible: Bool = false
+    
     var body: some View {
         
         VStack(spacing: 10) {
@@ -26,22 +29,37 @@ struct OnboardingWelcomeView: View {
             
             Spacer()
             
-            // Main title
-            Text("Welcome, Explorer")
-                .font(.extraLargeTitle)
-                .fontWidth(.expanded)
-            
-            // Sub description
-            Text("Dive into the world of archeology")
-                .font(.title3)
-                .foregroundStyle(.secondary)
+            Group{
+                // Main title
+                Text("Welcome, Explorer")
+                    .font(.extraLargeTitle)
+                    .fontWidth(.expanded)
+                
+                // Sub description
+                Text("Dive into the world of archeology")
+                    .font(.title3)
+                    .foregroundStyle(.secondary)
+            }
+            .blur(radius: blurRadius)
+            .onAppear{
+                withAnimation(.spring(duration: 3)){
+                    blurRadius = 0
+                } completion: {
+                    withAnimation{
+                        buttonVisible = true
+                    }
+                }
+            }
             
             Spacer()
             
             // Button to switch onboarding state and navigate to the next View
-            Button(action: {switchState()}){
-                Text("Continue")
+            if buttonVisible{
+                Button(action: {switchState()}){
+                    Text("Continue")
+                }
             }
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.all, 40)
