@@ -56,7 +56,7 @@ struct OnboardingFeaturesView: View {
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { timer in
                 if animationPhase < 4 {
-                    withAnimation {
+                    withAnimation(.spring) {
                         animationPhase += 1
                     }
                 } else {

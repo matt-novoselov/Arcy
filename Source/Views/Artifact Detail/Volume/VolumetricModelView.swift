@@ -27,10 +27,7 @@ struct VolumetricModelView: View {
             
             // Collapse button
             Button(action: {
-                withAnimation{
-                    volumeModel.isExpanded = false
-                    dismissWindow(id: "secondaryVolume")
-                }
+                closeVolume()
             }, label: {
                 Label("Collapse", systemImage: "arrow.down.right.and.arrow.up.left")
                     .font(.title)
@@ -40,5 +37,16 @@ struct VolumetricModelView: View {
         }
         .scaledToFit()
         
+        .onDisappear {
+            closeVolume()
+        }
+        
+    }
+    
+    func closeVolume(){
+        withAnimation{
+            volumeModel.isExpanded = false
+            dismissWindow(id: "secondaryVolume")
+        }
     }
 }

@@ -20,7 +20,7 @@ struct ArtifactDetailView: View {
     
     // Animated rotation of the model
     @State private var modelRotation = Angle.zero
-
+    
     let selectedArtifact: Artifact
     
     var body: some View {
@@ -68,33 +68,32 @@ struct ArtifactDetailView: View {
             
             // Information card
             VStack(alignment: .leading){
-                // Title and description
-                VStack(alignment: .leading){
-                    Text(selectedArtifact.name)
-                        .font(.largeTitle)
-                    
-                    Text(selectedArtifact.description.replacingOccurrences(of: "\\n", with: "\n"))
-                        .foregroundStyle(.secondary)
-                }
-                .padding()
-                .background(.regularMaterial, in: .rect(cornerRadius: 20))
+                // Artifact description
+                Text(selectedArtifact.description.replacingOccurrences(of: "\\n", with: "\n"))
+                    .foregroundStyle(.secondary)
+                
+                Spacer()
                 
                 // Action buttons
                 HStack{
+                    LikeButtonView(artifactID: selectedArtifact.artifactID)
+                    
                     ShareLink(item: selectedArtifact.previewImage, preview: SharePreview("\(selectedArtifact.name)\n\n\(selectedArtifact.description)", image: selectedArtifact.previewImage)) {
                         Image(systemName: "square.and.arrow.up")
                     }
-                    
-                    LikeButtonView(artifactID: selectedArtifact.artifactID)
                 }
             }
-            .frame(width: 400)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding()
+            .background(.regularMaterial, in: .rect(cornerRadius: 20))
             
             // Map
             ExpandableMapView(selectedArtifact: selectedArtifact)
             
         }
         .padding(.all, 20)
+        
+        .navigationTitle(selectedArtifact.name)
         
         .onDisappear {
             dismissWindow(id: "secondaryVolume")

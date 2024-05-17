@@ -47,6 +47,8 @@ struct OnboardingCardView: View {
         
         .clipShape(.capsule)
         
+        .transition(.scale)
+        
     }
 }
 

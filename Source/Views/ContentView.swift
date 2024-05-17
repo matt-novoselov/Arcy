@@ -23,14 +23,12 @@ struct ContentView: View {
                 TabView {
                     // Archive View
                     SelectionPageView()
-                        .transition(.blurReplace)
                         .tabItem {
                             Label("Collection", systemImage: "square.grid.2x2.fill")
                         }
 
                     // Guess Game View
                     GameView()
-                        .transition(.blurReplace)
                         .tabItem {
                             Label("Game", systemImage: "trophy")
                         }
