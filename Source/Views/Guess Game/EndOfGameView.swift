@@ -33,7 +33,8 @@ struct EndOfGameView: View {
     // Environment variable to close Immersive space to hide confetti
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     
-    var resetGame: () -> Void
+    // Value to dismiss the current navigation link view
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         
@@ -56,16 +57,12 @@ struct EndOfGameView: View {
                 .padding(.all, 50)
             
             // Button to exit back to page selection view
-            Button("Play again", systemImage: "arrow.clockwise", action: {
-                resetGame()
-                gainedXp = 0
-                gainedProgress = 0
-                userXpScore = 0
+            Button("Exit", systemImage: "chevron.left", action: {
+                dismiss()
                 Task{
                     await dismissImmersiveSpace()
                 }
             })
-                .labelStyle(CenteredLabelStyle())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.all, 40)
@@ -115,6 +112,6 @@ struct EndOfGameView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    EndOfGameView(countCorrectAnswers: 3, resetGame: {})
+    EndOfGameView(countCorrectAnswers: 3)
         .previewVariables()
 }

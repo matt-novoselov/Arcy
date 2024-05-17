@@ -16,6 +16,9 @@ struct GameView: View {
     
     // Property that counts how many times the user guessed the artifacts correctly
     @State private var countCorrectAnswers: Int = 0
+    
+    // Value to dismiss the current navigation link view
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         
@@ -23,7 +26,14 @@ struct GameView: View {
                 
                 // Custom toolbar visible during game phase
                 if currentLevel < 3{
-                    HStack{                        
+                    HStack{
+                        // Back / Exit button
+                        Button(action: {dismiss()}){
+                            Image(systemName: "chevron.left")
+                        }
+                        .buttonBorderShape(.circle)
+                        .help("Back")
+                        
                         // Progress bar
                         // SF Symbol is used to enable adaptive frame size to match size of the back / exit button
                         Button(action: {}){
@@ -51,7 +61,7 @@ struct GameView: View {
                     case 2:
                         GuessArtifactView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
                     default:
-                        EndOfGameView(countCorrectAnswers: countCorrectAnswers, resetGame: {resetGame()})
+                        EndOfGameView(countCorrectAnswers: countCorrectAnswers)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -66,13 +76,6 @@ struct GameView: View {
     func nextLevel(){
         withAnimation{
             currentLevel+=1
-        }
-    }
-    
-    func resetGame(){
-        withAnimation{
-            currentLevel = 0
-            countCorrectAnswers = 0
         }
     }
 }

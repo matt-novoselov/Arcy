@@ -20,22 +20,11 @@ struct ContentView: View {
         // Display main view or onboarding based on saved value
         Group{
             if animatedOnboardingCompleted{
-                TabView {
-                    // Archive View
-                    SelectionPageView()
-                        .tabItem {
-                            Label("Collection", systemImage: "square.grid.2x2.fill")
-                        }
-
-                    // Guess Game View
-                    GameView()
-                        .tabItem {
-                            Label("Game", systemImage: "trophy")
-                        }
-                }
-                .transition(.blurReplace)
+                // Archive View
+                SelectionPageView()
+                    .transition(.blurReplace)
                 
-                    
+                
             } else{
                 OnboardingView()
                     .transition(.blurReplace)
