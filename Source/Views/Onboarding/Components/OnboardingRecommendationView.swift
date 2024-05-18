@@ -26,7 +26,7 @@ struct OnboardingRecommendationView: View {
                 }
 
             // Display description
-            Text("Discover personalized artifact recommendations powered by a Neural Network. The Artificial Intelligence will suggest artifacts based on the archaeological items you have liked.")
+            Text("Discover personalized artifact recommendations powered by a Neural Network. The Artificial Intelligence will suggest artifacts based on the items you have liked.")
                 .font(.headline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.leading) // Align text to the leading edge

@@ -36,7 +36,7 @@ struct OnboardingWelcomeView: View {
                     .fontWeight(.black)
                 
                 // Sub description
-                Text("Dive into the world of archeology")
+                Text("Dive into the world of archaeology like never before.")
                     .font(.title3)
                     .foregroundStyle(.secondary)
             }
