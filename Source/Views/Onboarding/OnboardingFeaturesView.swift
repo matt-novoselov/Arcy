@@ -39,7 +39,7 @@ struct OnboardingFeaturesView: View {
                     OnboardingCardView(iconName: "graduationcap", title: "Take a Quiz", description: "Test your knowledge and earn points!")
                 }
             }
-            .frame(maxWidth: 390)
+            .frame(maxWidth: 420)
             .offset(z: 5)
             
             Spacer()

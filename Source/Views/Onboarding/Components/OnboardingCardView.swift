@@ -31,6 +31,7 @@ struct OnboardingCardView: View {
                     }
             }
             .font(.extraLargeTitle)
+            .padding()
             
             VStack(alignment: .leading){
                 // Display title

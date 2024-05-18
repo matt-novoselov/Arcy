@@ -64,23 +64,16 @@ struct SelectionPageView: View {
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: ProfileView()){
                         Image(systemName: "circle")
+                            .hidden()
+                        
+                        Text("Profile")
+                            .foregroundStyle(.secondary)
                     }
                     .overlay{
                         ProfilePictureView()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                            .padding(.all, 5)
                             .allowsHitTesting(false)
-                            .contentShape(.hoverEffect, .circle)
-                            .hoverEffect()
-                    }
-                    .buttonBorderShape(.circle)
-                    .help("Profile")
-                }
-                
-                // Favorites View
-                if selectionPage == .collection{
-                    ToolbarItem(placement: .topBarTrailing){
-                        Toggle(isOn: $showingLiked.animation()){
-                            Label("Favorites", systemImage: showingLiked ? "heart.fill" : "heart")
-                        }
                     }
                 }
                 
@@ -89,7 +82,18 @@ struct SelectionPageView: View {
                     NavigationLink(destination: GameView()){
                         HStack{
                             Image(systemName: "graduationcap")
+                            
                             Text("Take quiz")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                
+                // Favorites View
+                if selectionPage == .collection{
+                    ToolbarItem(placement: .topBarTrailing){
+                        Toggle(isOn: $showingLiked.animation()){
+                            Label("Favorites", systemImage: showingLiked ? "heart.fill" : "heart")
                         }
                     }
                 }
