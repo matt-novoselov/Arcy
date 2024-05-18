@@ -29,8 +29,6 @@ struct ExpandableMapView: View {
             )
         )
         
-        
-        
         // Display main Map
         Map(initialPosition: position){
             
@@ -41,7 +39,7 @@ struct ExpandableMapView: View {
         }
         
         // Apply standard map style
-        .mapStyle(.standard(elevation: .realistic))
+        .mapStyle(.standard(elevation: .realistic, pointsOfInterest: .excludingAll))
         
         // Hide all maps controls
         .mapControlVisibility(.hidden)

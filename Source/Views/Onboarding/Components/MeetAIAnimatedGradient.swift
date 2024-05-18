@@ -17,15 +17,19 @@ struct MeetAIAnimatedGradient: View {
     var body: some View {
         
         Group{
-            // Normal text
-            Text("Meet ") +
-            // Gradient text
-            Text("AI Recommendations")
-                .fontWeight(.black)
-                .foregroundStyle(
-                    // Use branding logo colors for default gradient
-                    LinearGradient(colors: [.iconPurple, .iconBlue], startPoint: .topLeading, endPoint: .bottomTrailing)
-                )
+            HStack{
+                Image(systemName: "sparkles")
+                
+                // Normal text
+                Text("Meet ") +
+                // Gradient text
+                Text("AI Recommendations")
+                    .fontWeight(.black)
+                    .foregroundStyle(
+                        // Use branding logo colors for default gradient
+                        LinearGradient(colors: [.iconPurple, .iconBlue], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    )
+            }
         }
         .font(.largeTitle)
         
@@ -34,7 +38,7 @@ struct MeetAIAnimatedGradient: View {
         
         // Start infinite animation on bootstrap
         .onAppear {
-            withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
+            withAnimation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true)) {
                 animateGradient.toggle()
             }
         }

@@ -116,6 +116,19 @@ struct RecommendationView: View {
             showingRecommendationOnboarding = !onboardingRecommendationCompleted
         }
         
+        // Toolbar
+        .toolbar{
+            // Guess Game View
+            ToolbarItem(placement: .topBarTrailing){
+                Label("Suggested by AI", systemImage: "sparkles")
+                    .labelStyle(CenteredLabelStyle())
+                    .font(.title)
+                    .foregroundStyle(.tertiary)
+                    .padding()
+            }
+
+        }
+        
     }
 }
 

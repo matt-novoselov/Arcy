@@ -26,12 +26,12 @@ struct OnboardingRecommendationView: View {
                 }
 
             // Display description
-            Text("Discover personalized artifact recommendations powered by AI, tailored to your unique preferences. A neural network will suggest artifacts based on the archaeological items you have liked.")
+            Text("Discover personalized artifact recommendations powered by a Neural Network. The Artificial Intelligence will suggest artifacts based on the archaeological items you have liked.")
                 .font(.headline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.leading) // Align text to the leading edge
                 .fixedSize(horizontal: false, vertical: true) // Allow text to wrap
-                .frame(maxWidth: 450)
+                .frame(maxWidth: 480)
             
             Button("Lets try!") {
                 // Mark AI onboarding as completed which will result in a sheet being closed

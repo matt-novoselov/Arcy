@@ -110,7 +110,7 @@ enum SelectionPage: CaseIterable {
         case .collection:
             return "Collection"
         case .recommendation:
-            return "Recommendation"
+            return "Recommendations"
         }
     }
 }

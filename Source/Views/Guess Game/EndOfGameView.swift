@@ -27,6 +27,9 @@ struct EndOfGameView: View {
     // Get user score value from the user defaults
     @AppStorage("userXpScore") private var userXpScore: Int = 0
     
+    // Value to store username in the user defaults
+    @AppStorage("userName") private var userName: String = ""
+    
     // Environment variable to open Immersive space to display confetti
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     
@@ -40,7 +43,7 @@ struct EndOfGameView: View {
         
         VStack{
             // Title
-            Text("You did it!")
+            Text("\(userName), you did it!")
                 .font(.title)
             
             // Profile statistics view is used to display statistics in the end of the game
