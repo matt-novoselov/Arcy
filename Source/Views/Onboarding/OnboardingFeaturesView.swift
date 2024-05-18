@@ -36,10 +36,10 @@ struct OnboardingFeaturesView: View {
                 }
                 
                 if animationPhase>=3{
-                    OnboardingCardView(iconName: "puzzlepiece.extension", title: "Play Game", description: "Test your knowledge and earn points!")
+                    OnboardingCardView(iconName: "arcade.stick", title: "Play Game", description: "Test your knowledge and earn points!")
                 }
             }
-            .frame(maxWidth: 380)
+            .frame(maxWidth: 390)
             .offset(z: 5)
             
             Spacer()

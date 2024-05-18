@@ -23,8 +23,14 @@ struct OnboardingCardView: View {
         
         HStack(spacing: 15){
             // Display SF Symbol
-            Image(systemName: iconName)
-                .font(.extraLargeTitle)
+            Group{
+                Image(systemName: "circle")
+                    .foregroundStyle(.clear)
+                    .overlay{
+                        Image(systemName: iconName)
+                    }
+            }
+            .font(.extraLargeTitle)
             
             VStack(alignment: .leading){
                 // Display title
