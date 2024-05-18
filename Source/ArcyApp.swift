@@ -38,7 +38,7 @@ struct ArcyApp: App {
                 .environment(volumeModel)
         }
         .windowStyle(.volumetric)
-        .defaultSize(width: 0.5, height: 0.5, depth: 0.5, in: .meters)
+        .defaultSize(width: 0.5, height: 0.5, depth: 0.6, in: .meters)
         
     }
 }

@@ -23,7 +23,6 @@ struct VolumetricModelView: View {
         ZStack(alignment: .bottom){
             // Display the 3D model of an Artifact
             ArtifactModelView(modelName: volumeModel.nameOfModel, allowYawRotation: true, allowPitchRotation: true)
-                .padding3D()
             
             // Collapse button
             Button(action: {
@@ -35,6 +34,7 @@ struct VolumetricModelView: View {
             })
             .glassBackgroundEffect()
         }
+        .padding3D()
         .scaledToFit()
         
         .onDisappear {
