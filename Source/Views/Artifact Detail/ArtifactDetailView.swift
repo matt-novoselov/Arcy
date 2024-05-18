@@ -69,8 +69,11 @@ struct ArtifactDetailView: View {
             // Information card
             VStack(alignment: .leading){
                 // Artifact description
-                Text(selectedArtifact.description.replacingOccurrences(of: "\\n", with: "\n"))
-                    .foregroundStyle(.secondary)
+                ScrollView{
+                    Text(selectedArtifact.description.replacingOccurrences(of: "\\n", with: "\n"))
+                        .foregroundStyle(.secondary)
+                        .padding(.horizontal)
+                }
                 
                 Spacer()
                 
@@ -82,9 +85,10 @@ struct ArtifactDetailView: View {
                         Image(systemName: "square.and.arrow.up")
                     }
                 }
+                .padding(.horizontal)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
+            .padding(.vertical)
             .background(.regularMaterial, in: .rect(cornerRadius: 20))
             
             // Map

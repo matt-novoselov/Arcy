@@ -40,6 +40,7 @@ struct OnboardingFeaturesView: View {
                 }
             }
             .frame(maxWidth: 380)
+            .offset(z: 5)
             
             Spacer()
             

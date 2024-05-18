@@ -33,7 +33,7 @@ struct OnboardingWelcomeView: View {
                 // Main title
                 Text("Welcome, Explorer")
                     .font(.extraLargeTitle)
-                    .fontWidth(.expanded)
+                    .fontWeight(.black)
                 
                 // Sub description
                 Text("Dive into the world of archeology")

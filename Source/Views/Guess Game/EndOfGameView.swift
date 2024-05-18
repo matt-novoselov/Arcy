@@ -57,7 +57,7 @@ struct EndOfGameView: View {
                 .padding(.all, 50)
             
             // Button to exit back to page selection view
-            Button("Exit", systemImage: "chevron.left", action: {
+            Button("Continue", action: {
                 dismiss()
                 Task{
                     await dismissImmersiveSpace()
