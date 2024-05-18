@@ -87,7 +87,10 @@ struct SelectionPageView: View {
                 // Guess Game View
                 ToolbarItem(placement: .topBarLeading){
                     NavigationLink(destination: GameView()){
-                        Label("Game", systemImage: "trophy")
+                        HStack{
+                            Image(systemName: "graduationcap")
+                            Text("Take quiz")
+                        }
                     }
                 }
 

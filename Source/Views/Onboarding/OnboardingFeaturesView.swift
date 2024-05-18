@@ -36,7 +36,7 @@ struct OnboardingFeaturesView: View {
                 }
                 
                 if animationPhase>=3{
-                    OnboardingCardView(iconName: "trophy", title: "Play Game", description: "Test your knowledge and earn points!")
+                    OnboardingCardView(iconName: "graduationcap", title: "Take a Quiz", description: "Test your knowledge and earn points!")
                 }
             }
             .frame(maxWidth: 390)

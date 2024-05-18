@@ -105,6 +105,7 @@ struct GuessArtifactView: View {
                 .scaledToFit()
                 .frame(maxWidth: 300, maxHeight: 400)
                 .padding3D()
+                .padding(.vertical)
             
             Spacer()
 
