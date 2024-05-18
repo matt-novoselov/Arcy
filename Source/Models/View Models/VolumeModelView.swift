@@ -15,7 +15,7 @@ class VolumeModelView {
     // Note: Pass only the name of the model in the .usdz format without an extension itself
     // Example:
     // If the model in the Resource folder is named MyModel.usdz, you only need to pass MyModel
-    var nameOfModel: String = ""
+    var nameOfModel: String = "Small_terracotta_figurine_of_a_veiled_woman"
     
     var isExpanded: Bool = false
     
