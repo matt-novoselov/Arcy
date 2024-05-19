@@ -25,6 +25,7 @@ struct UILottieView: View {
             LottieView(url: fileURL, playOnce: playOnce, animationSpeed: animationSpeed)
         }
         else{
+            // Display error text
             Text("Lottie not found")
                 .foregroundStyle(.red)
                 .fontWeight(.bold)

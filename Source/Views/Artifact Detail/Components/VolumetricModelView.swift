@@ -37,12 +37,14 @@ struct VolumetricModelView: View {
         .padding3D()
         .scaledToFit()
         
+        // Self close the volume if user closes the volumetric window through a system xmark
         .onDisappear {
             closeVolume()
         }
         
     }
     
+    // Function to close the volume
     func closeVolume(){
         withAnimation{
             volumeModel.isExpanded = false

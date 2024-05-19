@@ -42,6 +42,7 @@ struct SelectionPageView: View {
             // Ornament
             .toolbar{
                 // Toolbar that resembles selection picker
+                // The native selection picker is not working as intended and not following Apple Human Design Guidelines
                 ToolbarItem(placement: .bottomOrnament){
                     HStack{
                         ForEach(SelectionPage.allCases, id: \.self) { category in
@@ -77,9 +78,9 @@ struct SelectionPageView: View {
                     }
                 }
                 
-                // Guess Game View
+                // Quiz game
                 ToolbarItem(placement: .topBarLeading){
-                    NavigationLink(destination: GameView()){
+                    NavigationLink(destination: QuizView()){
                         HStack{
                             Image(systemName: "graduationcap")
                             
@@ -89,7 +90,7 @@ struct SelectionPageView: View {
                     }
                 }
                 
-                // Favorites View
+                // Favorites Filter
                 if selectionPage == .collection{
                     ToolbarItem(placement: .topBarTrailing){
                         Toggle(isOn: $showingLiked.animation()){

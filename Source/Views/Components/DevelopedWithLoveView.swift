@@ -13,7 +13,7 @@ struct DevelopedWithLoveView: View {
         HStack(spacing: 5){
             Text("Developed with")
             
-            // love
+            // love (like button)
             DecorativeLikeButtonView()
             
             Text("by Matt Novoselov")

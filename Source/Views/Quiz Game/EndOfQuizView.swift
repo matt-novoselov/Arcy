@@ -9,7 +9,7 @@ import SwiftUI
 import RealityKit
 import RealityKitContent
 
-struct EndOfGameView: View {
+struct EndOfQuizView: View {
     
     // An amount of correctly answered questions by user
     var countCorrectAnswers: Int
@@ -115,6 +115,6 @@ struct EndOfGameView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    EndOfGameView(countCorrectAnswers: 3)
+    EndOfQuizView(countCorrectAnswers: 3)
         .previewVariables()
 }

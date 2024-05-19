@@ -52,7 +52,7 @@ struct GuessGameButton: View {
                 .frame(maxWidth: .infinity)
         })
         
-        // Disable button after user has posted a reponse
+        // Disable button after user has posted a response
         .disabled(selectedAnswer != nil && !highlightedCorrectly && !highlightedIncorrectly)
         
         // Highlight correct answer

@@ -8,7 +8,7 @@
 import SwiftUI
 
 // Game View is responsible for keeping track of the game's state
-struct GameView: View {
+struct QuizView: View {
     
     // Property that controls the current level
     // By default game has 3 levels
@@ -61,7 +61,7 @@ struct GameView: View {
                     case 2:
                         GuessArtifactView(nextButtonAction: {nextLevel()}, countCorrectAnswers: $countCorrectAnswers)
                     default:
-                        EndOfGameView(countCorrectAnswers: countCorrectAnswers)
+                        EndOfQuizView(countCorrectAnswers: countCorrectAnswers)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -81,6 +81,6 @@ struct GameView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    GameView()
+    QuizView()
         .previewVariables()
 }

@@ -25,7 +25,10 @@ struct GridView: View {
     // Likes should be displayed in the collection grid, but not in the recommendations
     var showingLikes: Bool = true
     
-    var showingAi: Bool = true
+    // Show AI sparkles icon in the right up corner
+    // Sparkles should be shown in the Recommendations View to indicate
+    // that the Artifacts are suggested by a Neural Network
+    var showingSparkles: Bool = true
     
     var body: some View {
         
@@ -36,7 +39,7 @@ struct GridView: View {
                 // Display each artifact
                 ForEach(gridToDisplay) { artifact in
                     // Display Artifact Button
-                    ArtifactButtonView(selectedArtifact: artifact, showingLike: showingLikes, showingAi: showingAi)
+                    ArtifactButtonView(selectedArtifact: artifact, showingLike: showingLikes, showingSparkles: showingSparkles)
                         .padding()
                     
                         // Add scroll transition that fades out element on the top

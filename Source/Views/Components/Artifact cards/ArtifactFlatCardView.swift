@@ -20,7 +20,10 @@ struct ArtifactFlatCardView: View {
     // Likes should be displayed in the collection grid, but not in the recommendations
     var showingLike: Bool = true
     
-    var showingAi: Bool = false
+    // Show AI sparkles icon in the right up corner
+    // Sparkles should be shown in the Recommendations View to indicate
+    // that the Artifacts are suggested by a Neural Network
+    var showingSparkles: Bool = false
     
     var body: some View {
         
@@ -50,9 +53,10 @@ struct ArtifactFlatCardView: View {
         .aspectRatio(1, contentMode: .fit)
         .background(.ultraThinMaterial.opacity(0.3), in: .rect(cornerRadius: buttonCornerRadius))
         
-        // Display like button
+        // Display like button or sparkles
         .overlay{
             Group{
+                // Display intractable like button
                 if showingLike {
                     LikeButtonView(artifactID: selectedArtifact.artifactID)
                         .buttonStyle(PlainButtonStyle())
@@ -60,7 +64,8 @@ struct ArtifactFlatCardView: View {
 
                 }
                 
-                if showingAi {
+                // Display sparkles AI logo
+                if showingSparkles {
                     Image(systemName: "sparkles")
                         .fontWeight(.bold)
                         .foregroundStyle(.tertiary)

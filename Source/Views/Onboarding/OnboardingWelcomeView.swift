@@ -13,7 +13,10 @@ struct OnboardingWelcomeView: View {
     // Binding for controlling current onboarding scene
     @Binding var onboardingState: onboardingState
     
+    // Property that animates the blur radius that is applied to the text
     @State private var blurRadius: Double = 10
+    
+    // Animated property that hides visibility of button, until blur animation is finished
     @State private var buttonVisible: Bool = false
     
     var body: some View {
@@ -36,11 +39,13 @@ struct OnboardingWelcomeView: View {
                     .fontWeight(.black)
                 
                 // Sub description
-                Text("Dive into the world of archaeology like never before.")
+                Text("Dive into the world of archeology like never before")
                     .font(.title3)
                     .foregroundStyle(.secondary)
             }
             .blur(radius: blurRadius)
+            
+            // Play blur animation on appear
             .onAppear{
                 withAnimation(.spring(duration: 3)){
                     blurRadius = 0

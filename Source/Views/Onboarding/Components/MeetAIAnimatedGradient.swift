@@ -18,10 +18,12 @@ struct MeetAIAnimatedGradient: View {
         
         Group{
             HStack{
+                // AI Sparkles symbol
                 Image(systemName: "sparkles")
                 
                 // Normal text
                 Text("Meet ") +
+                
                 // Gradient text
                 Text("AI Recommendations")
                     .fontWeight(.black)

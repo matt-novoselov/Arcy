@@ -35,6 +35,7 @@ struct ArtifactModelView: View {
     
     var body: some View {
         
+        // Try to find the .usdz file inside of the Resource folder
         if let fileURL = Bundle.main.url(forResource: modelName, withExtension: "usdz"){
             // Display the 3D model of an Artifact
             Model3D(named: fileURL.lastPathComponent) { model in
@@ -44,6 +45,7 @@ struct ArtifactModelView: View {
                     ProgressView()
                     
                 case .success(let resolvedModel3D):
+                    // Display resolved 3D Model
                     resolvedModel3D
                         .resizable()
                         .scaledToFit()
@@ -61,6 +63,7 @@ struct ArtifactModelView: View {
                         }
                     
                 case .failure(let error):
+                    // Display error text if model fails to load
                     Text(error.localizedDescription)
                     
                 @unknown default:
@@ -69,15 +72,10 @@ struct ArtifactModelView: View {
             }
         }
         else{
+            // Display Error text if the model was not found in the files
             Text("3D model not found")
                 .foregroundStyle(.red)
                 .fontWeight(.bold)
-                .onAppear{
-                    // Try to fix the problem
-                    volumeModel.isExpanded = false
-                    volumeModel.nameOfModel = ""
-                    dismissWindow(id: "secondaryVolume")
-                }
         }
     }
 }

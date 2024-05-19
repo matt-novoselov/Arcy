@@ -17,6 +17,7 @@ class VolumeModelView {
     // If the model in the Resource folder is named MyModel.usdz, you only need to pass MyModel
     var nameOfModel: String = "Small_terracotta_figurine_of_a_veiled_woman"
     
+    // Property that controls if the volume with the selected model is Expanded
     var isExpanded: Bool = false
     
 }

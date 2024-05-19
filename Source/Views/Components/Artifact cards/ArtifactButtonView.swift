@@ -20,12 +20,15 @@ struct ArtifactButtonView: View {
     // Likes should be displayed in the collection grid, but not in the recommendations
     var showingLike: Bool = true
     
-    var showingAi: Bool = true
+    // Show AI sparkles icon in the right up corner
+    // Sparkles should be shown in the Recommendations View to indicate
+    // that the Artifacts are suggested by a Neural Network
+    var showingSparkles: Bool = true
     
     var body: some View {
         // Display navigation link that should lead to the Artifact detail view
         NavigationLink(destination: ArtifactDetailView(selectedArtifact: selectedArtifact)){
-            ArtifactFlatCardView(selectedArtifact: selectedArtifact, buttonCornerRadius: buttonCornerRadius, showingLike: showingLike, showingAi: showingAi)
+            ArtifactFlatCardView(selectedArtifact: selectedArtifact, buttonCornerRadius: buttonCornerRadius, showingLike: showingLike, showingSparkles: showingSparkles)
         }
         // Adjust button shape
         .buttonStyle(PlainButtonStyle())

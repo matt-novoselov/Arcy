@@ -9,38 +9,43 @@ import SwiftUI
 
 struct ArtifactDetailView: View {
     
+    // Volume Model is responsible for controlling what Artifact should currently be displayed in the 3D volume
     @Environment(VolumeModelView.self) var volumeModel
     
+    // Environment variable to open window by ID
     @Environment(\.openWindow) private var openWindow
     
     // Environment variable to dismiss the currently opened window
     @Environment(\.dismissWindow) private var dismissWindow
     
+    // Property that controls if the Artifact is liked or not
     @State private var isLiked: Bool = false
     
     // Animated rotation of the model
     @State private var modelRotation = Angle.zero
     
+    // Pass the selected Artifact to get information from
     let selectedArtifact: Artifact
     
     var body: some View {
         
         HStack{
-            
-            @Bindable var model = volumeModel
-            
+
             // 3D model and label
             ZStack(alignment: .bottom){
                 
                 // 3D model
                 ArtifactModelView(modelName: selectedArtifact.modelName)
                     .rotation3DEffect(modelRotation, axis: .y)
+                
+                    // Animate model rotation on appearance
                     .onAppear {
                         withAnimation(.interpolatingSpring(duration: 1.5)){
                             modelRotation.degrees+=360
                         }
                     }
                 
+                // Make a binding to control the state of expansion of the volume through a toggle
                 let isExpandedBinding = Binding(
                     get: { volumeModel.isExpanded },
                     set: { volumeModel.isExpanded = $0 }
@@ -50,14 +55,16 @@ struct ArtifactDetailView: View {
                 Toggle(isOn: isExpandedBinding.animation()){
                     Label(volumeModel.isExpanded ? "Collapse" : "Expand", systemImage: volumeModel.isExpanded ? "arrow.down.right.and.arrow.up.left" : "arrow.up.left.and.arrow.down.right")
                 }
-                
                 .toggleStyle(ButtonToggleStyle())
                 
+                // Open / Dismiss volume after user's action
                 .onChange(of: volumeModel.isExpanded){
+                    // Expand volume
                     if volumeModel.isExpanded{
                         volumeModel.nameOfModel = selectedArtifact.modelName
                         openWindow(id: "secondaryVolume")
                     } else{
+                        // Collapse volume
                         dismissWindow(id: "secondaryVolume")
                     }
                 }
@@ -68,8 +75,9 @@ struct ArtifactDetailView: View {
             
             // Information card
             VStack(alignment: .leading){
-                // Artifact description
+                // Artifact description wrapped in scroll view to ensure text is always readable
                 ScrollView{
+                    // Ensure that paragraphs are displayed correctly by replacing \\n with \n
                     Text(selectedArtifact.description.replacingOccurrences(of: "\\n", with: "\n"))
                         .foregroundStyle(.secondary)
                         .padding(.horizontal)
@@ -79,8 +87,10 @@ struct ArtifactDetailView: View {
                 
                 // Action buttons
                 HStack{
+                    // Button to like the artifact
                     LikeButtonView(artifactID: selectedArtifact.artifactID)
                     
+                    // Share Artifact's flat image and description
                     ShareLink(item: selectedArtifact.previewImage, preview: SharePreview("\(selectedArtifact.name)\n\n\(selectedArtifact.description)", image: selectedArtifact.previewImage)) {
                         Image(systemName: "square.and.arrow.up")
                     }
@@ -91,7 +101,7 @@ struct ArtifactDetailView: View {
             .padding(.vertical)
             .background(.regularMaterial, in: .rect(cornerRadius: 20))
             
-            // Map
+            // Map that displays the position of the Artifact
             ExpandableMapView(selectedArtifact: selectedArtifact)
             
         }
@@ -99,6 +109,7 @@ struct ArtifactDetailView: View {
         
         .navigationTitle(selectedArtifact.name)
         
+        // Dismiss volume expanded window after exiting from the Detail view
         .onDisappear {
             dismissWindow(id: "secondaryVolume")
             volumeModel.isExpanded = false

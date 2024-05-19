@@ -84,10 +84,13 @@
 		1AE1ADC32BEC142000E60AC6 /* AppVersionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADC22BEC142000E60AC6 /* AppVersionExtension.swift */; };
 		1AE1ADC52BEC191200E60AC6 /* ProfileStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADC42BEC191200E60AC6 /* ProfileStatsView.swift */; };
 		1AE1ADC82BEC19B200E60AC6 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1ADC72BEC19B200E60AC6 /* CircularProgressView.swift */; };
-		1AE7D1372BE91ADB002A98D6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1362BE91ADB002A98D6 /* GameView.swift */; };
+		1AE7D1372BE91ADB002A98D6 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1362BE91ADB002A98D6 /* QuizView.swift */; };
 		1AE7D1392BE91D64002A98D6 /* ExtensionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */; };
 		1AE7D1412BE92034002A98D6 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1402BE92034002A98D6 /* ProgressBar.swift */; };
-		1AE7D1432BE93BF1002A98D6 /* EndOfGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1422BE93BF1002A98D6 /* EndOfGameView.swift */; };
+		1AE7D1432BE93BF1002A98D6 /* EndOfQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D1422BE93BF1002A98D6 /* EndOfQuizView.swift */; };
+		1AE83DED2BF9E6CE00ED77A4 /* ArtifactRecommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE83DEC2BF9E6CE00ED77A4 /* ArtifactRecommendationModel.swift */; };
+		1AE83DF12BF9E77A00ED77A4 /* ClassRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE83DF02BF9E77A00ED77A4 /* ClassRecommender.swift */; };
+		1AE83DF42BF9E7C200ED77A4 /* RecommendationProxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE83DF32BF9E7C200ED77A4 /* RecommendationProxyView.swift */; };
 		1AE9B2DC2BE9007700465DDE /* GuessGameButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */; };
 		1AEA7C512BE82F1F006791FD /* ArtifactButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA7C502BE82F1F006791FD /* ArtifactButtonView.swift */; };
 		1AEA7C542BE83635006791FD /* DevelopedWithLoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA7C532BE83635006791FD /* DevelopedWithLoveView.swift */; };
@@ -178,10 +181,13 @@
 		1AE1ADC22BEC142000E60AC6 /* AppVersionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionExtension.swift; sourceTree = "<group>"; };
 		1AE1ADC42BEC191200E60AC6 /* ProfileStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsView.swift; sourceTree = "<group>"; };
 		1AE1ADC72BEC19B200E60AC6 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		1AE7D1362BE91ADB002A98D6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		1AE7D1362BE91ADB002A98D6 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		1AE7D1382BE91D64002A98D6 /* ExtensionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTransition.swift; sourceTree = "<group>"; };
 		1AE7D1402BE92034002A98D6 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
-		1AE7D1422BE93BF1002A98D6 /* EndOfGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfGameView.swift; sourceTree = "<group>"; };
+		1AE7D1422BE93BF1002A98D6 /* EndOfQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfQuizView.swift; sourceTree = "<group>"; };
+		1AE83DEC2BF9E6CE00ED77A4 /* ArtifactRecommendationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactRecommendationModel.swift; sourceTree = "<group>"; };
+		1AE83DF02BF9E77A00ED77A4 /* ClassRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRecommender.swift; sourceTree = "<group>"; };
+		1AE83DF32BF9E7C200ED77A4 /* RecommendationProxyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationProxyView.swift; sourceTree = "<group>"; };
 		1AE9B2DB2BE9007700465DDE /* GuessGameButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessGameButtonView.swift; sourceTree = "<group>"; };
 		1AEA7C502BE82F1F006791FD /* ArtifactButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifactButtonView.swift; sourceTree = "<group>"; };
 		1AEA7C532BE83635006791FD /* DevelopedWithLoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopedWithLoveView.swift; sourceTree = "<group>"; };
@@ -285,14 +291,6 @@
 			path = Persistancy;
 			sourceTree = "<group>";
 		};
-		1A1753A92BEFD0D600229329 /* Volume */ = {
-			isa = PBXGroup;
-			children = (
-				1AADF0A52BEF87550095333C /* VolumetricModelView.swift */,
-			);
-			path = Volume;
-			sourceTree = "<group>";
-		};
 		1A185AE52BE4508900B7843C /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,7 +365,7 @@
 		1A31C8A12BE42E05004CCB0B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */,
+				1AE83DEE2BF9E6E500ED77A4 /* Artifacts */,
 				1A595FF02BE96BD20040469C /* LikesModel.swift */,
 				1A31C8A22BE42E0B004CCB0B /* View Models */,
 			);
@@ -443,16 +441,43 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		1AE9B2DA2BE9005C00465DDE /* Guess Game */ = {
+		1AE83DEE2BF9E6E500ED77A4 /* Artifacts */ = {
+			isa = PBXGroup;
+			children = (
+				1A31C88C2BE4245E004CCB0B /* ArtifactModel.swift */,
+				1AE83DEC2BF9E6CE00ED77A4 /* ArtifactRecommendationModel.swift */,
+			);
+			path = Artifacts;
+			sourceTree = "<group>";
+		};
+		1AE83DEF2BF9E72200ED77A4 /* Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				1AE83DF22BF9E79500ED77A4 /* Views */,
+				1AE83DF02BF9E77A00ED77A4 /* ClassRecommender.swift */,
+			);
+			path = Recommendations;
+			sourceTree = "<group>";
+		};
+		1AE83DF22BF9E79500ED77A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A07A28D2BED58BC002E103D /* RecommendationView.swift */,
+				1AE83DF32BF9E7C200ED77A4 /* RecommendationProxyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1AE9B2DA2BE9005C00465DDE /* Quiz Game */ = {
 			isa = PBXGroup;
 			children = (
 				1AEB0DA22BF24E0400FDFB53 /* Immersive */,
 				1AE7D1442BE93C06002A98D6 /* Components */,
-				1AE7D1362BE91ADB002A98D6 /* GameView.swift */,
+				1AE7D1362BE91ADB002A98D6 /* QuizView.swift */,
 				1A24732D2BE568CA001A0275 /* GuessArtifactView.swift */,
-				1AE7D1422BE93BF1002A98D6 /* EndOfGameView.swift */,
+				1AE7D1422BE93BF1002A98D6 /* EndOfQuizView.swift */,
 			);
-			path = "Guess Game";
+			path = "Quiz Game";
 			sourceTree = "<group>";
 		};
 		1AEA7C522BE82F27006791FD /* Artifact cards */ = {
@@ -468,7 +493,6 @@
 			isa = PBXGroup;
 			children = (
 				1AEB0DA12BF24DBC00FDFB53 /* Components */,
-				1A1753A92BEFD0D600229329 /* Volume */,
 				1AFA26222BE417EA00FD8152 /* ArtifactDetailView.swift */,
 			);
 			path = "Artifact Detail";
@@ -496,6 +520,7 @@
 		1AEB0DA12BF24DBC00FDFB53 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1AADF0A52BEF87550095333C /* VolumetricModelView.swift */,
 				1AEA7C562BE83707006791FD /* ExpandableMapView.swift */,
 			);
 			path = Components;
@@ -539,11 +564,11 @@
 				1A2473712BE638CE001A0275 /* Components */,
 				1A31C8AC2BE43D52004CCB0B /* Onboarding */,
 				1AEA7C552BE836E2006791FD /* Artifact Detail */,
-				1AE9B2DA2BE9005C00465DDE /* Guess Game */,
+				1AE9B2DA2BE9005C00465DDE /* Quiz Game */,
 				1A07A2932BED6837002E103D /* Profile View */,
+				1AE83DEF2BF9E72200ED77A4 /* Recommendations */,
 				1AF1119A2BD40973004D77EB /* ContentView.swift */,
 				1AFA26202BE4101900FD8152 /* SelectionPageView.swift */,
-				1A07A28D2BED58BC002E103D /* RecommendationView.swift */,
 				1A24736F2BE5A47F001A0275 /* CollectionView.swift */,
 			);
 			path = Views;
@@ -700,9 +725,10 @@
 				1AEA7C542BE83635006791FD /* DevelopedWithLoveView.swift in Sources */,
 				1A6558142BF5503C0080B30A /* DragRotationModifier.swift in Sources */,
 				1A358F7F2BE6BFDF001AB224 /* CenteredLabelStyle.swift in Sources */,
+				1AE83DED2BF9E6CE00ED77A4 /* ArtifactRecommendationModel.swift in Sources */,
 				1AADF0A62BEF87550095333C /* VolumetricModelView.swift in Sources */,
 				1A185AE42BE44EEC00B7843C /* Sinebow.metal in Sources */,
-				1AE7D1372BE91ADB002A98D6 /* GameView.swift in Sources */,
+				1AE7D1372BE91ADB002A98D6 /* QuizView.swift in Sources */,
 				1A2473642BE58514001A0275 /* UILottieView.swift in Sources */,
 				1AFA26232BE417EA00FD8152 /* ArtifactDetailView.swift in Sources */,
 				1A44CC5F2BEAA87B00A3D95B /* ConfettiImmersive.swift in Sources */,
@@ -710,11 +736,13 @@
 				1A2473342BE576FD001A0275 /* OnboardingCardView.swift in Sources */,
 				1A3B77EA2BE7DE8D008DCBF4 /* BackgroundGradientView.swift in Sources */,
 				1A2405332BED263A00AD9D17 /* MeetAIAnimatedGradient.swift in Sources */,
+				1AE83DF42BF9E7C200ED77A4 /* RecommendationProxyView.swift in Sources */,
 				1A2473282BE538E4001A0275 /* ProfilePictureView.swift in Sources */,
-				1AE7D1432BE93BF1002A98D6 /* EndOfGameView.swift in Sources */,
+				1AE7D1432BE93BF1002A98D6 /* EndOfQuizView.swift in Sources */,
 				1AE1ADC32BEC142000E60AC6 /* AppVersionExtension.swift in Sources */,
 				1A0CE8582BEFB6DB009203F1 /* PhotosViewModel.swift in Sources */,
 				1A24732A2BE550C8001A0275 /* ArtifactFlatCardView.swift in Sources */,
+				1AE83DF12BF9E77A00ED77A4 /* ClassRecommender.swift in Sources */,
 				1AE9B2DC2BE9007700465DDE /* GuessGameButtonView.swift in Sources */,
 				1A0CE8542BEFB438009203F1 /* CoreDataManager.swift in Sources */,
 				1A2473362BE578AF001A0275 /* OnboardingFeaturesView.swift in Sources */,

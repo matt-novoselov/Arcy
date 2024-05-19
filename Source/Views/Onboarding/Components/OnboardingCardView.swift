@@ -22,7 +22,7 @@ struct OnboardingCardView: View {
     var body: some View {
         
         HStack(spacing: 15){
-            // Display SF Symbol
+            // Display SF Symbol with a fixed size
             Group{
                 Image(systemName: "circle")
                     .foregroundStyle(.clear)
@@ -42,7 +42,6 @@ struct OnboardingCardView: View {
                 Text(description)
                     .font(.body)
                     .foregroundStyle(.secondary)
-                
             }
             
             Spacer()
@@ -54,6 +53,7 @@ struct OnboardingCardView: View {
         
         .clipShape(.capsule)
         
+        // Apply scale transition after appearing
         .transition(.scale)
         
     }

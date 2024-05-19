@@ -25,9 +25,10 @@ struct OnboardingFeaturesView: View {
             
             Spacer()
             
+            // Display several onboarding cards with features description
+            // Each card appearance is animated
             Group{
                 if animationPhase>=1{
-                    // Display several onboarding cards with features description
                     OnboardingCardView(iconName: "rotate.3d", title: "Intractable Artifacts", description: "Explore artifacts from every angle.")
                 }
                 
@@ -40,6 +41,8 @@ struct OnboardingFeaturesView: View {
                 }
             }
             .frame(maxWidth: 420)
+            
+            // Offset cards a bit to the front to create a 3D effect
             .offset(z: 5)
             
             Spacer()
