@@ -14,7 +14,7 @@ Many archaeological artifacts are housed in museums, private collections, or rem
 With Arcy, users can view and interact with virtual archaeological artifacts in spatial reality, gaining detailed information about each one. Explore history like never before, right from the comfort of your own space.
 
 <a href="https://www.youtube.com/watch?v=oICA5GGamFs" target="_blank">
-  <img src="https://github.com/MassimoPalosciaIT/iSOS/assets/59065228/3816afd0-ed60-4369-a039-d85ed58b7000" alt="GIF">
+  <img src="https://github.com/matt-novoselov/Arcy/assets/59065228/7829f813-006a-4d05-8e31-f7a835bd1782" alt="GIF">
 </a>
 
 [![](https://github.com/matt-novoselov/matt-novoselov/blob/34555effedede5dd5aa24ae675218d989e976cf6/Files/YouTube_Badge.svg)](https://www.youtube.com/watch?v=oICA5GGamFs)
