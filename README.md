@@ -18,8 +18,6 @@ With Arcy, users can view and interact with virtual archaeological artifacts in 
 </a>
 
 [![](https://github.com/matt-novoselov/matt-novoselov/blob/34555effedede5dd5aa24ae675218d989e976cf6/Files/YouTube_Badge.svg)](https://www.youtube.com/watch?v=oICA5GGamFs)
-[![](https://github.com/matt-novoselov/matt-novoselov/blob/eb675928f9e5b3cd2a2db6cde2b6ecf5ab646b4c/Files/Available_on_the_Test_Flight.svg)](https://testflight.apple.com/join/l8JQokLW)
-
 
 ## Features
 
